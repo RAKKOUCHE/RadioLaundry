@@ -1,0 +1,21 @@
+Board Information Report
+Filename     : D:\Projets\RadioLaundry\HW\Satellites\Satellite.PcbDoc
+Date         : 10/02/2021
+Time         : 17:53:51
+Time Elapsed : 00:00:00
+
+Non-Plated Hole Size, Pads, Vias
+    0mils, 2, 0
+count : 1
+
+Plated Hole Size, Pads, Vias
+    0mils, 150, 0
+    10mils, 9, 0
+    28mils, 0, 116
+    40mils, 24, 0
+    47.244mils, 3, 0
+    51mils, 10, 0
+    55.118mils, 12, 0
+    60mils, 2, 0
+    165mils, 4, 0
+count : 9
