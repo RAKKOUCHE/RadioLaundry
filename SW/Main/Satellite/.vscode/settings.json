@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "io.h": "c",
+        "wifi.h": "c",
+        "espnow.h": "c"
+    },
+    "comments.info.fileExtension": ".c and .h",
+    "user.info.name": "Rachid AKKOUCHE",
+    "user.info.email": "rachid.akkouche@wanadoo.fr",
+    "comments.info.importationText": "Importation des librairies",
+    "main.info.brief": "Fonction principale du programme"
+}

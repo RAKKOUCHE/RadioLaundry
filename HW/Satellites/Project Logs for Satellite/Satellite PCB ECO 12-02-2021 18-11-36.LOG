@@ -1,0 +1,9 @@
+Added Component: Designator=PU1(IRM-05-X.X)
+Added Pin To Net: NetName=NetP4_1 Pin=PU1-1
+Added Pin To Net: NetName=NetF1_1 Pin=PU1-2
+Added Pin To Net: NetName=NetF1_1 Pin=PU1-2
+Added Pin To Net: NetName=GND Pin=PU1-3
+Added Pin To Net: NetName=GND Pin=PU1-3
+Added Pin To Net: NetName=+5 Pin=PU1-4
+Added Pin To Net: NetName=+5 Pin=PU1-4
+Added Member To Class: ClassName=U_PSU Member=Component PU1 IRM-05-5
