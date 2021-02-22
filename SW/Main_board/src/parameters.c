@@ -79,7 +79,6 @@ static bool setVFS_SPIFFS(void)
 * \details Vérifie si le fichier existe, sinon crée le fichier avec un un numéro de machine 255
 * indiquant que la carte est vierge. Dans le cas où le fichier existe, lecture du numéro de machine.
 * \remarks Si le fichier des paramètres n'existe pas, il s'agit de la première utilisation de la carte.
-* \return 
 */
 static void checkFileParameters(void)
 {
@@ -94,7 +93,7 @@ static void checkFileParameters(void)
         fclose(filedata);
         filedata = NULL;
     }
-
+    
     if (!fread(&MachineAddress, sizeof(MachineAddress), 1, filedata = fopen(filename, "rb+")))
     {
         ESP_LOGD(TAG_PARAMETER, "%s", "La lecture du numéro de la machine a échoué\n");
@@ -103,7 +102,16 @@ static void checkFileParameters(void)
     {
         ESP_LOGI(TAG_PARAMETER, "%s%u\n", "La lecture du numéro de la machine est : ", MachineAddress);
         fseek(filedata, 0, SEEK_SET);
+#ifdef DEBUG
+        if (MachineAddress == 0xff)
+        {
+            MachineAddress = 0x01;
+            fwrite(&MachineAddress, sizeof(MachineAddress), 1, filedata);
+            fflush(filedata);
+        }
+#endif
     }
+    fclose(filedata);
 }
 
 /*!
@@ -121,22 +129,4 @@ void InitParameters(void)
     {
         checkFileParameters();
     }
-}
-
-/*!
-* \fn void saveMachineNumber(void)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  22/02/2021
-* \brief 
-* \remarks None
-*/
-void saveMachineNumber(void)
-{
-    fseek(filedata, 0, SEEK_SET);
-    fwrite(&MachineAddress, sizeof(MachineAddress), 1, filedata);
-    fflush(filedata);
-    fseek(filedata, 0, SEEK_SET);
-    fread(&MachineAddress, sizeof(MachineAddress), 1, filedata);
-    ESP_LOGI(TAG_PARAMETER, "%s%u\n", "Nouveau numéro de machine : ", MachineAddress);
 }

@@ -26,9 +26,6 @@
 */
 #define DEBUG
 
-/**
-* \brief
-*/
 uint8_t MachineAddress;
 
 /*!
@@ -40,15 +37,5 @@ uint8_t MachineAddress;
 * \remarks None
 */
 void InitParameters(void);
-
-/*!
-* \fn void saveMachineNumber(void)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  22/02/2021
-* \brief 
-* \remarks None
-*/
-void saveMachineNumber(void);
 
 #endif

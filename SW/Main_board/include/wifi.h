@@ -7,6 +7,7 @@
 * \remarks None
 */
 
+
 #ifndef WIFI_H
 #define WIFI_H
 
@@ -17,7 +18,6 @@
 #include "esp_wifi.h"
 #include "esp_now.h"
 #include "esp_log.h"
-#include "parameters.h"
 
 /*!
 * \fn void InitWifi(void)

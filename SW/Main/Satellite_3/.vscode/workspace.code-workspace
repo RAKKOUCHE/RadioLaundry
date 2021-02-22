@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Satellite_3",
+			"path": ".."
+		},
+		{
+			"name": "Main_board",
+			"path": "..\\..\\..\\Main_board"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"flash.h": "c"
+		}
+	}
+}

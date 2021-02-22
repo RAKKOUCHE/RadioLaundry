@@ -17,10 +17,10 @@
 #include "main.h"
 
 /*!
-* \def MAIN_TAG
+* \def TAG_MAIN
 * Description TAG utilisé par les logs pour ce fichier
 */
-#define MAIN_TAG "Main module"
+#define TAG_MAIN "Main module"
 
 /*!
 * \def BUTTON
@@ -83,8 +83,11 @@ static void InitApp(void)
 */
 void app_main()
 {
+    //uint8_t oldAddress = 18;
+    uint8_t newAddress = 11;
+
     int delay = 10;
-    ESP_LOGI(MAIN_TAG, "%s", "Debut du programme");
+    ESP_LOGI(TAG_MAIN, "%s", "Debut du programme");
     //Initialisation du programme
     InitApp();
 
@@ -93,12 +96,14 @@ void app_main()
     {
         //Permet de réinitialiser le watchdog
         vTaskDelay(100);
-        ESP_LOGD(MAIN_TAG, "%s", "Loop\n");
+        ESP_LOGD(TAG_MAIN, "%s", "Loop\n");
 
         //Si le bouton est utilisé
         if (!gpio_get_level(BUTTON))
         {
-            ESP_LOGD(MAIN_TAG, "%s\n", "Bouton utilisé");
+            setESPNOWTaskState(ESPNOWMSGSEND);
+
+            ESP_LOGI(TAG_MAIN, "%s%u\n", "Numéro de série : ", ESPNOWGetSerialNumber(newAddress));
             while (!gpio_get_level(BUTTON))
                 ;
         }
