@@ -91,10 +91,6 @@
 */
 #define BOOT GPIO_NUM_0
 
-/**
- * @brief 
- */
-TaskHandle_t hTaskIO;
 
 /**
 *\brief
@@ -108,15 +104,7 @@ typedef enum
     IOLEDOff,
 } IOTaskState_t;
 
-/*!
-* \fn void setIOState(IOTaskState_t state)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  21/02/2021
-* \brief 
-* \remarks None
-* \param state 
-*/
+
 void setIOState(IOTaskState_t state);
 
 /*!
@@ -129,6 +117,11 @@ void setIOState(IOTaskState_t state);
 * \param[in] led 
 */
 void setLED(const gpio_num_t led);
+
+/**
+ * @brief 
+ */
+TaskHandle_t hTaskIO;
 
 /*!
 * \fn void TaskIO(void *vParameter)
