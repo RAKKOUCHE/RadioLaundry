@@ -1,5 +1,5 @@
 /*!
-* \file d:\Projets\RADIOLAUNDRY\SW\Main\Satellite_3\include\io.h
+* \file d:\Projets\RADIOLAUNDRY\SW\Main\Main_board\include\io.h
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date 16/02/2021
@@ -10,11 +10,8 @@
 #ifndef IO_H
 #define IO_H
 
-/*! Importation des librairies*/
-/*! Fichiers includes*/
 /*! Fichiers inclus*/
 #include "driver/gpio.h"
-#include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -105,6 +102,15 @@ typedef enum
 } IOTaskState_t;
 
 
+/*!
+* \fn void setIOState(IOTaskState_t state)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  24/02/2021
+* \brief 
+* \remarks None
+* \param state 
+*/
 void setIOState(IOTaskState_t state);
 
 /*!

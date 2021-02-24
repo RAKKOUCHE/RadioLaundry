@@ -92,13 +92,13 @@ void app_main()
     while (1)
     {
         //Permet de réinitialiser le watchdog
-        vTaskDelay(100);
+        vTaskDelay(250);
         ESP_LOGD(MAIN_TAG, "%s", "Loop\n");
 
         //Si le bouton est utilisé
         if (!gpio_get_level(BUTTON))
         {
-            ESPNOWPoll(MachineAddress);
+            //ESPNOWPoll(MachineAddress);
             ESP_LOGD(MAIN_TAG, "%s\n", "Bouton utilisé");
             while (!gpio_get_level(BUTTON))
                 ;

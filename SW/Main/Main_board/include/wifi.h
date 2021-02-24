@@ -1,5 +1,5 @@
 /*!
-* \file d:\Projets\RADIOLAUNDRY\SW\Main\Satellite_3\include\wifi.h
+* \file d:\Projets\RADIOLAUNDRY\SW\Main\Main_board\include\wifi.h
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date 16/02/2021
@@ -12,12 +12,12 @@
 #define WIFI_H
 
 /*! Fichiers includes*/
+/*! Fichiers inclus*/
 #include <stdint.h>
 #include "esp_err.h"
 #include "esp_netif.h"
 #include "esp_wifi.h"
 #include "esp_now.h"
-#include "esp_log.h"
 
 /*!
 * \fn void InitWifi(void)

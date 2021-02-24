@@ -11,13 +11,10 @@
 #define MAIN_h
 
 /*! Fichiers inclus*/
-#include "esp_log.h"
 #include "io.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "flash.h"
-#include "logs.h"
-#include "parameters.h"
 #include "espnow.h"
 
 /*!
@@ -26,7 +23,10 @@
 */
 #define DEBUG
 
-uint8_t MachineAddress;
-
+/**
+ * @brief Numéro de la machine utilisée pour les test
+ * 
+ */
+uint8_t MachineAddress = 11;
 
 #endif

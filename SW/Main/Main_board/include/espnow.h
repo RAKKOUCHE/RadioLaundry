@@ -10,25 +10,23 @@
 #ifndef ESPNOW_H
 #define ESPNOW_H
 
-/*!
-* \file d:\Projets\RADIOLAUNDRY\SW\Main\Satellite_3\include\espnow.h
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date 16/02/2021
-* \brief 
-* \remarks None
-*/
-
-/*! Importation des librairies*/
-/*! Fichiers includes*/
 /*! Fichiers inclus*/
 #include <string.h>
+#include <stdio.h>
 #include "wifi.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/timers.h"
 #include "driver/gpio.h"
 #include "io.h"
 #include "esp_err.h"
+
+#define DEBUG
+/**
+ * @brief 
+ * 
+ */
+#define SECONDE (1000 / portTICK_PERIOD_MS)
 
 /**
  * @brief 
@@ -118,8 +116,9 @@ void TASKESPNOW(void *vParameter);
 * \brief 
 * \remarks None
 * \param address 
+* \return true si le pool réussi.
 */
-void ESPNOWPoll(uint8_t address);
+bool ESPNOWPoll(uint8_t address);
 
 /*!
 * \fn bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress)

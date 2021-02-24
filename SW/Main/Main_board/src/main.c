@@ -11,10 +11,10 @@
 #include "main.h"
 
 /*!
-* \def MAIN_TAG
+* \def TAG_MAIN
 * Description TAG utilisé par les logs pour ce fichier
 */
-#define MAIN_TAG "Main module"
+#define TAG_MAIN "\nMain module : "
 
 /*!
 * \def BUTTON
@@ -46,16 +46,17 @@ static void createTasks(void)
 * \date  23/02/2021
 * \brief 
 * \remarks None
+* \return 
 */
 static void InitApp(void)
 {
     //Initialisation nécessaire de la flash
     InitFlash();
-    //Initialisation des logs
-    InitESPLOG();
+    // //Initialisation des logs
+    // InitESPLOG();
     //Lecture des paramètres
-    InitParameters();
-    //Creation des tâches
+    // InitParameters();
+    // //Creation des tâches
     createTasks();
     //Initialise le WIFI
     xTaskNotifyGive(hTaskESPNOW);
@@ -77,7 +78,7 @@ static void InitApp(void)
 void app_main()
 {
     int delay = 10;
-    ESP_LOGI(MAIN_TAG, "%s", "Debut du programme");
+    printf("%s%s", TAG_MAIN, "Debut du programme");
     //Initialisation du programme
     InitApp();
 
@@ -86,16 +87,30 @@ void app_main()
     {
         //Permet de réinitialiser le watchdog
         vTaskDelay(100);
-        ESP_LOGD(MAIN_TAG, "%s", "Loop\n");
+        printf("%s%s", TAG_MAIN, "Loop");
 
         //Si le bouton est utilisé
         if (!gpio_get_level(BUTTON))
         {
-            ESPNOWPoll(MachineAddress);
-            ESP_LOGD(MAIN_TAG, "%s\n", "Bouton utilisé");
+            printf("%s%s", TAG_MAIN, "Bouton utilisé");
+
+            //Prépare l'envoie d'une commande
+            setESPNOWTaskState(ESPNOWMSGSEND);
+
+            //Envoie un poll.
+            if (ESPNOWPoll(MachineAddress))
+            {
+                printf("%s", "\nle pool a réussi");
+            }
+            else
+            {
+                printf("%s", "\nle pool a échoué");
+            }
+            //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))
                 ;
         }
+
         //Arrête le glignotement de la led
         if (delay && (--delay == 0))
         {

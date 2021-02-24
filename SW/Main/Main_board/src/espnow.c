@@ -1,19 +1,21 @@
 /*!
-* \file d:\Projets\RADIOLAUNDRY\SW\Main_board\src\espnow.c
+* \file d:\Projets\RADIOLAUNDRY\SW\Main\Main_board\src\espnow.c
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date 21/02/2021
 * \brief 
 * \remarks None
 */
+
 /*! Fichiers inclus*/
+/*! Importation of librairies*/
 #include "espnow.h"
 
 /*!
 * \def TAG_ESPNOW
 * Description
 */
-#define TAG_ESPNOW "ESPNOW module"
+#define TAG_ESPNOW "\nESPNOW Module : "
 
 /*!
 * \def CONFIG_ESPNOW_CHANNEL
@@ -31,13 +33,19 @@
 * \def CONFIG_ESPNOW_PMK
 * Description
 */
-#define CONFIG_ESPNOW_PMK  "pmk*Waterloo1612"
+#define CONFIG_ESPNOW_PMK "pmk*Waterloo1612"
 
 /*!
 * \def CONFIG_ESPNOW_LMK
 * Description
 */
-#define CONFIG_ESPNOW_LMK  "lmk*Waterloo1612"
+#define CONFIG_ESPNOW_LMK "lmk*Waterloo1612"
+
+/*!
+* \def TO_COMMAND
+* Description
+*/
+#define TO_COMMAND (2000 / portTICK_PERIOD_MS)
 
 /**
 * \brief
@@ -72,12 +80,33 @@ static esp_now_peer_info_t peer_info;
 /**
 * \brief
 */
-static uint8_t macAddress[] = {0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF};
+static bool isCommandFinished;
+
+/**
+ * @brief 
+ * 
+ */
+static TimerHandle_t hCommandTO;
 
 /**
 * \brief
 */
-bool isAnswered;
+static uint8_t macAddress[] = {0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF};
+
+/*!
+* \fn static void CommandTO(TimerHandle_t handle)
+* \author Name <email@email.com>
+* \version 0.1
+* \date  23/02/2021
+* \brief 
+* \remarks None
+* \param handle 
+* \return 
+*/
+static void CommandTO(TimerHandle_t handle)
+{
+    isCommandFinished = true;
+}
 
 /*!
 * \fn static uint16_t wCRC16(void *byData, const uint8_t byLen)
@@ -119,8 +148,9 @@ static uint16_t wCRC16(void *byData, const uint8_t byLen)
 */
 static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 {
-    isAnswered = false;
-    ESP_LOGI(TAG_ESPNOW, "result : %d\n", (uint8_t)status);
+    isCommandFinished = false;
+    xTimerStart(hCommandTO, 1 * SECONDE);
+    printf("%sresult : %d\n", TAG_ESPNOW, (uint8_t)status);
 }
 
 /*!
@@ -136,18 +166,19 @@ static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 * \return 
 */
 static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
-{    
+{
     setLED(LED_1);
     setIOState(IOLedFlash);
-    ESP_LOGI(TAG_ESPNOW, "result : ");
-    for(uint8_t i =0; i < len; i++)
+    printf("%s%s", TAG_ESPNOW, "result : ");
+    for (uint8_t i = 0; i < len; i++)
     {
         printf("%02u ", data[i]);
     }
     memmove(msg_received, data, len);
-    ESP_LOGI(TAG_ESPNOW, "\nMac address sender : %02X:%02X:%02X:%02X:%02X:%02X\n", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);   
-    isAnswered = true;
-    vTaskDelay(250);
+    printf("%sMac address sender : %02X:%02X:%02X:%02X:%02X:%02X\n", TAG_ESPNOW, macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
+    isCommandFinished = true;
+    xTimerStop(hCommandTO, 1 * SECONDE);
+    vTaskDelay(350);
     setLED(LED_1);
     setIOState(IOLEDOff);
 }
@@ -173,7 +204,8 @@ static void InitESPNOW(void)
     peer_info.ifidx = ESP_IF_WIFI_STA;
     peer_info.encrypt = false;
     ESP_ERROR_CHECK(esp_now_add_peer(&peer_info));
-    ESP_LOGI(TAG_ESPNOW, "%s", "ESPNOW initialisé.\n");
+    hCommandTO = xTimerCreate("TO command", TO_COMMAND, pdFALSE, 0, CommandTO);
+    printf("%s%s", TAG_ESPNOW, "ESPNOW initialisé.");
 }
 
 /*!
@@ -201,9 +233,10 @@ static void formatSendMsg(uint8_t addressRecipient, Command_t command, uint8_t l
     memmove(&buffer[4], message, len);
     LCRC = wCRC16(buffer, len + 4);
     memmove(&buffer[len + 4], &LCRC, sizeof(uint16_t));
+    memset(msg_received, 0, sizeof(msg_received));
     ESP_ERROR_CHECK(esp_now_send(macAddress, buffer, len + 6));
     free(buffer);
-    ESP_LOGI(TAG_ESPNOW, "%s%u%s\n", "Commande ", command, " envoyée!");
+    printf("%s%s%u%s\n", TAG_ESPNOW,  "Commande ", command, " envoyée!");
 }
 
 /*!
@@ -221,25 +254,31 @@ void setESPNOWTaskState(ESPNOWTaskState_t state)
 }
 
 /*!
-* \fn void ESPNOWPoll(uint8_t address)
+* \fn bool ESPNOWPoll(uint8_t address)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
 * \brief 
 * \remarks None
 * \param address 
+* \return 
 */
-void ESPNOWPoll(uint8_t address)
+bool ESPNOWPoll(uint8_t address)
 {
     msg_address_recipient = address;
     msg_cmd = SIMPLEPOLL;
     msg_len = 0;
-    ESP_LOGI(TAG_ESPNOW, "Poll");
-    xTaskNotifyGive(hTaskESPNOW);    
+    printf("%sPoll", TAG_ESPNOW);
+    xTaskNotifyGive(hTaskESPNOW);
+    while (!isCommandFinished)
+    {
+    };
+    printf("%s%s%s", TAG_ESPNOW, "Pool ", msg_received[0] == HOST ? "résussi" : "échoué");
+    return msg_received[0] == HOST;
 }
 
 /*!
-* \fn void ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress )
+* \fn bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress )
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  22/02/2021
@@ -247,28 +286,41 @@ void ESPNOWPoll(uint8_t address)
 * \remarks None
 * \param address 
 * \param newAddress 
+* \return 
 */
-bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress )
-{    
+bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress)
+{
     msg_address_recipient = address;
     msg_cmd = MODIFY_MACHINE_NUMBER;
     msg_len = 1;
     msg_buffer[0] = newAddress;
-    ESP_LOGI(TAG_ESPNOW, "Change address");
-    xTaskNotifyGive(hTaskESPNOW);    
-    while(!isAnswered);
-    ESP_LOGI(TAG_ESPNOW, "%s%u\n", "Nouvelle adresse : ", msg_received[2]);
+    printf("%sChange address", TAG_ESPNOW);
+    xTaskNotifyGive(hTaskESPNOW);
+    while (!isCommandFinished)
+        ;
+    printf("%s%s%u\n", TAG_ESPNOW, "Nouvelle adresse : ", msg_received[2]);
     return msg_received[2] == newAddress;
 }
 
+/*!
+* \fn uint32_t ESPNOWGetSerialNumber(uint8_t address)
+* \author Name <email@email.com>
+* \version 0.1
+* \date  23/02/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
 uint32_t ESPNOWGetSerialNumber(uint8_t address)
 {
     msg_address_recipient = address;
     msg_cmd = REQUEST_MACHINE_NUMBER;
     msg_len = 0;
-    ESP_LOGI(TAG_ESPNOW, "Change address");
-    xTaskNotifyGive(hTaskESPNOW);    
-    while(!isAnswered);
+    printf("%sChange address", TAG_ESPNOW);
+    xTaskNotifyGive(hTaskESPNOW);
+    while (!isCommandFinished)
+        ;
     return (msg_received[2] * 0X10000) + (msg_received[1] * 0X10000) + msg_received[0];
 }
 
@@ -291,7 +343,7 @@ void TASKESPNOW(void *vParameter)
         {
         case ESPNOW_IDLE: //Never call
         {
-            ESP_LOGD(TAG_ESPNOW, "%s", "Notification ESPNOW injustifié!");
+            printf("%s%s",TAG_ESPNOW,  "Notification ESPNOW injustifié!");
             break;
         }
         case WIFIINIT:
@@ -312,7 +364,7 @@ void TASKESPNOW(void *vParameter)
             break;
         }
         default:
-            ESP_LOGD(TAG_ESPNOW, "%s %u", "Notification ESPNOW injustifié : ", (uint8_t)ESPNOWTaskState);
+            printf("%s%s %u",TAG_ESPNOW,  "Notification ESPNOW injustifié : ", (uint8_t)ESPNOWTaskState);
             break;
         }
     }

@@ -10,7 +10,7 @@
 /*! Fichiers inclus*/
 #include "flash.h"
 
-#define TAG_FLASH "Flash Module"
+#define TAG_FLASH "\nFlash Module : "
 
 /*!
 * \fn void InitFlash(void)
@@ -29,5 +29,5 @@ void InitFlash(void)
         ESP_ERROR_CHECK(nvs_flash_erase());
         ESP_ERROR_CHECK(ret = nvs_flash_init());
     }  
-    ESP_LOGI(TAG_FLASH, "%s", "Fin de l'initialisation de la flash");
+    printf("%s%s",TAG_FLASH,  "Fin de l'initialisation de la flash");
 }

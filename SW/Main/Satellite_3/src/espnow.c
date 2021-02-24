@@ -7,13 +7,14 @@
 * \remarks None
 */
 /*! Fichiers inclus*/
+/*! Importation of librairies*/
 #include "espnow.h"
 
 /*!
-* \def ESPNOW_TAG
+* \def TAG_ESPNOW
 * Description
 */
-#define ESPNOW_TAG "ESPNOW module"
+#define TAG_ESPNOW "ESPNOW module"
 
 /*!
 * \def CONFIG_ESPNOW_CHANNEL
@@ -28,36 +29,59 @@
 #define HOST 1
 
 /*!
+* \def POS_HEADER
+* Description
+*/
+#define POS_HEADER 3
+
+/*!
+* \def POS_PARAMETERS
+* Description
+*/
+#define POS_PARAMETERS 4
+
+/*!
 * \def CONFIG_ESPNOW_PMK
 * Description
 */
-#define CONFIG_ESPNOW_PMK  "pmk*Waterloo1612"
+#define CONFIG_ESPNOW_PMK "pmk*Waterloo1612"
 
 /*!
 * \def CONFIG_ESPNOW_LMK
 * Description
 */
-#define CONFIG_ESPNOW_LMK  "lmk*Waterloo1612"
+#define CONFIG_ESPNOW_LMK "lmk*Waterloo1612"
+
+/*!
+* \fn typedef enum __attribute__((__packed__))
+* \author Name <email@email.com>
+* \version 0.1
+* \date  24/02/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+typedef enum __attribute__((__packed__))
+{
+    ACK = 0,        /*!< Instruction reçu correctement.*/
+    NAK = 5,        /*!< Instruction erronée.*/
+    BOARD_BUSY = 6, /*!< Impossible de répondre pour cause d'occupation.*/
+} board_Answer_t;
 
 /**
 * \brief
 */
-uint8_t msg_address_recipient;
+static uint8_t msg_len;
 
 /**
 * \brief
 */
-uint8_t msg_len;
+static uint8_t msg_buffer[64];
 
 /**
-* \brief
-*/
-uint8_t msg_cmd;
-
-/**
-* \brief
-*/
-uint8_t *msg_buffer;
+ * @brief 
+ */
+static board_Answer_t boardState;
 
 /**
 * \brief
@@ -75,7 +99,7 @@ static esp_now_peer_info_t peer_info;
 static uint8_t macAddress[] = {0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF};
 
 /*!
-* \fn static uint16_t wCRC16(void *byData, const uint8_t byLen)
+* \fn static uint16_t wCRC16(const void *byData, const uint8_t byLen)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
@@ -85,7 +109,7 @@ static uint8_t macAddress[] = {0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF};
 * \param byLen 
 * \return 
 */
-static uint16_t wCRC16(void *byData, const uint8_t byLen)
+static uint16_t wCRC16(const void *byData, const uint8_t byLen)
 {
     uint8_t *data = byData;
     uint8_t byIndex, byIndex2;
@@ -102,6 +126,99 @@ static uint16_t wCRC16(void *byData, const uint8_t byLen)
 }
 
 /*!
+* \fn static void formatSendAnswer(const board_Answer_t state, const uint8_t len, const uint8_t *message)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  21/02/2021
+* \brief 
+* \remarks None
+* \param state 
+* \param len 
+* \param message 
+* \return 
+*/
+static void formatSendAnswer(const board_Answer_t state, const uint8_t len, const uint8_t *message)
+{
+    uint16_t LCRC;
+    uint8_t *buffer;
+    buffer = malloc(sizeof(HOST) + sizeof(len) + sizeof(MachineAddress) + 1 + len + sizeof(uint16_t));
+    buffer[0] = HOST;
+    buffer[1] = len;
+    buffer[2] = MachineAddress;
+    buffer[3] = (uint8_t)state;
+    memmove(&buffer[4], message, len);
+    LCRC = wCRC16(buffer, len + 4);
+    memmove(&buffer[len + 4], &LCRC, sizeof(uint16_t));
+    ESP_ERROR_CHECK(esp_now_send(macAddress, buffer, len + 6));
+    free(buffer);
+}
+
+/*!
+* \fn static void vACK(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  21/02/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+static void vACK(void)
+{
+    boardState = ACK,
+    msg_len = 0;
+    setESPNOWTaskState(ESPNOWMSGSEND);
+    xTaskNotifyGive(hTaskESPNOW);
+}
+
+/*!
+* \fn static void checkheader(const uint8_t *data)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  21/02/2021
+* \brief 
+* \remarks None
+* \param data
+* \return 
+*/
+static void checkheader(const uint8_t *data)
+{
+    switch (data[POS_HEADER])
+    {
+    case MODIFY_MACHINE_NUMBER:
+    {
+//        MachineAddress = 
+    }
+    case SIMPLEPOLL:
+    {
+        ESP_LOGI(TAG_ESPNOW, "SIMPLE POLL");
+        vACK();
+        break;
+    }
+    default:
+    {
+        break;
+    }
+    }
+}
+
+/*!
+* \fn static bool isMsgValid(const uint8_t *data, uint8_t len)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  21/02/2021
+* \brief 
+* \remarks None
+* \param data
+* \param len
+* \return  true si le message est destiné à cette carte.
+*/
+static bool isMsgValid(const uint8_t *data, uint8_t len)
+{
+    uint16_t LCRC = wCRC16(data, len - 2);
+    return ((data[0] == MachineAddress) && (data[2] == HOST) && (LCRC == (data[len - 2] + (data[len - 1] * 0x100))));
+}
+
+/*!
 * \fn static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
@@ -114,7 +231,7 @@ static uint16_t wCRC16(void *byData, const uint8_t byLen)
 */
 static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 {
-    ESP_LOGI(ESPNOW_TAG, "result : %d\n", (uint8_t)status);
+    ESP_LOGI(TAG_ESPNOW, "result : %d\n", (uint8_t)status);
 }
 
 /*!
@@ -130,15 +247,17 @@ static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 * \return 
 */
 static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
-{    
-    setLED(LED_1);
-    setIOState(IOLedFlash);
-    ESP_LOGI(ESPNOW_TAG, "result : ");
-    for(uint8_t i =0; i < len; i++)
+{
+    ESP_LOGI(TAG_ESPNOW, "%s", "Donnée reçues!");
+    if (isMsgValid(data, len))
     {
-        printf("%02u ", data[i]);
+        setLED(LED_1);
+        setIOState(IOLedFlash);
+        checkheader(data);
+        vTaskDelay(500);
+        setLED(LED_1);
+        setIOState(IOLEDOff);
     }
-    ESP_LOGI(ESPNOW_TAG, "\nMac address sender : %02X:%02X:%02X:%02X:%02X:%02X\n", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);   
 }
 
 /*!
@@ -162,36 +281,7 @@ static void InitESPNOW(void)
     peer_info.ifidx = ESP_IF_WIFI_STA;
     peer_info.encrypt = false;
     ESP_ERROR_CHECK(esp_now_add_peer(&peer_info));
-    ESP_LOGI(ESPNOW_TAG, "%s", "ESPNOW initialisé.\n");
-}
-
-/*!
-* \fn static void formatSendMsg(uint8_t addressRecipient, Command_t command, uint8_t len, uint8_t *message)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  21/02/2021
-* \brief 
-* \remarks None
-* \param addressRecipient 
-* \param command 
-* \param len 
-* \param message 
-* \return 
-*/
-static void formatSendMsg(uint8_t addressRecipient, Command_t command, uint8_t len, uint8_t *message)
-{
-    uint16_t LCRC;
-    uint8_t *buffer;
-    buffer = malloc(sizeof(addressRecipient) + sizeof(command) + sizeof(len) + len + sizeof(uint16_t));
-    buffer[0] = addressRecipient;
-    buffer[1] = len;
-    buffer[2] = HOST;
-    buffer[3] = command;
-    memmove(&buffer[4], message, len);
-    LCRC = wCRC16(buffer, len + 4);
-    memmove(&buffer[len + 4], &LCRC, sizeof(uint16_t));
-    ESP_ERROR_CHECK(esp_now_send(macAddress, buffer, len + 6));
-    free(buffer);
+    ESP_LOGI(TAG_ESPNOW, "%s", "ESPNOW initialisé.\n");
 }
 
 /*!
@@ -206,25 +296,6 @@ static void formatSendMsg(uint8_t addressRecipient, Command_t command, uint8_t l
 void setESPNOWTaskState(ESPNOWTaskState_t state)
 {
     ESPNOWTaskState = state;
-}
-
-/*!
-* \fn void ESPNOWPoll(uint8_t address)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  21/02/2021
-* \brief 
-* \remarks None
-* \param address 
-*/
-void ESPNOWPoll(uint8_t address)
-{
-    setESPNOWTaskState(ESPNOWMSGSEND);
-    msg_address_recipient = address;
-    msg_cmd = SIMPLEPOLL;
-    msg_len = 0;
-    msg_buffer = NULL;
-    xTaskNotifyGive(hTaskESPNOW);    
 }
 
 /*!
@@ -246,7 +317,7 @@ void TASKESPNOW(void *vParameter)
         {
         case ESPNOW_IDLE: //Never call
         {
-            ESP_LOGD(ESPNOW_TAG, "%s", "Notification ESPNOW injustifié!");
+            ESP_LOGD(TAG_ESPNOW, "%s", "Notification ESPNOW injustifié!");
             break;
         }
         case WIFIINIT:
@@ -263,11 +334,17 @@ void TASKESPNOW(void *vParameter)
         }
         case ESPNOWMSGSEND:
         {
-            formatSendMsg(msg_address_recipient, msg_cmd, msg_len, msg_buffer);
+            formatSendAnswer(boardState, msg_len, msg_buffer);
+            break;
+        }
+        case ESPNOWRECEIVE:
+        {
+            // ESP_LOGD(TAG_ESPNOW, "%s", "ESPNOW_RECEIVE");
+            // setESPNOWTaskState(ESPNOW_IDLE);
             break;
         }
         default:
-            ESP_LOGD(ESPNOW_TAG, "%s %u", "Notification ESPNOW injustifié : ", (uint8_t)ESPNOWTaskState);
+            ESP_LOGD(TAG_ESPNOW, "%s %u", "Notification ESPNOW injustifié : ", (uint8_t)ESPNOWTaskState);
             break;
         }
     }
