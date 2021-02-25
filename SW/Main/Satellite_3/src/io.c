@@ -28,7 +28,7 @@
 #define DELAY_TASK_IO 100
 
 /*!
-* \def IO_TAG
+* \def TAG_IO
 * Description
 */
 #define TAG_IO "\nIO module : "
@@ -69,22 +69,35 @@ static void InitIO(void)
     ESP_ERROR_CHECK(gpio_set_level(LED_2, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MACHINE, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MAIN, LO));
-    printf("%s%s", TAG_IO,  "IOs iinitialisés.");
+    printf("%s%s", TAG_IO, "IOs iinitialisés.");
 }
 
 /*!
-* \fn static void setIOState(IOTaskState_t state)
+* \fn void setIOState(IOTaskState_t state)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
 * \brief 
 * \remarks None
 * \param state 
-* \return 
 */
 void setIOState(IOTaskState_t state)
 {
     IOTaskState = state;
+}
+
+/*!
+* \fn IOTaskState_t getIOState(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  25/02/2021
+* \brief Renvoi l'état de la tâche IO
+* \remarks None
+* \return L'etat de la tâche IO
+*/
+IOTaskState_t getIOState(void)
+{
+    return IOTaskState;
 }
 
 /*!
@@ -131,7 +144,7 @@ void TaskIO(void *VParameter)
         case IOLedFlash:
         {
             gpio_set_level(LED, !gpio_get_level(LED));
-            printf("%sLed %d : %s",TAG_IO,  LED,  (gpio_get_level(LED) ? "ON" : "OFF"));
+            printf("%sLed %d : %s", TAG_IO, LED, (gpio_get_level(LED) ? "ON" : "OFF"));
             break;
         }
         case IOLEDOff:
@@ -146,6 +159,20 @@ void TaskIO(void *VParameter)
             setIOState(IOtASKIdle);
             gpio_set_level(LED, HI);
             printf("%sLed %d : %s", TAG_IO, LED, "ON");
+            break;
+        }
+        case IORELAYMACHINEON:
+        {
+            setIOState(IOtASKIdle);
+            gpio_set_level(CTRL_MACHINE, HI);
+            printf("%sMachine activée", TAG_IO);
+            break;
+        }
+        case IORELAYMACHINEOFF:
+        {
+            gpio_set_level(CTRL_MACHINE, LO);
+            printf("%sMachine activée", TAG_IO);
+            setIOState(IOtASKIdle);
             break;
         }
         default:

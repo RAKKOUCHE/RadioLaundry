@@ -6,8 +6,8 @@
 * \brief 
 * \remarks None
 */
+
 /*! Fichiers inclus*/
-/*! Importation of librairies*/
 #include "espnow.h"
 
 /*!
@@ -153,6 +153,14 @@ static void formatSendAnswer(const board_Answer_t state, const uint8_t len, cons
     free(buffer);
 }
 
+static void vNACK(void)
+{
+    boardState = NAK;
+    msg_len = 0;
+    setESPNOWTaskState(ESPNOWANSWER);
+    xTaskNotifyGive(hTaskESPNOW);
+}
+
 /*!
 * \fn static void vACK(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
@@ -164,7 +172,7 @@ static void formatSendAnswer(const board_Answer_t state, const uint8_t len, cons
 */
 static void vACK(void)
 {
-    boardState = ACK,
+    boardState = ACK;
     msg_len = 0;
     setESPNOWTaskState(ESPNOWANSWER);
     xTaskNotifyGive(hTaskESPNOW);
@@ -206,6 +214,25 @@ static void checkheader(const uint8_t *data)
         printf("%s%s%u", TAG_ESPNOW, "Le numéro de série de la carte est : ", msg_buffer[2] + (msg_buffer[1] * 0X100) + (msg_buffer[0] * 0x10000));
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
+        break;
+    }
+    case MODIFY_MACHINE_RELAY_STATE:
+    {
+        printf("%sActive ou desacltive le relais\n", TAG_ESPNOW);
+        setIOState(data[4] ? IORELAYMACHINEON : IORELAYMACHINEOFF);
+        while (getIOState() == IORELAYMACHINEON)
+        {
+        };
+        if (gpio_get_level(CTRL_MACHINE) == data[4])
+        {
+            printf("%s%s%s.", TAG_ESPNOW, "Relais machine ", data[4] ? "activé" : "desactivé");
+            vACK();
+        }
+        else
+        {
+            printf("%s%s", TAG_ESPNOW, "Echec d'activation du relais machine.");
+            vNACK();
+        }
         break;
     }
     default:
@@ -265,12 +292,13 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
     if (isMsgValid(data, len))
     {
         printf("%s%s%02X:%02X:%02X:%02X:%02X:%02X", TAG_ESPNOW, "Données reçues de : ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
+        checkheader(data);
         setLED(LED_1);
         setIOState(IOLedFlash);
-        checkheader(data);
-        vTaskDelay(500);
-        setLED(LED_1);
-        setIOState(IOLEDOff);
+        delay = 5;
+        // vTaskDelay(500);
+        // setLED(LED_1);
+        // setIOState(IOLEDOff);
     }
 }
 

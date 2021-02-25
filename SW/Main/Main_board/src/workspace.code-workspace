@@ -6,12 +6,8 @@
 		}
 	],
 	"settings": {
-		"comments.info.fileExtension": ".c and .h",
-		"comments.info.importationText": "Fichiers inclus",
-		"user.info.email": "rachid.akkouche@wanadoo.fr",
-		"user.info.name": "Rachid AKKOUCHE",
 		"files.associations": {
-			"espnow.h": "c"
+			"parameters.h": "c"
 		}
 	}
 }

@@ -23,4 +23,6 @@
 #include "espnow.h"
 #include "parameters.h"
 
+int delay;
+
 #endif

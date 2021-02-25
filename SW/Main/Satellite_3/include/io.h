@@ -105,6 +105,8 @@ typedef enum
     IOLedFlash,
     IOLEDOn,
     IOLEDOff,
+    IORELAYMACHINEON,
+    IORELAYMACHINEOFF,
 } IOTaskState_t;
 
 /*!
@@ -117,6 +119,17 @@ typedef enum
 * \param state 
 */
 void setIOState(IOTaskState_t state);
+
+/*!
+* \fn IOTaskState_t getIOState(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  25/02/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+IOTaskState_t getIOState(void);
 
 /*!
 * \fn void setLED(const gpio_num_t led)

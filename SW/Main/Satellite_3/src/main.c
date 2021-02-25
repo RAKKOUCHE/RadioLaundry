@@ -76,11 +76,12 @@ static void InitApp(void)
 */
 void app_main()
 {
-    int delay = 5;
+
     printf("%s%s", TAG_MAIN, "Debut du programme");
+    delay = 5;
     //Initialisation du programme
     InitApp();
-    
+
     //Boucle permanente
     while (1)
     {
@@ -95,10 +96,13 @@ void app_main()
             };
         }
         //Arrête le glignotement de la led
-        if (delay && (--delay == 0))
+        if (delay)
         {
-            setLED(LED_1);
-            setIOState(IOLEDOff);
+            if (--delay == 0)
+                {
+                    setLED(LED_1);
+                    setIOState(IOLEDOff);
+                }
         }
     }
 }

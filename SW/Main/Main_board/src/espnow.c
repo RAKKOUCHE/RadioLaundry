@@ -48,6 +48,22 @@
 */
 #define TO_COMMAND (1000 / portTICK_PERIOD_MS)
 
+/*!
+* \fn typedef enum __attribute__((__packed__))
+* \author Name <email@email.com>
+* \version 0.1
+* \date  24/02/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+typedef enum __attribute__((__packed__))
+{
+    ACK = 0,        /*!< Instruction reçu correctement.*/
+    NAK = 5,        /*!< Instruction erronée.*/
+    BOARD_BUSY = 6, /*!< Impossible de répondre pour cause d'occupation.*/
+} board_Answer_t;
+
 /**
 * \brief
 */
@@ -353,7 +369,7 @@ bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive)
     uint8_t active = (uint8_t)isActive;
     printf("%s%s%s", TAG_ESPNOW, isActive ? "Active" : "Desactive", " le relais");
     prepareMessageToSend(address, MODIFY_MACHINE_RELAY_STATE, 1, &active);
-    printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) ? "réussie" : "échouée");
+    printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST)  && (msg_received[3] == ACK) ? "réussie" : "échouée");
     return (msg_received[0] == HOST);
 }
 

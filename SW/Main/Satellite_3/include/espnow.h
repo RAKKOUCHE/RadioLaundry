@@ -20,6 +20,8 @@
 #include "esp_err.h"
 #include "wifi.h"
 #include "parameters.h"
+#include "main.h"
+
 /**
  * @brief 
  * 

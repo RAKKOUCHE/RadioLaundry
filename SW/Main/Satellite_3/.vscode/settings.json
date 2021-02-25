@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "parameters.h": "c"
-    }
+        "parameters.h": "c",
+        "future": "cpp"
+    },
+    "C_Cpp.vcFormat.indent.caseLabels": true
 }

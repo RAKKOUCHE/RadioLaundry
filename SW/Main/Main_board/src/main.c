@@ -80,7 +80,7 @@ static void InitApp(void)
 void app_main()
 {
     uint8_t delay = 10;
-  //  uint8_t newAddress = 11;
+    //  uint8_t newAddress = 11;
     printf("%s%s", TAG_MAIN, "Debut du programme");
     //Initialisation du programme
     InitApp();
@@ -102,11 +102,17 @@ void app_main()
             //printf("\n%s%s%s\n", TAG_MAIN, "Le changement d'adresse a ", ESPNOWSetNewAddress(MachineAddress, newAddress) ? "réussi" : "échoué");
 
             // //Lecture du numéro de série de carte
-            printf("%s%s%u", TAG_MAIN, "Le numéro de série est : ", ESPNOWGetSerialNumber(MachineAddress));
+            //printf("%s%s%u", TAG_MAIN, "Le numéro de série est : ", ESPNOWGetSerialNumber(MachineAddress));
+
+            //Activation du relais de la machine
+            printf("%s%s%s\n", TAG_MAIN, "Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, true) ? "activé" : "desactivé");
+            vTaskDelay(200);
+            printf("%s%s%s\n", TAG_MAIN, "Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, false) ? "desactivé" : "activé");
 
             //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))
-                ;
+            {
+            };
         }
 
         //Arrête le glignotement de la led
