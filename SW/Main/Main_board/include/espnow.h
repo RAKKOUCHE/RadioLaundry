@@ -145,6 +145,29 @@ bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress);
 */
 uint32_t ESPNOWGetSerialNumber(uint8_t address);
 
+
+/*!
+* \fn bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  16/02/2021
+* \brief 
+* \remarks None
+* \param state 
+* \return 
+*/
+bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive);
+
+/*!
+* \fn bool isModifiedDelayActivation(uint8_t address, uint8_t)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  16/02/2021
+* \brief 
+* \remarks None
+* \param state 
+* \return 
+*/
 bool isModifiedDelayActivation(uint8_t address, uint8_t);
 
 #endif

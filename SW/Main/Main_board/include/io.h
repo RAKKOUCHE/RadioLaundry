@@ -17,74 +17,74 @@
 
 /*!
 * \def POS_LED_1
-* Description
+* \brief
 */
 #define POS_LED_1 GPIO_SEL_2
 /*!
 * \def POS_LED_2
-* Description
+* \brief
 */
 #define POS_LED_2 GPIO_SEL_5
 /*!
 * \def POS_CTRL_MACHINE
-* Description
+* \brief
 */
 #define POS_CTRL_MACHINE GPIO_SEL_25
 /*!
 * \def POS_CTRL_MAIN
-* Description
+* \brief
 */
 #define POS_CTRL_MAIN GPIO_SEL_32
 /*!
 * \def POS_EMPTY
-* Description
+* \brief
 */
 #define POS_EMPTY GPIO_SEL_33
 /*!
 * \def POS_DIPSWITCH_2
-* Description
+* \brief
 */
 #define POS_DIPSWITCH_2 GPIO_SEL_4
 /*!
 * \def POS_BOOT
-* Description
+* \brief
 */
 #define POS_BOOT GPIO_SEL_0
 
 /*!
 * \def LED_1
-* Description
+* \brief
 */
 #define LED_1 GPIO_NUM_2
 
 /*!
 * \def LED_2
-* Description
+* \brief
 */
 #define LED_2 GPIO_NUM_5
 /*!
 * \def CTRL_MACHINE
-* Description
+* \brief
 */
 #define CTRL_MACHINE GPIO_NUM_25
 /*!
 * \def CTRL_MAIN
-* Description
+* \brief
 */
 #define CTRL_MAIN GPIO_NUM_32
 /*!
 * \def EMPTY
-* Description
+* \brief
 */
 #define EMPTY GPIO_NUM_33
 /*!
 * \def DIPSWITCH_2
-* Description
+* \brief
 */
 #define DIPSWITCH_2 GPIO_NUM_4
 /*!
 * \def BOOT
-* Description
+* \brief
 */
 #define BOOT GPIO_NUM_0
 

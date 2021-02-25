@@ -14,37 +14,37 @@
 
 /*!
 * \def TAG_ESPNOW
-* Description
+* \brief Etiquette du module ESPNOW
 */
 #define TAG_ESPNOW "\nESPNOW Module : "
 
 /*!
 * \def CONFIG_ESPNOW_CHANNEL
-* Description
+* \brief Canal Wifi utilisé par le système
 */
 #define CONFIG_ESPNOW_CHANNEL 0
 
 /*!
 * \def HOST
-* Description
+* \brief
 */
 #define HOST 1
 
 /*!
 * \def CONFIG_ESPNOW_PMK
-* Description
+* \brief
 */
 #define CONFIG_ESPNOW_PMK "pmk*Waterloo1612"
 
 /*!
 * \def CONFIG_ESPNOW_LMK
-* Description
+* \brief
 */
 #define CONFIG_ESPNOW_LMK "lmk*Waterloo1612"
 
 /*!
 * \def TO_COMMAND
-* Description
+* \brief
 */
 #define TO_COMMAND (1000 / portTICK_PERIOD_MS)
 
@@ -166,6 +166,7 @@ static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 */
 static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 {
+    printf("%s%s%02X:%02X:%02X:%02X:%02X:%02X", TAG_ESPNOW, "Données reçues de :", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
     setLED(LED_1);
     setIOState(IOLedFlash);
     printf("%s%s", TAG_ESPNOW, "result : ");
@@ -174,7 +175,6 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
         printf("%02u ", data[i]);
     }
     memmove(msg_received, data, len);
-    printf("%sMac address sender : %02X:%02X:%02X:%02X:%02X:%02X", TAG_ESPNOW, macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
     isCommandFinished = true;
     xTimerStop(hCommandTO, 1 * SECONDE);
     vTaskDelay(350);
@@ -239,6 +239,35 @@ static void formatSendMsg(uint8_t addressRecipient, Command_t command, uint8_t l
 }
 
 /*!
+* \fn static void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  25/02/2021
+* \brief 
+* \remarks None
+* \param address 
+* \param header 
+* \param len 
+* \param data 
+* \return 
+*/
+static void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
+{
+    isCommandFinished = false;
+    xTimerStart(hCommandTO, 1 * SECONDE);
+    msg_address_recipient = address;
+    msg_cmd = header;
+    msg_len = len;
+    memmove(msg_buffer, data, len);
+    setESPNOWTaskState(ESPNOWMSGSEND);
+    xTaskNotifyGive(hTaskESPNOW);
+    while (!isCommandFinished)
+    {
+        vTaskDelay(1);
+    };
+}
+
+/*!
 * \fn void setESPNOWTaskState(ESPNOWTaskState_t state)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
@@ -264,23 +293,14 @@ void setESPNOWTaskState(ESPNOWTaskState_t state)
 */
 bool ESPNOWPoll(uint8_t address)
 {
-    isCommandFinished = false;
-    xTimerStart(hCommandTO, 1 * SECONDE);
-    msg_address_recipient = address;
-    msg_cmd = SIMPLEPOLL;
-    msg_len = 0;
-    printf("%sPoll", TAG_ESPNOW);
-    xTaskNotifyGive(hTaskESPNOW);
-    while (!isCommandFinished)
-    {
-        vTaskDelay(1);
-    };
+    printf("%s%s", TAG_ESPNOW, "Poll");
+    prepareMessageToSend(address, SIMPLEPOLL, 0, NULL);
     printf("%s%s%s", TAG_ESPNOW, "Pool ", msg_received[0] == HOST ? "résussi" : "échoué");
     return msg_received[0] == HOST;
 }
 
 /*!
-* \fn bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress )
+* \fn bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  22/02/2021
@@ -292,18 +312,8 @@ bool ESPNOWPoll(uint8_t address)
 */
 bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress)
 {
-    isCommandFinished = false;
-    xTimerStart(hCommandTO, 1 * SECONDE);
-    msg_address_recipient = address;
-    msg_cmd = MODIFY_MACHINE_NUMBER;
-    msg_len = 1;
-    msg_buffer[0] = newAddress;
     printf("%sChange address", TAG_ESPNOW);
-    xTaskNotifyGive(hTaskESPNOW);
-    while (!isCommandFinished)
-    {
-        vTaskDelay(1);
-    };
+    prepareMessageToSend(address, MODIFY_MACHINE_NUMBER, 1, &newAddress);
     printf("%s%s%u", TAG_ESPNOW, "Nouvelle adresse : ", msg_received[2]);
     return msg_received[2] == newAddress;
 }
@@ -320,19 +330,31 @@ bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress)
 */
 uint32_t ESPNOWGetSerialNumber(uint8_t address)
 {
-    isCommandFinished = false;
-    xTimerStart(hCommandTO, 1 * SECONDE);
+    printf("%sDemande le numéro de série", TAG_ESPNOW);
     memset(msg_received, 0, sizeof(msg_received));
-    msg_address_recipient = address;
-    msg_cmd = REQUEST_MACHINE_NUMBER;
-    msg_len = 0;
-    printf("%sChange address", TAG_ESPNOW);
-    xTaskNotifyGive(hTaskESPNOW);
-    while (!isCommandFinished)
-    {
-        vTaskDelay(1);
-    };
+    prepareMessageToSend(address, REQUEST_MACHINE_NUMBER, 0, NULL);
+    printf("%s%s%u", TAG_ESPNOW, "Le numéro de série est : ", msg_received[6] + (msg_received[5] * 0X100) + (msg_received[4] * 0x10000));
     return (msg_received[6] + (msg_received[5] * 0X100) + (msg_received[4] * 0x10000));
+}
+
+/*!
+* \fn bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  25/02/2021
+* \brief 
+* \remarks None
+* \param address 
+* \param isActive 
+* \return 
+*/
+bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive)
+{
+    uint8_t active = (uint8_t)isActive;
+    printf("%s%s%s", TAG_ESPNOW, isActive ? "Active" : "Desactive", " le relais");
+    prepareMessageToSend(address, MODIFY_MACHINE_RELAY_STATE, 1, &active);
+    printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) ? "réussie" : "échouée");
+    return (msg_received[0] == HOST);
 }
 
 /*!

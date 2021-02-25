@@ -11,10 +11,10 @@
 #include "main.h"
 
 /*!
-* \def MAIN_TAG
+* \def TAG_MAIN
 * Description TAG utilisé par les logs pour ce fichier
 */
-#define MAIN_TAG "\nMain module : "
+#define TAG_MAIN "\nMain module : "
 
 /*!
 * \def BUTTON
@@ -77,10 +77,10 @@ static void InitApp(void)
 void app_main()
 {
     int delay = 5;
-    printf("%s%s", MAIN_TAG, "Debut du programme");
+    printf("%s%s", TAG_MAIN, "Debut du programme");
     //Initialisation du programme
     InitApp();
-
+    
     //Boucle permanente
     while (1)
     {
@@ -89,7 +89,7 @@ void app_main()
         //Si le bouton est utilisé
         if (!gpio_get_level(BUTTON))
         {
-            printf("%s%s", MAIN_TAG, "Bouton utilisé");
+            printf("%s%s", TAG_MAIN, "Bouton utilisé");
             while (!gpio_get_level(BUTTON))
             {
             };

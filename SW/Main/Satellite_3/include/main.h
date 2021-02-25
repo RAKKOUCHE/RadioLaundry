@@ -10,7 +10,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/*! Fichiers includes*/
+/*! Fichiers inclus*/
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/unistd.h>

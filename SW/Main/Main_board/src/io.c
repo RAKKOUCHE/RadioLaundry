@@ -12,24 +12,24 @@
 
 /*!
 * \def LO
-* Description
+* \brief
 */
 #define LO 0
 /*!
 * \def HI
-* Description
+* \brief
 */
 #define HI 1
 
 /*!
 * \def DELAY_TASK_IO
-* Description
+* \brief
 */
 #define DELAY_TASK_IO 100
 
 /*!
 * \def IO_TAG
-* Description
+* \brief
 */
 #define TAG_IO "\nIO module : "
 

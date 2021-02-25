@@ -102,7 +102,7 @@ static void checkFileParameters(void)
     }
     else
     {
-        printf("%s%s%u", TAG_PARAMETER, "La lecture du numéro de la machine est : ", MachineAddress);
+        printf("\n%s%s%u\n", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
         fseek(filedata, 0, SEEK_SET);
         if (MachineAddress == 0xff)
         {

@@ -19,7 +19,7 @@
 
 /*!
 * \def DEBUG
-* Description Flag à retirer pour la version release
+* \brief Flag à retirer pour la version release
 */
 #define DEBUG
 

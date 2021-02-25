@@ -12,13 +12,13 @@
 
 /*!
 * \def WIFI_TAG
-* Description
+* \brief
 */
 #define WIFI_TAG "\nWIFI module : "
 
 /*!
 * \def ESPNOW_WIFI_MODE
-* Description
+* \brief
 */
 #define ESPNOW_WIFI_MODE WIFI_MODE_STA
 

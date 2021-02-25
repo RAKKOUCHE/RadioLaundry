@@ -198,10 +198,12 @@ static void checkheader(const uint8_t *data)
     }
     case REQUEST_MACHINE_NUMBER:
     {
+        uint8_t macAddress[6];
+        ESP_ERROR_CHECK(esp_wifi_get_mac(WIFI_MODE_STA, macAddress));
         boardState = ACK;
         msg_len = 3;
-        memmove(msg_buffer, &macAddress[3], 3);
-        printf("%s%s%u", TAG_ESPNOW, "Le numéro de série de la cartem est : ", msg_buffer[2] + (msg_buffer[1] * 0X100) + (msg_buffer[0] * 0x10000));
+        memmove(msg_buffer, &macAddress[3], msg_len);
+        printf("%s%s%u", TAG_ESPNOW, "Le numéro de série de la carte est : ", msg_buffer[2] + (msg_buffer[1] * 0X100) + (msg_buffer[0] * 0x10000));
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
         break;
@@ -262,7 +264,7 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 {
     if (isMsgValid(data, len))
     {
-        printf("%s%s", TAG_ESPNOW, "Donnée reçues!");
+        printf("%s%s%02X:%02X:%02X:%02X:%02X:%02X", TAG_ESPNOW, "Données reçues de : ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
         setLED(LED_1);
         setIOState(IOLedFlash);
         checkheader(data);
