@@ -7,12 +7,6 @@
 * \remarks None
 */
 
-/*!
-* \def LOG_LOCAL_LEVEL
-* Description Definition locale du niveau de log
-*/
-#define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
-
 /*! Fichiers inclus*/
 #include "main.h"
 
@@ -20,7 +14,7 @@
 * \def MAIN_TAG
 * Description TAG utilisé par les logs pour ce fichier
 */
-#define MAIN_TAG "Main module"
+#define MAIN_TAG "\nMain module : "
 
 /*!
 * \def BUTTON
@@ -58,8 +52,7 @@ static void InitApp(void)
 {
     //Initialisation nécessaire de la flash
     InitFlash();
-    //Initialisation des logs
-    InitESPLOG();
+
     //Lecture des paramètres
     InitParameters();
     //Creation des tâches
@@ -83,8 +76,8 @@ static void InitApp(void)
 */
 void app_main()
 {
-    int delay = 10;
-    ESP_LOGI(MAIN_TAG, "%s", "Debut du programme");
+    int delay = 5;
+    printf("%s%s", MAIN_TAG, "Debut du programme");
     //Initialisation du programme
     InitApp();
 
@@ -93,15 +86,13 @@ void app_main()
     {
         //Permet de réinitialiser le watchdog
         vTaskDelay(250);
-        ESP_LOGD(MAIN_TAG, "%s", "Loop\n");
-
         //Si le bouton est utilisé
         if (!gpio_get_level(BUTTON))
         {
-            //ESPNOWPoll(MachineAddress);
-            ESP_LOGD(MAIN_TAG, "%s\n", "Bouton utilisé");
+            printf("%s%s", MAIN_TAG, "Bouton utilisé");
             while (!gpio_get_level(BUTTON))
-                ;
+            {
+            };
         }
         //Arrête le glignotement de la led
         if (delay && (--delay == 0))

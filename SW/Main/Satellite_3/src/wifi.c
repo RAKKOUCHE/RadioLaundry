@@ -14,7 +14,7 @@
 * \def WIFI_TAG
 * Description
 */
-#define WIFI_TAG "WIFI module"
+#define WIFI_TAG "\nWIFI module : "
 
 /*!
 * \def ESPNOW_WIFI_MODE
@@ -31,7 +31,7 @@
 * \remarks None
 */
 void InitWifi(void)
-{    
+{
     uint8_t macAddress[6];
     ESP_ERROR_CHECK(esp_netif_init());
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -41,5 +41,6 @@ void InitWifi(void)
     ESP_ERROR_CHECK(esp_wifi_start());
     ESP_ERROR_CHECK(esp_wifi_set_channel(3, 0));
     ESP_ERROR_CHECK(esp_wifi_get_mac(WIFI_MODE_STA, macAddress));
-    ESP_LOGI(WIFI_TAG, "mac adressse : %02X:%02X:%02X:%02X:%02X:%02X\n", macAddress[0], macAddress[1], macAddress[2], macAddress[3], macAddress[4], macAddress[5]);
+    printf("%smac adressse : %02X:%02X:%02X:%02X:%02X:%02X", WIFI_TAG,
+           macAddress[0], macAddress[1], macAddress[2], macAddress[3], macAddress[4], macAddress[5]);
 }

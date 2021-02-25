@@ -11,6 +11,7 @@
 #define PARANETERS_H
 
 /*! Fichiers inclus*/
+/*! Fichier inclus*/
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/unistd.h>
@@ -18,7 +19,6 @@
 #include "freertos/task.h"
 #include "esp_spiffs.h"
 #include "esp_err.h"
-#include "esp_log.h"
 
 /*!
 * \def DEBUG
@@ -26,7 +26,23 @@
 */
 #define DEBUG
 
+/**
+ * @brief 
+ * 
+ */
 uint8_t MachineAddress;
+
+/*!
+* \fn bool saveMachineNumber(const uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  24/02/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
+bool saveMachineNumber(const uint8_t address);
 
 /*!
 * \fn void InitParameters(void)

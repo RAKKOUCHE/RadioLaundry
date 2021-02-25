@@ -69,7 +69,7 @@ static void InitIO(void)
     ESP_ERROR_CHECK(gpio_set_level(LED_2, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MACHINE, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MAIN, LO));
-    printf("%s %s", TAG_IO, " IOs iinitialisés.\n");
+    printf("%s %s", TAG_IO, " IOs iinitialisés.");
 }
 
 /*!
@@ -131,21 +131,21 @@ void TaskIO(void *VParameter)
         case IOLedFlash:
         {
             gpio_set_level(LED, !gpio_get_level(LED));
-            printf("%s Led %u : %s\n",TAG_IO,  LED,  (gpio_get_level(LED) ? "ON" : "OFF"));
+            printf("%s Led %u : %s",TAG_IO,  LED,  (gpio_get_level(LED) ? "ON" : "OFF"));
             break;
         }
         case IOLEDOff:
         {
             setIOState(IOtASKIdle);
             gpio_set_level(LED, LO);
-            printf("%sLed %u : %s\n", TAG_IO, LED, "OFF");
+            printf("%sLed %u : %s", TAG_IO, LED, "OFF\n");
             break;
         }
         case IOLEDOn:
         {
             setIOState(IOtASKIdle);
             gpio_set_level(LED, HI);
-            printf("%sLed %u : %s\n", TAG_IO, LED, "ON");
+            printf("%sLed %u : %s", TAG_IO, LED, "ON\n");
             break;
         }
         default:

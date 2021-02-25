@@ -28,8 +28,8 @@ typedef enum
     ESPNOW_IDLE,
     WIFIINIT,
     ESPNOWINIT,
-    ESPNOWMSGSEND,
-    ESPNOWRECEIVE,   
+    ESPNOWANSWER,
+    //ESPNOWRECEIVE,   
 } ESPNOWTaskState_t;
 
 /**

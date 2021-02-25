@@ -15,7 +15,6 @@
 #include <sys/stat.h>
 #include <sys/unistd.h>
 #include "esp_err.h"
-#include "esp_log.h"
 #include "Freertos/Freertos.h"
 #include "Freertos/task.h"
 #include "io.h"
@@ -23,6 +22,5 @@
 #include "wifi.h"
 #include "espnow.h"
 #include "parameters.h"
-#include "logs.h"
 
 #endif

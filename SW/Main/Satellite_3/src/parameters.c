@@ -8,13 +8,14 @@
 */
 
 /*! Fichiers inclus*/
+/*! Fichier inclus*/
 #include "parameters.h"
 
 /*!
 * \def TAG_PARAMETER
 * Description
 */
-#define TAG_PARAMETER "Module paramètres"
+#define TAG_PARAMETER "\nModule paramètres : "
 
 /**
 *\brief Nom du fichier contenant les paramètres
@@ -46,7 +47,7 @@ static esp_vfs_spiffs_conf_t conf;
 */
 static bool setVFS_SPIFFS(void)
 {
-    ESP_LOGI(TAG_PARAMETER, "%s", "Vérification SPIFFS\n");
+    printf("%s%s",TAG_PARAMETER,  "Vérification SPIFFS");
     conf.base_path = "/data";
     conf.partition_label = NULL;
     conf.max_files = 2;
@@ -56,15 +57,15 @@ static bool setVFS_SPIFFS(void)
     {
         if (err == ESP_FAIL)
         {
-            ESP_LOGE(TAG_PARAMETER, "Failed to mount or format filesystem\n");
+            printf("%sFailed to mount or format filesystem", TAG_PARAMETER );
         }
         else if (err == ESP_ERR_NOT_FOUND)
         {
-            ESP_LOGE(TAG_PARAMETER, "Failed to find SPIFFS partition\n");
+            printf("%sFailed to find SPIFFS partition", TAG_PARAMETER);
         }
         else
         {
-            ESP_LOGE(TAG_PARAMETER, "Failed to initialize SPIFFS (%s)\n", esp_err_to_name(err));
+            printf("%sFailed to initialize SPIFFS (%s)", TAG_PARAMETER,  esp_err_to_name(err));
         }
     }
     return (err == 0);
@@ -79,14 +80,15 @@ static bool setVFS_SPIFFS(void)
 * \details Vérifie si le fichier existe, sinon crée le fichier avec un un numéro de machine 255
 * indiquant que la carte est vierge. Dans le cas où le fichier existe, lecture du numéro de machine.
 * \remarks Si le fichier des paramètres n'existe pas, il s'agit de la première utilisation de la carte.
+* \return 
 */
 static void checkFileParameters(void)
 {
     struct stat s;
-    ESP_LOGI(TAG_PARAMETER, "%s", "Lecture du numéro de la machine\n");
+    printf("%s%s",TAG_PARAMETER,  "Lecture du numéro de la machine");
     if (stat(filename, &s) < 0)
     {
-        ESP_LOGD(TAG_PARAMETER, "%s", "Le fichier n'existe pas!\n");
+        printf("%s%s", TAG_PARAMETER, "Le fichier n'existe pas!");
         MachineAddress = 0XFF;
         fwrite(&MachineAddress, sizeof(MachineAddress), 1, (filedata = fopen(filename, "wb+")));
         fflush(filedata);
@@ -96,22 +98,37 @@ static void checkFileParameters(void)
     
     if (!fread(&MachineAddress, sizeof(MachineAddress), 1, filedata = fopen(filename, "rb+")))
     {
-        ESP_LOGD(TAG_PARAMETER, "%s", "La lecture du numéro de la machine a échoué\n");
+        printf("%s%s",TAG_PARAMETER,  "La lecture du numéro de la machine a échoué");
     }
     else
     {
-        ESP_LOGI(TAG_PARAMETER, "%s%u\n", "La lecture du numéro de la machine est : ", MachineAddress);
+        printf("%s%s%u", TAG_PARAMETER, "La lecture du numéro de la machine est : ", MachineAddress);
         fseek(filedata, 0, SEEK_SET);
-#ifdef DEBUG
         if (MachineAddress == 0xff)
         {
             MachineAddress = 11;
             fwrite(&MachineAddress, sizeof(MachineAddress), 1, filedata);
             fflush(filedata);
         }
-#endif
     }
-    fclose(filedata);
+}
+
+/*!
+* \fn bool saveMachineNumber(const uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  24/02/2021
+* \brief Enregistre l'adresse du module
+* \remarks None
+* \param address 
+*/
+bool saveMachineNumber(const uint8_t address)
+{
+    fseek(filedata, 0, SEEK_SET);
+    fwrite(&address, sizeof(address), 1, filedata);
+    fflush(filedata);
+    fseek(filedata, 0, SEEK_SET);
+    return (fread(&MachineAddress, sizeof(MachineAddress), 1,filedata) && (MachineAddress == address));
 }
 
 /*!
@@ -124,7 +141,7 @@ static void checkFileParameters(void)
 */
 void InitParameters(void)
 {
-    ESP_LOGI(TAG_PARAMETER, "%s", "Initialisation et lecture des paramètres.");
+    printf("%s%s",TAG_PARAMETER,  "Initialisation et lecture des paramètres.");
     if (setVFS_SPIFFS())
     {
         checkFileParameters();

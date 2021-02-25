@@ -14,7 +14,7 @@
 * \def TAG_ESPNOW
 * Description
 */
-#define TAG_ESPNOW "ESPNOW module"
+#define TAG_ESPNOW "\nESPNOW module : "
 
 /*!
 * \def CONFIG_ESPNOW_CHANNEL
@@ -166,7 +166,7 @@ static void vACK(void)
 {
     boardState = ACK,
     msg_len = 0;
-    setESPNOWTaskState(ESPNOWMSGSEND);
+    setESPNOWTaskState(ESPNOWANSWER);
     xTaskNotifyGive(hTaskESPNOW);
 }
 
@@ -186,12 +186,24 @@ static void checkheader(const uint8_t *data)
     {
     case MODIFY_MACHINE_NUMBER:
     {
-//        MachineAddress = 
+        printf("%s%s%s%s%u", TAG_ESPNOW, "L'enregistrement du numéro de la machine a ", saveMachineNumber(data[4]) ? "résussi" : "échoué:", " Le nouveau numéro est : ", MachineAddress);
+        vACK();
+        break;
     }
     case SIMPLEPOLL:
     {
-        ESP_LOGI(TAG_ESPNOW, "SIMPLE POLL");
+        printf("%sSIMPLE POLL", TAG_ESPNOW);
         vACK();
+        break;
+    }
+    case REQUEST_MACHINE_NUMBER:
+    {
+        boardState = ACK;
+        msg_len = 3;
+        memmove(msg_buffer, &macAddress[3], 3);
+        printf("%s%s%u", TAG_ESPNOW, "Le numéro de série de la cartem est : ", msg_buffer[2] + (msg_buffer[1] * 0X100) + (msg_buffer[0] * 0x10000));
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
         break;
     }
     default:
@@ -231,7 +243,7 @@ static bool isMsgValid(const uint8_t *data, uint8_t len)
 */
 static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 {
-    ESP_LOGI(TAG_ESPNOW, "result : %d\n", (uint8_t)status);
+    printf("%sresult : %d", TAG_ESPNOW, (uint8_t)status);
 }
 
 /*!
@@ -248,9 +260,9 @@ static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 */
 static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 {
-    ESP_LOGI(TAG_ESPNOW, "%s", "Donnée reçues!");
     if (isMsgValid(data, len))
     {
+        printf("%s%s", TAG_ESPNOW, "Donnée reçues!");
         setLED(LED_1);
         setIOState(IOLedFlash);
         checkheader(data);
@@ -281,7 +293,7 @@ static void InitESPNOW(void)
     peer_info.ifidx = ESP_IF_WIFI_STA;
     peer_info.encrypt = false;
     ESP_ERROR_CHECK(esp_now_add_peer(&peer_info));
-    ESP_LOGI(TAG_ESPNOW, "%s", "ESPNOW initialisé.\n");
+    printf("%s%s", TAG_ESPNOW, "ESPNOW initialisé.");
 }
 
 /*!
@@ -317,7 +329,7 @@ void TASKESPNOW(void *vParameter)
         {
         case ESPNOW_IDLE: //Never call
         {
-            ESP_LOGD(TAG_ESPNOW, "%s", "Notification ESPNOW injustifié!");
+            printf("%s%s", TAG_ESPNOW, "Notification ESPNOW injustifié!");
             break;
         }
         case WIFIINIT:
@@ -332,19 +344,13 @@ void TASKESPNOW(void *vParameter)
             InitESPNOW();
             break;
         }
-        case ESPNOWMSGSEND:
+        case ESPNOWANSWER:
         {
             formatSendAnswer(boardState, msg_len, msg_buffer);
             break;
         }
-        case ESPNOWRECEIVE:
-        {
-            // ESP_LOGD(TAG_ESPNOW, "%s", "ESPNOW_RECEIVE");
-            // setESPNOWTaskState(ESPNOW_IDLE);
-            break;
-        }
         default:
-            ESP_LOGD(TAG_ESPNOW, "%s %u", "Notification ESPNOW injustifié : ", (uint8_t)ESPNOWTaskState);
+            printf("%s%s %u", TAG_ESPNOW, "Notification ESPNOW injustifié : ", (uint8_t)ESPNOWTaskState);
             break;
         }
     }

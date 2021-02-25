@@ -7,6 +7,8 @@
 * \remarks None 
 */
 
+//TODO:ssupprimer la lecture des paramètres dans la release.
+
 /*! Fichiers inclus*/
 #include "main.h"
 
@@ -55,7 +57,7 @@ static void InitApp(void)
     // //Initialisation des logs
     // InitESPLOG();
     //Lecture des paramètres
-    // InitParameters();
+    //InitParameters();
     // //Creation des tâches
     createTasks();
     //Initialise le WIFI
@@ -77,7 +79,8 @@ static void InitApp(void)
 */
 void app_main()
 {
-    int delay = 10;
+    uint8_t delay = 10;
+    //uint8_t newAddress = 11;
     printf("%s%s", TAG_MAIN, "Debut du programme");
     //Initialisation du programme
     InitApp();
@@ -87,25 +90,23 @@ void app_main()
     {
         //Permet de réinitialiser le watchdog
         vTaskDelay(100);
-        printf("%s%s", TAG_MAIN, "Loop");
-
         //Si le bouton est utilisé
         if (!gpio_get_level(BUTTON))
         {
             printf("%s%s", TAG_MAIN, "Bouton utilisé");
 
             //Prépare l'envoie d'une commande
-            setESPNOWTaskState(ESPNOWMSGSEND);
 
-            //Envoie un poll.
-            if (ESPNOWPoll(MachineAddress))
-            {
-                printf("%s", "\nle pool a réussi");
-            }
-            else
-            {
-                printf("%s", "\nle pool a échoué");
-            }
+            setESPNOWTaskState(ESPNOWMSGSEND);
+            // // //Envoie un poll.
+            // printf("\n%s%s%s\n", TAG_MAIN, "le pool a ", ESPNOWPoll(MachineAddress) ? "réussi" : "échoué");
+
+            // //Change l'adresse du module
+            // printf("\n%s%s%s\n", TAG_MAIN, "Le changement d'adresse a ", ESPNOWSetNewAddress(MachineAddress, newAddress) ? "réussi" : "échoué");
+
+            //Lecture du numéro de série de carte
+            printf("%s%s%u", TAG_MAIN, "Le numéro de série est : ", ESPNOWGetSerialNumber(MachineAddress));
+
             //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))
                 ;
