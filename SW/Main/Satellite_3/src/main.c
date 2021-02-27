@@ -7,6 +7,8 @@
 * \remarks None
 */
 
+//TODO: Supprimer l'enregistrement du numéro 11 dans la version release.
+
 /*! Fichiers inclus*/
 #include "main.h"
 
@@ -63,7 +65,7 @@ static void InitApp(void)
     xTaskNotifyGive(hTaskESPNOW);
     //Led 1 clignotante
     setLED(LED_1);
-    setIOState(IOLedFlash);
+    setIOState(IOLEDFLASH);
 }
 
 /*!
@@ -96,13 +98,10 @@ void app_main()
             };
         }
         //Arrête le glignotement de la led
-        if (delay)
+        if (delay && (--delay == 0))
         {
-            if (--delay == 0)
-                {
-                    setLED(LED_1);
-                    setIOState(IOLEDOff);
-                }
+            setLED(LED_1);
+            setIOState(IOLEDOFF);
         }
     }
 }

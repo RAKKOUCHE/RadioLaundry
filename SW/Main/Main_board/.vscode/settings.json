@@ -10,5 +10,6 @@
     "user.info.email": "rachid.akkouche@wanadoo.fr",
     "user.info.name": "Rachid AKKOUCHE",
     "comments.info.fileExtension": ".c and .h",
-    "comments.info.importationText": "Fichiers inclus"
+    "comments.info.importationText": "Fichiers inclus",
+    "doxdocgen.file.copyrightTag": []
 }

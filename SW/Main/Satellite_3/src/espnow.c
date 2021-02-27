@@ -141,7 +141,7 @@ static void formatSendAnswer(const board_Answer_t state, const uint8_t len, cons
 {
     uint16_t LCRC;
     uint8_t *buffer;
-    buffer = malloc(sizeof(HOST) + sizeof(len) + sizeof(MachineAddress) + 1 + len + sizeof(uint16_t));
+    buffer = malloc(1 + sizeof(len) + sizeof(MachineAddress) + 1 + len + sizeof(uint16_t));
     buffer[0] = HOST;
     buffer[1] = len;
     buffer[2] = MachineAddress;
@@ -218,10 +218,13 @@ static void checkheader(const uint8_t *data)
     }
     case MODIFY_MACHINE_RELAY_STATE:
     {
-        printf("%sActive ou desacltive le relais\n", TAG_ESPNOW);
+
+        printf("%s%s", TAG_ESPNOW, "Active ou desacltive le relais");
+
         setIOState(data[4] ? IORELAYMACHINEON : IORELAYMACHINEOFF);
-        while (getIOState() == IORELAYMACHINEON)
+        while (getIOState() != IOTASKIDLE)
         {
+            vTaskDelay(1);
         };
         if (gpio_get_level(CTRL_MACHINE) == data[4])
         {
@@ -233,6 +236,17 @@ static void checkheader(const uint8_t *data)
             printf("%s%s", TAG_ESPNOW, "Echec d'activation du relais machine.");
             vNACK();
         }
+        
+        break;
+    }
+    case REQUEST_MACHINE_RELAY_STATE:
+    {
+        printf("%s%s", TAG_ESPNOW, "L'état du relais");
+        boardState = ACK;
+        msg_len = 1;
+        msg_buffer[0] = (uint8_t)gpio_get_level(CTRL_MACHINE);
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
         break;
     }
     default:
@@ -292,13 +306,17 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
     if (isMsgValid(data, len))
     {
         printf("%s%s%02X:%02X:%02X:%02X:%02X:%02X", TAG_ESPNOW, "Données reçues de : ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
+        printf("%s%s", TAG_ESPNOW, "result : ");
+        for (uint8_t i = 0; i < len; i++)
+        {
+            printf("%02u ", data[i]);
+        }
         checkheader(data);
+        //Lance le clignotement
         setLED(LED_1);
-        setIOState(IOLedFlash);
+        setIOState(IOLEDFLASH);
         delay = 5;
-        // vTaskDelay(500);
-        // setLED(LED_1);
-        // setIOState(IOLEDOff);
+        //---------------
     }
 }
 

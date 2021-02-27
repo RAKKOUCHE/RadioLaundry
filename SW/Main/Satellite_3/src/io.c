@@ -57,7 +57,7 @@ static void InitIO(void)
     ESP_ERROR_CHECK(gpio_set_direction(LED_1, GPIO_MODE_INPUT_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(LED_2, GPIO_MODE_INPUT_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(CTRL_MAIN, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_direction(CTRL_MACHINE, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_direction(CTRL_MACHINE, GPIO_MODE_INPUT_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(DIPSWITCH_2, GPIO_MODE_INPUT));
     ESP_ERROR_CHECK(gpio_set_direction(BOOT, GPIO_MODE_INPUT));
     ESP_ERROR_CHECK(gpio_set_direction(EMPTY, GPIO_MODE_INPUT));
@@ -125,54 +125,54 @@ void setLED(const gpio_num_t led)
 */
 void TaskIO(void *VParameter)
 {
-    setIOState(IOTaskInit);
+    setIOState(IOTASKINIT);
     TickType_t xLastWakeTime = xTaskGetTickCount();
     while (1)
     {
         switch (IOTaskState)
         {
-        case IOtASKIdle:
+        case IOTASKIDLE:
         {
             break;
         }
-        case IOTaskInit:
+        case IOTASKINIT:
         {
-            setIOState(IOtASKIdle);
+            setIOState(IOTASKIDLE);
             InitIO();
             break;
         }
-        case IOLedFlash:
+        case IOLEDFLASH:
         {
             gpio_set_level(LED, !gpio_get_level(LED));
             printf("%sLed %d : %s", TAG_IO, LED, (gpio_get_level(LED) ? "ON" : "OFF"));
             break;
         }
-        case IOLEDOff:
+        case IOLEDOFF:
         {
-            setIOState(IOtASKIdle);
+            setIOState(IOTASKIDLE);
             gpio_set_level(LED, LO);
             printf("%sLed %d : %s", TAG_IO, LED, "OFF\n");
             break;
         }
-        case IOLEDOn:
+        case IOLEDON:
         {
-            setIOState(IOtASKIdle);
+            setIOState(IOTASKIDLE);
             gpio_set_level(LED, HI);
             printf("%sLed %d : %s", TAG_IO, LED, "ON");
             break;
         }
         case IORELAYMACHINEON:
         {
-            setIOState(IOtASKIdle);
             gpio_set_level(CTRL_MACHINE, HI);
-            printf("%sMachine activée", TAG_IO);
+            printf("%sRelais machine activé", TAG_IO);
+            setIOState(IOTASKIDLE);
             break;
         }
         case IORELAYMACHINEOFF:
         {
             gpio_set_level(CTRL_MACHINE, LO);
-            printf("%sMachine activée", TAG_IO);
-            setIOState(IOtASKIdle);
+            printf("%sRelais machine desactivé", TAG_IO);
+            setIOState(IOTASKIDLE);
             break;
         }
         default:

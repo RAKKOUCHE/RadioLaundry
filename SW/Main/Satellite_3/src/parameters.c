@@ -104,12 +104,15 @@ static void checkFileParameters(void)
     {
         printf("\n%s%s%u\n", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
         fseek(filedata, 0, SEEK_SET);
+
+        //TODO: Supprimer cette partie
         if (MachineAddress == 0xff)
         {
             MachineAddress = 11;
             fwrite(&MachineAddress, sizeof(MachineAddress), 1, filedata);
             fflush(filedata);
         }
+        //****************************
     }
 }
 

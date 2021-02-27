@@ -87,24 +87,13 @@ TaskHandle_t hTaskESPNOW;
 uint8_t msg_received[32];
 
 /*!
-* \fn void setESPNOWTaskState(ESPNOWTaskState_t state)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  16/02/2021
-* \brief 
-* \remarks None
-* \param state 
-*/
-void setESPNOWTaskState(ESPNOWTaskState_t state);
-
-/*!
 * \fn void TASKESPNOW(void *vParameter)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  16/02/2021
 * \brief 
 * \remarks None
-* \param vParameter 
+* \param[in] vParameter 
 */
 void TASKESPNOW(void *vParameter);
 
@@ -115,35 +104,35 @@ void TASKESPNOW(void *vParameter);
 * \date  16/02/2021
 * \brief 
 * \remarks None
-* \param address 
+* \param[in] address 
 * \return true si le pool réussi.
 */
 bool ESPNOWPoll(uint8_t address);
 
 /*!
-* \fn bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress)
+* \fn bool setESPNOWNewAddress(uint8_t address, uint8_t newAddress)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  22/02/2021
 * \brief 
 * \remarks None
-* \param address 
-* \param newAddress 
+* \param[in] address 
+* \param[in] newAddress 
 * \return 
 */
-bool ESPNOWSetNewAddress(uint8_t address, uint8_t newAddress);
+bool setESPNOWNewAddress(uint8_t address, uint8_t newAddress);
 
 /*!
-* \fn uint32_t ESPNOWGetSerialNumber(uint8_t address)
+* \fn uint32_t getESPNOWSerialNumber(uint8_t address)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  22/02/2021
 * \brief 
 * \remarks None
-* \param address Numéro de la machine pour laquelle la requête est effectuée.
+* \param[in] address Numéro de la machine pour laquelle la requête est effectuée.
 * \return Le numéro de série de la carte.
 */
-uint32_t ESPNOWGetSerialNumber(uint8_t address);
+uint32_t getESPNOWSerialNumber(uint8_t address);
 
 
 /*!
@@ -153,10 +142,12 @@ uint32_t ESPNOWGetSerialNumber(uint8_t address);
 * \date  16/02/2021
 * \brief 
 * \remarks None
-* \param state 
+* \param[in] state 
 * \return 
 */
 bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive);
+
+int getESPNOWStateMachineRelay(uint8_t address);
 
 /*!
 * \fn bool isModifiedDelayActivation(uint8_t address, uint8_t)
@@ -165,7 +156,7 @@ bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive);
 * \date  16/02/2021
 * \brief 
 * \remarks None
-* \param state 
+* \param[in] state 
 * \return 
 */
 bool isModifiedDelayActivation(uint8_t address, uint8_t);

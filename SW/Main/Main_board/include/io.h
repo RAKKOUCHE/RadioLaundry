@@ -88,7 +88,6 @@
 */
 #define BOOT GPIO_NUM_0
 
-
 /**
 *\brief
 */
@@ -101,6 +100,11 @@ typedef enum
     IOLEDOff,
 } IOTaskState_t;
 
+/**
+ * @brief 
+ * 
+ */
+uint8_t delay;
 
 /*!
 * \fn void setIOState(IOTaskState_t state)

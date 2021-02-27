@@ -100,11 +100,11 @@ TaskHandle_t hTaskIO;
 */
 typedef enum
 {
-    IOtASKIdle,
-    IOTaskInit,
-    IOLedFlash,
-    IOLEDOn,
-    IOLEDOff,
+    IOTASKIDLE,
+    IOTASKINIT,
+    IOLEDFLASH,
+    IOLEDON,
+    IOLEDOFF,
     IORELAYMACHINEON,
     IORELAYMACHINEOFF,
 } IOTaskState_t;

@@ -79,7 +79,6 @@ static void InitApp(void)
 */
 void app_main()
 {
-    uint8_t delay = 10;
     //  uint8_t newAddress = 11;
     printf("%s%s", TAG_MAIN, "Debut du programme");
     //Initialisation du programme
@@ -99,15 +98,19 @@ void app_main()
             //printf("\n%s%s%s\n", TAG_MAIN, "le pool a ", ESPNOWPoll(MachineAddress) ? "réussi" : "échoué");
 
             // //Change l'adresse du module
-            //printf("\n%s%s%s\n", TAG_MAIN, "Le changement d'adresse a ", ESPNOWSetNewAddress(MachineAddress, newAddress) ? "réussi" : "échoué");
+            //printf("\n%s%s%s\n", TAG_MAIN, "Le changement d'adresse a ", setESPNOWNewAddress(MachineAddress, newAddress) ? "réussi" : "échoué");
 
             // //Lecture du numéro de série de carte
-            //printf("%s%s%u", TAG_MAIN, "Le numéro de série est : ", ESPNOWGetSerialNumber(MachineAddress));
+            //printf("%s%s%u", TAG_MAIN, "Le numéro de série est : ", getESPNOWSerialNumber(MachineAddress));
 
             //Activation du relais de la machine
-            printf("%s%s%s\n", TAG_MAIN, "Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, true) ? "activé" : "desactivé");
-            vTaskDelay(200);
-            printf("%s%s%s\n", TAG_MAIN, "Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, false) ? "desactivé" : "activé");
+            printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, true) ? "activé" : "repos");
+            // vTaskDelay(100);
+            //printf("%s%s%s", TAG_MAIN, "Lecture de l'etat du  relais. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
+             vTaskDelay(600);
+              printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, false) ? "activé" : "repos");
+            // vTaskDelay(100);
+            // printf("%s%s%s", TAG_MAIN, "Lecture de l'etat du  relais. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
 
             //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))

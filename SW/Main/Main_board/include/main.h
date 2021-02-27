@@ -29,4 +29,10 @@
  */
 uint8_t MachineAddress = 11;
 
+/**
+ * @brief delay de clignotement de la led
+ * 
+ */
+uint8_t delay = 5;
+
 #endif
