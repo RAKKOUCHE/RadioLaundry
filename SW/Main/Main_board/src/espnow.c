@@ -372,7 +372,7 @@ bool ESPNOWSetStateMachineRelay(const uint8_t address, const bool isActive)
     printf("%s%s%s", TAG_ESPNOW, isActive ? "Active" : "Desactive", " le relais");
     prepareMessageToSend(address, MODIFY_MACHINE_RELAY_STATE, 1, &active);
     printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "réussie" : "échouée");
-    return (msg_received[0] == HOST);
+    return ((msg_received[0] == HOST) && (msg_received[3] == ACK)) ? isActive : false;
 }
 
 /*!
@@ -392,7 +392,7 @@ int getESPNOWStateMachineRelay(uint8_t address)
     if ((msg_received[0] == HOST) && (msg_received[3] == ACK))
     {
         printf("%s%s%s", TAG_ESPNOW, "Le relais est : ", msg_received[4] ? "activé" : "repos");
-        return true;
+        return msg_received[4] ;
     }
     else
     {
