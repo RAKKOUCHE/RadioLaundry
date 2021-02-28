@@ -135,14 +135,14 @@ bool saveMachineNumber(const uint8_t address)
 }
 
 /*!
-* \fn void InitParameters(void)
+* \fn void initParameters(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
 * \brief 
 * \remarks None
 */
-void InitParameters(void)
+void initParameters(void)
 {
     printf("%s%s",TAG_PARAMETER,  "Initialisation et lecture des paramètres.");
     if (setVFS_SPIFFS())

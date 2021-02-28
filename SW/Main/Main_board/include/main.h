@@ -16,6 +16,7 @@
 #include "freertos/task.h"
 #include "flash.h"
 #include "espnow.h"
+#include "adc.h"
 
 /*!
 * \def DEBUG

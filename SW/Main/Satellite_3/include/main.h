@@ -22,6 +22,7 @@
 #include "wifi.h"
 #include "espnow.h"
 #include "parameters.h"
+#include "adc.h"
 
 int delay;
 

@@ -55,7 +55,7 @@ typedef enum __attribute__ ((__packed__))
     MODIFY_MACHINE_RELAY_STATE = REQUEST_MACHINE_NUMBER - 1, /*!< Active ou desactive le relais qui contrôle la machine.*/
     REQUEST_MACHINE_RELAY_STATE = MODIFY_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état du relais qui contrôle la machine.*/
 
-    REQUEST_MACHINE_STATUS = REQUEST_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état d'occupation de la machine.*/
+    REQUEST_MACHINE_STATUS = REQUEST_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie la valeur de l'état d'occupation de la machine.*/
 
     MODIFY_DELAY_OVER_BUSY = REQUEST_MACHINE_STATUS - 1, /*!< Modifie le temps de suroccupation du satellite.*/
     REQUEST_DELAY_OVER_BUSY = MODIFY_DELAY_OVER_BUSY - 1, /*!< Le satellite renvoie le temps suroccupation.*/
@@ -98,6 +98,21 @@ uint8_t msg_received[32];
 void TASKESPNOW(void *vParameter);
 
 /*!
+* \fn void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  25/02/2021
+* \brief Fonction locale Préparant le message pour l'envoi.
+* \remarks None
+* \param[in] address Adresse du module concerné.
+* \param[in] header Commande a exécuter.
+* \param[in] len Nombre de paramètres contenu dans le buffer.
+* \param[in] data Buffer contenant les paramètres.
+* \return 
+*/
+void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data);
+
+/*!
 * \fn void ESPNOWPoll(uint8_t address)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
@@ -136,7 +151,7 @@ uint32_t getESPNOWSerialNumber(uint8_t address);
 
 
 /*!
-* \fn bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive)
+* \fn bool setESPNOWMachineRelay(uint8_t address, bool isActive)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  16/02/2021
@@ -145,8 +160,18 @@ uint32_t getESPNOWSerialNumber(uint8_t address);
 * \param[in] state 
 * \return 
 */
-bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive);
+bool setESPNOWMachineRelay(uint8_t address, bool isActive);
 
+/*!
+* \fn int getESPNOWStateMachineRelay(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  22/02/2021
+* \brief 
+* \remarks None
+* \param[in] address Numéro de la machine pour laquelle la requête est effectuée.
+* \return Le numéro de série de la carte.
+*/
 int getESPNOWStateMachineRelay(uint8_t address);
 
 /*!

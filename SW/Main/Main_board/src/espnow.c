@@ -268,7 +268,7 @@ static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 }
 
 /*!
-* \fn static void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
+* \fn void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  25/02/2021
@@ -280,7 +280,7 @@ static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 * \param[in] data Buffer contenant les paramètres.
 * \return 
 */
-static void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
+void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
 {
     isCommandFinished = false;
     xTimerStart(hCommandTO, 1 * SECONDE);
@@ -356,7 +356,7 @@ uint32_t getESPNOWSerialNumber(const uint8_t address)
 }
 
 /*!
-* \fn bool ESPNOWSetStateMachineRelay(uint8_t address, bool isActive)
+* \fn bool setESPNOWMachineRelay(uint8_t address, bool isActive)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  25/02/2021
@@ -366,7 +366,7 @@ uint32_t getESPNOWSerialNumber(const uint8_t address)
 * \param[in] isActive Flag indiquant si le relais sera activé ou relaché.
 * \return true si l'action s'est effectuée correctement.
 */
-bool ESPNOWSetStateMachineRelay(const uint8_t address, const bool isActive)
+bool setESPNOWMachineRelay(const uint8_t address, const bool isActive)
 {
     uint8_t active = (uint8_t)isActive;
     printf("%s%s%s", TAG_ESPNOW, isActive ? "Active" : "Desactive", " le relais");

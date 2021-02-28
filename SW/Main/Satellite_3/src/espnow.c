@@ -135,7 +135,6 @@ static uint16_t wCRC16(const void *byData, const uint8_t byLen)
 * \param state 
 * \param len 
 * \param message 
-* \return 
 */
 static void formatSendAnswer(const board_Answer_t state, const uint8_t len, const uint8_t *message)
 {
@@ -153,6 +152,14 @@ static void formatSendAnswer(const board_Answer_t state, const uint8_t len, cons
     free(buffer);
 }
 
+/*!
+* \fn static void vNACK(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  21/02/2021
+* \brief 
+* \remarks None
+*/
 static void vNACK(void)
 {
     boardState = NAK;
@@ -168,7 +175,6 @@ static void vNACK(void)
 * \date  21/02/2021
 * \brief 
 * \remarks None
-* \return 
 */
 static void vACK(void)
 {
@@ -186,7 +192,6 @@ static void vACK(void)
 * \brief 
 * \remarks None
 * \param data
-* \return 
 */
 static void checkheader(const uint8_t *data)
 {
@@ -236,7 +241,7 @@ static void checkheader(const uint8_t *data)
             printf("%s%s", TAG_ESPNOW, "Echec d'activation du relais machine.");
             vNACK();
         }
-        
+
         break;
     }
     case REQUEST_MACHINE_RELAY_STATE:
@@ -245,6 +250,18 @@ static void checkheader(const uint8_t *data)
         boardState = ACK;
         msg_len = 1;
         msg_buffer[0] = (uint8_t)gpio_get_level(CTRL_MACHINE);
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
+        break;
+    }
+    case REQUEST_MACHINE_STATUS:
+    {
+
+        printf("%s%s", TAG_ESPNOW, "Valeur de l'etat d'occupation.");
+        boardState = ACK;
+        msg_len = 2;
+        msg_buffer[1] = getADCValue() % 256;
+        msg_buffer[0] = getADCValue() / 256;
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
         break;
@@ -282,7 +299,6 @@ static bool isMsgValid(const uint8_t *data, uint8_t len)
 * \remarks None
 * \param macAddr 
 * \param status 
-* \return 
 */
 static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 {
@@ -327,7 +343,6 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 * \date  21/02/2021
 * \brief 
 * \remarks None
-* \return 
 */
 static void InitESPNOW(void)
 {
@@ -359,7 +374,7 @@ void setESPNOWTaskState(ESPNOWTaskState_t state)
 }
 
 /*!
-* \fn void TASKESPNOW(void *vParameter)
+* \fn void vTaskESPNOW(void *vParameter)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
@@ -367,7 +382,7 @@ void setESPNOWTaskState(ESPNOWTaskState_t state)
 * \remarks None
 * \param vParameter 
 */
-void TASKESPNOW(void *vParameter)
+void vTaskESPNOW(void *vParameter)
 {
     setESPNOWTaskState(WIFIINIT);
     while (1)

@@ -93,6 +93,6 @@ void setESPNOWTaskState(ESPNOWTaskState_t state);
 * \remarks None
 * \param vParameter 
 */
-void TASKESPNOW(void *vParameter);
+void vTaskESPNOW(void *vParameter);
 
 #endif

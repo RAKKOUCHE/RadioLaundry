@@ -143,7 +143,7 @@ IOTaskState_t getIOState(void);
 void setLED(const gpio_num_t led);
 
 /*!
-* \fn void TaskIO(void *vParameter)
+* \fn void vTaskIO(void *vParameter)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  16/02/2021
@@ -151,6 +151,6 @@ void setLED(const gpio_num_t led);
 * \remarks None
 * \param vParameter 
 */
-void TaskIO(void *vParameter);
+void vTaskIO(void *vParameter);
 
 #endif

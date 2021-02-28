@@ -36,9 +36,11 @@
 static void createTasks(void)
 {
     //Création la tâche des entrées sorties
-    xTaskCreate(TaskIO, "Task IO", 2048, NULL, 1, &hTaskIO);
+    xTaskCreate(vTaskIO, "Task IO", 1792, NULL, 1, &hTaskIO);
     //Création de la tâche ESPNOW
-    xTaskCreate(TASKESPNOW, "Task ESPNOW", 2560, NULL, 1, &hTaskESPNOW);
+    xTaskCreate(vTaskESPNOW, "Task ESPNOW", 2304, NULL, 1, &hTaskESPNOW);
+    //Création de la tâche ADC
+    xTaskCreate(vTaskADC, "Tâche ADC", 1536 , NULL, 1, &hTaskADC);
 }
 
 /*!
@@ -56,7 +58,9 @@ static void InitApp(void)
     InitFlash();
 
     //Lecture des paramètres
-    InitParameters();
+    initParameters();
+    //Initialisation du convertisseur ADC
+    initADC();
     //Creation des tâches
     createTasks();
     //Initialise le WIFI
@@ -78,7 +82,6 @@ static void InitApp(void)
 */
 void app_main()
 {
-
     printf("%s%s", TAG_MAIN, "Debut du programme");
     delay = 5;
     //Initialisation du programme
@@ -87,8 +90,6 @@ void app_main()
     //Boucle permanente
     while (1)
     {
-        //Permet de réinitialiser le watchdog
-        vTaskDelay(250);
         //Si le bouton est utilisé
         if (!gpio_get_level(BUTTON))
         {
@@ -103,5 +104,6 @@ void app_main()
             setLED(LED_1);
             setIOState(IOLEDOFF);
         }
+        vTaskDelay(pdMS_TO_TICKS(250));
     }
 }

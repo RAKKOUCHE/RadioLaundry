@@ -25,7 +25,7 @@
 * \def DELAY_TASK_IO
 * Description
 */
-#define DELAY_TASK_IO 100
+#define DELAY_TASK_IO  pdMS_TO_TICKS(100)
 
 /*!
 * \def TAG_IO
@@ -115,7 +115,7 @@ void setLED(const gpio_num_t led)
 }
 
 /*!
-* \fn void TaskIO(void *VParameter)
+* \fn void vTaskIO(void *VParameter)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
@@ -123,7 +123,7 @@ void setLED(const gpio_num_t led)
 * \remarks None
 * \param VParameter 
 */
-void TaskIO(void *VParameter)
+void vTaskIO(void *VParameter)
 {
     setIOState(IOTASKINIT);
     TickType_t xLastWakeTime = xTaskGetTickCount();
