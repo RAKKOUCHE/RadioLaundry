@@ -47,7 +47,7 @@ static esp_vfs_spiffs_conf_t conf;
 */
 static bool setVFS_SPIFFS(void)
 {
-    printf("%s%s",TAG_PARAMETER,  "Vérification SPIFFS");
+    printf("%s%s", TAG_PARAMETER, "Vérification SPIFFS");
     conf.base_path = "/data";
     conf.partition_label = NULL;
     conf.max_files = 2;
@@ -57,7 +57,7 @@ static bool setVFS_SPIFFS(void)
     {
         if (err == ESP_FAIL)
         {
-            printf("%sFailed to mount or format filesystem", TAG_PARAMETER );
+            printf("%sFailed to mount or format filesystem", TAG_PARAMETER);
         }
         else if (err == ESP_ERR_NOT_FOUND)
         {
@@ -65,7 +65,7 @@ static bool setVFS_SPIFFS(void)
         }
         else
         {
-            printf("%sFailed to initialize SPIFFS (%s)", TAG_PARAMETER,  esp_err_to_name(err));
+            printf("%sFailed to initialize SPIFFS (%s)", TAG_PARAMETER, esp_err_to_name(err));
         }
     }
     return (err == 0);
@@ -85,7 +85,7 @@ static bool setVFS_SPIFFS(void)
 static void checkFileParameters(void)
 {
     struct stat s;
-    printf("%s%s",TAG_PARAMETER,  "Lecture du numéro de la machine");
+    printf("%s%s", TAG_PARAMETER, "Lecture du numéro de la machine");
     if (stat(filename, &s) < 0)
     {
         printf("%s%s", TAG_PARAMETER, "Le fichier n'existe pas!");
@@ -95,15 +95,15 @@ static void checkFileParameters(void)
         fclose(filedata);
         filedata = NULL;
     }
-    
+
     if (!fread(&MachineAddress, sizeof(MachineAddress), 1, filedata = fopen(filename, "rb+")))
     {
-        printf("%s%s",TAG_PARAMETER,  "La lecture du numéro de la machine a échoué");
+        printf("%s%s", TAG_PARAMETER, "La lecture du numéro de la machine a échoué");
     }
     else
     {
         printf("\n%s%s%u\n", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
-        fseek(filedata, 0, SEEK_SET);
+        rewind(filedata);
 
         //TODO: Supprimer cette partie
         if (MachineAddress == 0xff)
@@ -124,14 +124,44 @@ static void checkFileParameters(void)
 * \brief Enregistre l'adresse du module
 * \remarks None
 * \param address 
+* \return 
 */
 bool saveMachineNumber(const uint8_t address)
 {
-    fseek(filedata, 0, SEEK_SET);
+    rewind(filedata);
     fwrite(&address, sizeof(address), 1, filedata);
     fflush(filedata);
     fseek(filedata, 0, SEEK_SET);
-    return (fread(&MachineAddress, sizeof(MachineAddress), 1,filedata) && (MachineAddress == address));
+    return (fread(&MachineAddress, sizeof(MachineAddress), 1, filedata) && (MachineAddress == address));
+}
+
+/*!
+* \fn bool saveDelayOverBusy(const uint32_t delay)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  01/03/2021
+* \brief 
+* \remarks None
+* \param delay 
+* \return 
+*/
+int nb_lus;
+bool saveDelayOverBusy(const uint16_t delay)
+{
+    uint32_t result;
+    if ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
+        (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
+        (fflush(filedata) == 0))
+    {
+        if (fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0)
+        {
+            if ((fread(&result, sizeof(result), 1, filedata) == 1))
+            {
+                return ((result == delay));
+            }
+        }
+    }
+    return false;
 }
 
 /*!
@@ -144,7 +174,7 @@ bool saveMachineNumber(const uint8_t address)
 */
 void initParameters(void)
 {
-    printf("%s%s",TAG_PARAMETER,  "Initialisation et lecture des paramètres.");
+    printf("%s%s", TAG_PARAMETER, "Initialisation et lecture des paramètres.");
     if (setVFS_SPIFFS())
     {
         checkFileParameters();

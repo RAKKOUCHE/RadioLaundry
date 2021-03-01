@@ -110,7 +110,7 @@ void TASKESPNOW(void *vParameter);
 * \param[in] data Buffer contenant les paramètres.
 * \return 
 */
-void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data);
+void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const void *data);
 
 /*!
 * \fn void ESPNOWPoll(uint8_t address)
@@ -149,7 +149,6 @@ bool setESPNOWNewAddress(uint8_t address, uint8_t newAddress);
 */
 uint32_t getESPNOWSerialNumber(uint8_t address);
 
-
 /*!
 * \fn bool setESPNOWMachineRelay(uint8_t address, bool isActive)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
@@ -173,6 +172,19 @@ bool setESPNOWMachineRelay(uint8_t address, bool isActive);
 * \return Le numéro de série de la carte.
 */
 int getESPNOWStateMachineRelay(uint8_t address);
+
+
+/*!
+* \fn bool setDelayOverBusy(uint8_t address, uint16_t delay)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  16/02/2021
+* \brief 
+* \remarks None
+* \param[in] state 
+* \return 
+*/
+bool setDelayOverBusy(uint8_t address, uint16_t delay);
 
 /*!
 * \fn bool isModifiedDelayActivation(uint8_t address, uint8_t)

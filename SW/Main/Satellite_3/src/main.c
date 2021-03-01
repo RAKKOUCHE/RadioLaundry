@@ -40,7 +40,7 @@ static void createTasks(void)
     //Création de la tâche ESPNOW
     xTaskCreate(vTaskESPNOW, "Task ESPNOW", 2304, NULL, 1, &hTaskESPNOW);
     //Création de la tâche ADC
-    xTaskCreate(vTaskADC, "Tâche ADC", 1536 , NULL, 1, &hTaskADC);
+    xTaskCreate(vTaskADC, "Tâche ADC", 1792 , NULL, 1, &hTaskADC);
 }
 
 /*!
@@ -56,7 +56,6 @@ static void InitApp(void)
 {
     //Initialisation nécessaire de la flash
     InitFlash();
-
     //Lecture des paramètres
     initParameters();
     //Initialisation du convertisseur ADC
@@ -83,7 +82,7 @@ static void InitApp(void)
 void app_main()
 {
     printf("%s%s", TAG_MAIN, "Debut du programme");
-    delay = 5;
+    delayBlink = 5;
     //Initialisation du programme
     InitApp();
 
@@ -99,7 +98,7 @@ void app_main()
             };
         }
         //Arrête le glignotement de la led
-        if (delay && (--delay == 0))
+        if (delayBlink && (--delayBlink == 0))
         {
             setLED(LED_1);
             setIOState(IOLEDOFF);

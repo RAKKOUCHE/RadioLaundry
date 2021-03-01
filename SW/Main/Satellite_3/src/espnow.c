@@ -197,15 +197,15 @@ static void checkheader(const uint8_t *data)
 {
     switch (data[POS_HEADER])
     {
-    case MODIFY_MACHINE_NUMBER:
-    {
-        printf("%s%s%s%s%u", TAG_ESPNOW, "L'enregistrement du numéro de la machine a ", saveMachineNumber(data[4]) ? "résussi" : "échoué:", " Le nouveau numéro est : ", MachineAddress);
-        vACK();
-        break;
-    }
     case SIMPLEPOLL:
     {
         printf("%sSIMPLE POLL", TAG_ESPNOW);
+        vACK();
+        break;
+    }
+    case MODIFY_MACHINE_NUMBER:
+    {
+        printf("%s%s%s%s%u", TAG_ESPNOW, "L'enregistrement du numéro de la machine a ", saveMachineNumber(data[4]) ? "résussi" : "échoué:", " Le nouveau numéro est : ", MachineAddress);
         vACK();
         break;
     }
@@ -264,6 +264,12 @@ static void checkheader(const uint8_t *data)
         msg_buffer[0] = getADCValue() / 256;
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
+        break;
+    }
+    case MODIFY_DELAY_OVER_BUSY:
+    {
+        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais d'overbusy a ", saveDelayOverBusy(data[4] + (data[5] * 0x100)) ? "résussi" : "échoué", data[4] + (data[5] * 0x100));
+        vACK();
         break;
     }
     default:
@@ -331,7 +337,7 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
         //Lance le clignotement
         setLED(LED_1);
         setIOState(IOLEDFLASH);
-        delay = 5;
+        delayBlink = 5;
         //---------------
     }
 }

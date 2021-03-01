@@ -111,8 +111,10 @@ void app_main()
             // printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, false) ? "activé" : "repos");
             // vTaskDelay(100);
             // printf("%s%s%s", TAG_MAIN, "Lecture de l'etat du  relais. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
-            printf("%s%s%u", TAG_MAIN, "Le niveau d'occupation est : ", getADCValueBusy(MachineAddress));
-            printf("\n");
+            // printf("%s%s%u", TAG_MAIN, "Le niveau d'occupation est : ", getADCValueBusy(MachineAddress));
+            // printf("\n");
+
+            printf("%s%s%s%u", TAG_MAIN, "Ecriture de délai overbusy a", setDelayOverBusy(MachineAddress, 60) ? "réussi." : "echoué" , 60);
             
             //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))

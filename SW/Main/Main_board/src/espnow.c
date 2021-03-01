@@ -280,7 +280,7 @@ static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 * \param[in] data Buffer contenant les paramètres.
 * \return 
 */
-void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
+void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const void *data)
 {
     isCommandFinished = false;
     xTimerStart(hCommandTO, 1 * SECONDE);
@@ -313,7 +313,7 @@ bool ESPNOWPoll(const uint8_t address)
 {
     printf("%s%s", TAG_ESPNOW, "Poll");
     prepareMessageToSend(address, SIMPLEPOLL, 0, NULL);
-    printf("%s%s%s", TAG_ESPNOW, "Pool ", msg_received[0] == HOST ? "résussi" : "échoué");
+    printf("%s%s%s", TAG_ESPNOW, "Pool ", (msg_received[0] == HOST) &&  (msg_received[3] == ACK) ? "résussi" : "échoué");
     return msg_received[0] == HOST;
 }
 
@@ -392,13 +392,21 @@ int getESPNOWStateMachineRelay(uint8_t address)
     if ((msg_received[0] == HOST) && (msg_received[3] == ACK))
     {
         printf("%s%s%s", TAG_ESPNOW, "Le relais est : ", msg_received[4] ? "activé" : "repos");
-        return msg_received[4] ;
+        return msg_received[4];
     }
     else
     {
         printf("%s%s", TAG_ESPNOW, "Echec de la demande");
         return false;
     }
+}
+
+bool setDelayOverBusy(uint8_t address, uint16_t delay)
+{
+    printf("%s%s%u", TAG_ESPNOW, "Enregistrement du dÉlai overbusy : ", delay);
+    prepareMessageToSend(address, MODIFY_DELAY_OVER_BUSY, sizeof(delay), &delay);
+    printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "réussie" : "échouée");
+    return (msg_received[0] == HOST) && (msg_received[3] == ACK);
 }
 
 /*!
