@@ -68,6 +68,10 @@ static bool setVFS_SPIFFS(void)
             printf("%sFailed to initialize SPIFFS (%s)", TAG_PARAMETER, esp_err_to_name(err));
         }
     }
+    else
+    {
+        printf("%s%s", TAG_PARAMETER, "Système fichiers monté.");
+    }
     return (err == 0);
 }
 
@@ -102,7 +106,7 @@ static void checkFileParameters(void)
     }
     else
     {
-        printf("\n%s%s%u\n", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
+        printf("%s%s%u", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
         rewind(filedata);
 
         //TODO: Supprimer cette partie
@@ -114,6 +118,7 @@ static void checkFileParameters(void)
         }
         //****************************
     }
+    printf("%s%s%u\n", TAG_PARAMETER, "Le délai de suroccupation est de : ", getDelayOverBusy());
 }
 
 /*!
@@ -147,13 +152,12 @@ bool saveMachineNumber(const uint8_t address)
 */
 bool saveDelayOverBusy(const uint16_t delay)
 {
-    uint16_t result;
     return ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
             (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
             (fflush(filedata) == 0) &&
             (fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
-            (fread(&result, sizeof(result), 1, filedata) == 1) &&
-            (result == delay));
+            (fread(&delayOverBusy, sizeof(delayOverBusy), 1, filedata) == 1) &&
+            (delayOverBusy == delay));
 }
 
 /*!
@@ -165,18 +169,14 @@ bool saveDelayOverBusy(const uint16_t delay)
 * \remarks None
 * \return 
 */
-int nb_lus;
 uint16_t getDelayOverBusy(void)
 {
-    uint16_t result;
-    
-    if ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0))
+    if ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
+        (fread(&delayOverBusy, sizeof(delayOverBusy), 1, filedata) != 0))
     {
-        nb_lus = fread(&result, sizeof(result), 1, filedata);
-        return result;
+        return delayOverBusy;
     }
-        return 0;
-
+    return 0;
 }
 
 /*!

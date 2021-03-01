@@ -13,14 +13,14 @@
 #define TAG_FLASH "\nFlash Module : "
 
 /*!
-* \fn void InitFlash(void)
+* \fn void initFlash(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  16/02/2021
 * \brief Initialisation de la flash comme indiqué par espressif
 * \remarks None
 */
-void InitFlash(void)
+void initFlash(void)
 {
     esp_err_t ret;
     ESP_ERROR_CHECK(ret = nvs_flash_init());
@@ -28,6 +28,6 @@ void InitFlash(void)
     {
         ESP_ERROR_CHECK(nvs_flash_erase());
         ESP_ERROR_CHECK(ret = nvs_flash_init());
-    }  
-    printf("%s%s", TAG_FLASH, "Fin de l'initialisation de la flash");
+    }
+    printf("%s%s", TAG_FLASH, "Fin de l'initialisation de la flash\n");
 }

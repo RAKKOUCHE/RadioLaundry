@@ -32,7 +32,7 @@ typedef enum
     WIFIINIT,
     ESPNOWINIT,
     ESPNOWANSWER,
-    //ESPNOWRECEIVE,   
+    //ESPNOWRECEIVE,
 } ESPNOWTaskState_t;
 
 /**
@@ -43,16 +43,16 @@ typedef enum __attribute__((__packed__))
 {
     SIMPLEPOLL = 0xFE, /*!< Vérifie la communication, le satellite répond par un ack.*/
 
-    MODIFY_MACHINE_NUMBER = SIMPLEPOLL - 1,             /*!< Modifie le numéro de la machine que contrôle le satellite adressé.*/
-    REQUEST_MACHINE_NUMBER = MODIFY_MACHINE_NUMBER - 1, /*!< Demande le numéro de la machine gérée par le satellite.*/
+    MODIFY_MACHINE_NUMBER = SIMPLEPOLL - 1,            /*!< Modifie le numéro de la machine que contrôle le satellite adressé.*/
+    REQUEST_SERIAL_NUMBER = MODIFY_MACHINE_NUMBER - 1, /*!< Demande le numéro de la machine gérée par le satellite.*/
 
-    MODIFY_MACHINE_RELAY_STATE = REQUEST_MACHINE_NUMBER - 1,      /*!< Active ou desactive le relais qui contrôle la machine.*/
+    MODIFY_MACHINE_RELAY_STATE = REQUEST_SERIAL_NUMBER - 1,       /*!< Active ou desactive le relais qui contrôle la machine.*/
     REQUEST_MACHINE_RELAY_STATE = MODIFY_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état du relais qui contrôle la machine.*/
 
-    REQUEST_MACHINE_STATUS = REQUEST_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état d'occupation de la machine.*/
+    REQUEST_MACHINE_BUSY_LEVEL = REQUEST_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état d'occupation de la machine.*/
 
-    MODIFY_DELAY_OVER_BUSY = REQUEST_MACHINE_STATUS - 1,  /*!< Modifie le temps de suroccupation du satellite.*/
-    REQUEST_DELAY_OVER_BUSY = MODIFY_DELAY_OVER_BUSY - 1, /*!< Le satellite renvoie le temps suroccupation.*/
+    MODIFY_DELAY_OVER_BUSY = REQUEST_MACHINE_BUSY_LEVEL - 1, /*!< Modifie le temps de suroccupation du satellite.*/
+    REQUEST_DELAY_OVER_BUSY = MODIFY_DELAY_OVER_BUSY - 1,    /*!< Le satellite renvoie le temps suroccupation.*/
 
     MODIFY_BUSY_LEVEL = REQUEST_DELAY_OVER_BUSY - 1, /*!Modifie le niveau permettant de définir une occupation de la machine.*/
     REQUEST_BUSY_LEVEL = MODIFY_BUSY_LEVEL - 1,      /*!< Renvoi le niveau permettant de définir une occupation de la machine.*/

@@ -26,7 +26,7 @@
  * @brief 
  * 
  */
-#define SECONDE  (1000 / portTICK_PERIOD_MS)
+#define SECONDE (1000 / portTICK_PERIOD_MS)
 
 /**
  * @brief 
@@ -49,10 +49,10 @@ typedef enum __attribute__((__packed__))
 {
     SIMPLEPOLL = 0xFE, /*!< Vérifie la communication, le satellite répond par un ack.*/
 
-    MODIFY_MACHINE_NUMBER = SIMPLEPOLL - 1,             /*!< Modifie le numéro de la machine que contrôle le satellite adressé.*/
-    REQUEST_MACHINE_NUMBER = MODIFY_MACHINE_NUMBER - 1, /*!< Demande le numéro de la machine gérée par le satellite.*/
+    MODIFY_MACHINE_NUMBER = SIMPLEPOLL - 1,            /*!< Modifie le numéro de la machine que contrôle le satellite adressé.*/
+    REQUEST_SERIAL_NUMBER = MODIFY_MACHINE_NUMBER - 1, /*!< Demande le numéro de la machine gérée par le satellite.*/
 
-    MODIFY_MACHINE_RELAY_STATE = REQUEST_MACHINE_NUMBER - 1,      /*!< Active ou desactive le relais qui contrôle la machine.*/
+    MODIFY_MACHINE_RELAY_STATE = REQUEST_SERIAL_NUMBER - 1,       /*!< Active ou desactive le relais qui contrôle la machine.*/
     REQUEST_MACHINE_RELAY_STATE = MODIFY_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état du relais qui contrôle la machine.*/
 
     REQUEST_MACHINE_STATUS = REQUEST_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie la valeur de l'état d'occupation de la machine.*/
@@ -208,4 +208,5 @@ bool isModifiedDelayActivation(uint8_t address, uint8_t);
 * \return Le délai d'overbusy
 */
 uint16_t getDelayOverBusy(uint8_t address);
+
 #endif

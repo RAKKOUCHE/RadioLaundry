@@ -209,7 +209,7 @@ static void checkheader(const uint8_t *data)
         vACK();
         break;
     }
-    case REQUEST_MACHINE_NUMBER:
+    case REQUEST_SERIAL_NUMBER:
     {
         uint8_t macAddress[6];
         ESP_ERROR_CHECK(esp_wifi_get_mac(WIFI_MODE_STA, macAddress));
@@ -224,8 +224,7 @@ static void checkheader(const uint8_t *data)
     case MODIFY_MACHINE_RELAY_STATE:
     {
 
-        printf("%s%s", TAG_ESPNOW, "Active ou desacltive le relais");
-
+        printf("%s%s", TAG_ESPNOW, "Active ou desactive le relais");
         setIOState(data[4] ? IORELAYMACHINEON : IORELAYMACHINEOFF);
         while (getIOState() != IOTASKIDLE)
         {
@@ -241,7 +240,6 @@ static void checkheader(const uint8_t *data)
             printf("%s%s", TAG_ESPNOW, "Echec d'activation du relais machine.");
             vNACK();
         }
-
         break;
     }
     case REQUEST_MACHINE_RELAY_STATE:
@@ -250,36 +248,37 @@ static void checkheader(const uint8_t *data)
         boardState = ACK;
         msg_len = 1;
         msg_buffer[0] = (uint8_t)gpio_get_level(CTRL_MACHINE);
+        printf("%s%s%s", TAG_ESPNOW, "Le relais machine est ", gpio_get_level(CTRL_MACHINE) ? "ON" : "OFF");
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
         break;
     }
-    case REQUEST_MACHINE_STATUS:
+    case REQUEST_MACHINE_BUSY_LEVEL:
     {
         uint16_t result = getADCValue();
-        printf("%s%s", TAG_ESPNOW, "Valeur de l'etat d'occupation.");
+        printf("%s%s", TAG_ESPNOW, "Lecture de la valeur de l'état d'occupation.");
         boardState = ACK;
-        msg_len = 2;
-        msg_buffer[1] = result % 256;
-        msg_buffer[0] = result / 256;
+        msg_len = sizeof(result);
+        memmove(msg_buffer, &result, sizeof(result));
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
+        printf("%s%s%u", TAG_ESPNOW, "La valeur d'occupation est : ", getADCValue());
         break;
     }
     case MODIFY_DELAY_OVER_BUSY:
     {
-        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais d'overbusy a ", saveDelayOverBusy(data[4] + (data[5] * 0x100)) ? "résussi" : "échoué", data[4] + (data[5] * 0x100));
+        printf("%s%s", TAG_ESPNOW, "Enregistrement du délais de suroccupation");
+        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais de suroccupation a ", saveDelayOverBusy(data[4] + (data[5] * 0x100)) ? "résussi" : "échoué", data[4] + (data[5] * 0x100));
         vACK();
         break;
     }
     case REQUEST_DELAY_OVER_BUSY:
     {
-        uint16_t result = getDelayOverBusy();
-        printf("%s%s%u", TAG_ESPNOW, "Le délai d'overbusy est de :", result);
+        printf("%s%s", TAG_ESPNOW, "Lecture du délai de suroccupation");
+        printf("%s%s%u", TAG_ESPNOW, "Le délai d'overbusy est de :", (delayOverBusy = getDelayOverBusy()));
         boardState = ACK;
-        msg_len = 2;
-        msg_buffer[0] = result % 256;
-        msg_buffer[1] = result / 256;
+        msg_len = sizeof(delayOverBusy);
+        memmove(msg_buffer, &delayOverBusy, sizeof(delayOverBusy));
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
         break;
@@ -339,12 +338,12 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 {
     if (isMsgValid(data, len))
     {
-        printf("%s%s%02X:%02X:%02X:%02X:%02X:%02X", TAG_ESPNOW, "Données reçues de : ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
-        printf("%s%s", TAG_ESPNOW, "result : ");
+        printf("\n%s%s%02X:%02X:%02X:%02X:%02X:%02X : - ", TAG_ESPNOW, "Données reçues de ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
         for (uint8_t i = 0; i < len; i++)
         {
             printf("%02u ", data[i]);
         }
+        printf("%s%u", "Commande ", data[3]);
         checkheader(data);
         //Lance le clignotement
         setLED(LED_1);
@@ -374,7 +373,7 @@ static void InitESPNOW(void)
     peer_info.ifidx = ESP_IF_WIFI_STA;
     peer_info.encrypt = false;
     ESP_ERROR_CHECK(esp_now_add_peer(&peer_info));
-    printf("%s%s", TAG_ESPNOW, "ESPNOW initialisé.");
+    printf("%s%s", TAG_ESPNOW, "ESPNOW initialisé.\n");
 }
 
 /*!

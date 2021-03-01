@@ -2,7 +2,8 @@
     "files.associations": {
         "parameters.h": "c",
         "future": "cpp",
-        "adc.h": "c"
+        "adc.h": "c",
+        "functional": "c"
     },
     "C_Cpp.vcFormat.indent.caseLabels": true,
     "editor.formatOnPaste": true,

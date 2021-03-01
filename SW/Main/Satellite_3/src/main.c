@@ -35,16 +35,17 @@
 */
 static void createTasks(void)
 {
+    printf("%s%s", TAG_MAIN, "Création des  tâches\n");
     //Création la tâche des entrées sorties
     xTaskCreate(vTaskIO, "Task IO", 1792, NULL, 1, &hTaskIO);
     //Création de la tâche ESPNOW
     xTaskCreate(vTaskESPNOW, "Task ESPNOW", 2304, NULL, 1, &hTaskESPNOW);
     //Création de la tâche ADC
-    xTaskCreate(vTaskADC, "Tâche ADC", 1792 , NULL, 1, &hTaskADC);
+    xTaskCreate(vTaskADC, "Tâche ADC", 1792, NULL, 1, &hTaskADC);
 }
 
 /*!
-* \fn static void InitApp(void)
+* \fn static void initApp(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  16/02/2021
@@ -52,10 +53,10 @@ static void createTasks(void)
 * \remarks None
 * \return 
 */
-static void InitApp(void)
+static void initApp(void)
 {
     //Initialisation nécessaire de la flash
-    InitFlash();
+    initFlash();
     //Lecture des paramètres
     initParameters();
     //Initialisation du convertisseur ADC
@@ -84,7 +85,7 @@ void app_main()
     printf("%s%s", TAG_MAIN, "Debut du programme");
     delayBlink = 5;
     //Initialisation du programme
-    InitApp();
+    initApp();
 
     //Boucle permanente
     while (1)

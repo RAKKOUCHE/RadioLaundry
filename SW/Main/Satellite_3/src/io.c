@@ -25,7 +25,7 @@
 * \def DELAY_TASK_IO
 * Description
 */
-#define DELAY_TASK_IO  pdMS_TO_TICKS(100)
+#define DELAY_TASK_IO pdMS_TO_TICKS(100)
 
 /*!
 * \def TAG_IO
@@ -69,7 +69,8 @@ static void InitIO(void)
     ESP_ERROR_CHECK(gpio_set_level(LED_2, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MACHINE, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MAIN, LO));
-    printf("%s%s", TAG_IO, "IOs iinitialisés.");
+    printf("%s%s", TAG_IO, "IOs iinitialisés");
+    printf("\n");
 }
 
 /*!
@@ -144,7 +145,7 @@ void vTaskIO(void *VParameter)
         case IOLEDFLASH:
         {
             gpio_set_level(LED, !gpio_get_level(LED));
-            printf("%sLed %d : %s", TAG_IO, LED, (gpio_get_level(LED) ? "ON" : "OFF"));
+            printf("%sLed %d : %s\n", TAG_IO, LED, (gpio_get_level(LED) ? "ON" : "OFF"));
             break;
         }
         case IOLEDOFF:

@@ -48,6 +48,12 @@
  */
 uint8_t MachineAddress;
 
+/**
+ * @brief 
+ * 
+ */
+uint16_t delayOverBusy;
+
 /*!
 * \fn bool saveMachineNumber(const uint8_t address)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>

@@ -182,7 +182,7 @@ static void OnDataSend(const uint8_t *macAddr, const esp_now_send_status_t statu
 */
 static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 {
-    printf("%s%s%02X:%02X:%02X:%02X:%02X:%02X : ", TAG_ESPNOW, "Données reçues de ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
+    printf("%s%s%02X:%02X:%02X:%02X:%02X:%02X : ", TAG_ESPNOW, "Données reçues du module ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
     for (uint8_t i = 0; i < len; i++)
     {
         printf("%02u ", data[i]);
@@ -254,8 +254,7 @@ static void formatSendMsg(const uint8_t addressRecipient, const Command_t comman
     }
     ESP_ERROR_CHECK(esp_now_send(macAddress, buffer, len + 6));
     free(buffer);
-    printf("%s%s%d%s", TAG_ESPNOW, "Commande ", command, " envoyée!");
-    printf("\n");
+    printf("%s%d", "- Commande : ", command);
 }
 
 /*!
@@ -355,7 +354,7 @@ uint32_t getESPNOWSerialNumber(const uint8_t address)
 {
     printf("%sDemande le numéro de série", TAG_ESPNOW);
     memset(msg_received, 0, sizeof(msg_received));
-    prepareMessageToSend(address, REQUEST_MACHINE_NUMBER, 0, NULL);
+    prepareMessageToSend(address, REQUEST_SERIAL_NUMBER, 0, NULL);
     printf("%s%s%u", TAG_ESPNOW, "Le numéro de série est : ", msg_received[6] + (msg_received[5] * 0X100) + (msg_received[4] * 0x10000));
     return (msg_received[6] + (msg_received[5] * 0X100) + (msg_received[4] * 0x10000));
 }

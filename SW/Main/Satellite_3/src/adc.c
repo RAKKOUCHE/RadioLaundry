@@ -26,7 +26,7 @@ static uint16_t adc_readed;
  * @brief 
  * 
  */
-static const adc_channel_t channel = ADC_CHANNEL_6; 
+static const adc_channel_t channel = ADC_CHANNEL_6;
 
 /*!
 * \fn uint16_t getADCValue(void)
@@ -52,6 +52,8 @@ uint16_t getADCValue(void)
 */
 void initADC(void)
 {
+    printf("%s%s", TAG_ADC, "Initialisation de l'ADC");
+    printf("\n");
     ESP_ERROR_CHECK(adc1_config_width(ADC_WIDTH_BIT_12));
     ESP_ERROR_CHECK(adc1_config_channel_atten(ADC1_CHANNEL_6, ADC_ATTEN_DB_11));
 }
@@ -66,16 +68,16 @@ void initADC(void)
 * \param vParameters 
 */
 void vTaskADC(void *vParameters)
-{    
+{
     while (1)
     {
         int adc_read = 0;
         for (int i = 0; i < NO_OF_SAMPLES; i++)
         {
-            adc_read += abs( adc1_get_raw((adc1_channel_t)channel));
+            adc_read += abs(adc1_get_raw((adc1_channel_t)channel));
         }
         adc_readed = (adc_read / NO_OF_SAMPLES);
-        printf("%s%s%d", TAG_ADC, "Valeur ADC : ",  adc_readed);
+        printf("%s%s%d\n", TAG_ADC, "Valeur ADC : ", adc_readed);
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }

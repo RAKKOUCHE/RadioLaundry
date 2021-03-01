@@ -7,7 +7,6 @@
 * \remarks None
 */
 
-
 #ifndef FLASH_H
 #define FLASH_H
 
@@ -20,13 +19,13 @@
 #include "esp_err.h"
 
 /*!
-* \fn void InitFlash(void)
+* \fn void initFlash(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
 * \brief 
 * \remarks None
 */
-void InitFlash(void);
+void initFlash(void);
 
 #endif
