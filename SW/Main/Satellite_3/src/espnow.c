@@ -256,12 +256,12 @@ static void checkheader(const uint8_t *data)
     }
     case REQUEST_MACHINE_STATUS:
     {
-
+        uint16_t result = getADCValue();
         printf("%s%s", TAG_ESPNOW, "Valeur de l'etat d'occupation.");
         boardState = ACK;
         msg_len = 2;
-        msg_buffer[1] = getADCValue() % 256;
-        msg_buffer[0] = getADCValue() / 256;
+        msg_buffer[1] = result % 256;
+        msg_buffer[0] = result / 256;
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
         break;
@@ -270,6 +270,18 @@ static void checkheader(const uint8_t *data)
     {
         printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais d'overbusy a ", saveDelayOverBusy(data[4] + (data[5] * 0x100)) ? "résussi" : "échoué", data[4] + (data[5] * 0x100));
         vACK();
+        break;
+    }
+    case REQUEST_DELAY_OVER_BUSY:
+    {
+        uint16_t result = getDelayOverBusy();
+        printf("%s%s%u", TAG_ESPNOW, "Le délai d'overbusy est de :", result);
+        boardState = ACK;
+        msg_len = 2;
+        msg_buffer[0] = result % 256;
+        msg_buffer[1] = result / 256;
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
         break;
     }
     default:

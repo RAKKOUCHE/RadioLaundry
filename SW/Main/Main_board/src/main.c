@@ -79,7 +79,7 @@ static void InitApp(void)
 */
 void app_main()
 {
-    //  uint8_t newAddress = 11;
+    //uint8_t newAddress = 11;
     printf("%s%s", TAG_MAIN, "Debut du programme");
     //Initialisation du programme
     InitApp();
@@ -94,28 +94,30 @@ void app_main()
         {
             printf("%s%s", TAG_MAIN, "Bouton utilisé");
 
-            // // //Envoie un poll.
-            //printf("\n%s%s%s\n", TAG_MAIN, "le pool a ", ESPNOWPoll(MachineAddress) ? "réussi" : "échoué");
+            //Envoie un poll.
+            printf("\n%s%s%s\n", TAG_MAIN, "le pool a ", ESPNOWPoll(MachineAddress) ? "réussi" : "échoué");
 
             // //Change l'adresse du module
             //printf("\n%s%s%s\n", TAG_MAIN, "Le changement d'adresse a ", setESPNOWNewAddress(MachineAddress, newAddress) ? "réussi" : "échoué");
 
-            // //Lecture du numéro de série de carte
-            //printf("%s%s%u", TAG_MAIN, "Le numéro de série est : ", getESPNOWSerialNumber(MachineAddress));
+            //Lecture du numéro de série de carte
+            printf("%s%s%u", TAG_MAIN, "Le numéro de série est : ", getESPNOWSerialNumber(MachineAddress));
 
-            // //Activation du relais de la machine
-            // printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, true) ? "activé" : "repos");
-            // vTaskDelay(100);
-            // printf("%s%s%s", TAG_MAIN, "Lecture de l'etat du  relais. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
-            // vTaskDelay(600);
-            // printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", ESPNOWSetStateMachineRelay(MachineAddress, false) ? "activé" : "repos");
-            // vTaskDelay(100);
-            // printf("%s%s%s", TAG_MAIN, "Lecture de l'etat du  relais. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
-            // printf("%s%s%u", TAG_MAIN, "Le niveau d'occupation est : ", getADCValueBusy(MachineAddress));
-            // printf("\n");
+            //Activation du relais de la machine
+            printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", setESPNOWMachineRelay(MachineAddress, true) ? "activé" : "repos");
+            vTaskDelay(100);
+            printf("%s%s%s", TAG_MAIN, "Lecture de l'etat du  relais. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
+            vTaskDelay(600);
+            printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", setESPNOWMachineRelay(MachineAddress, false) ? "activé" : "repos");
+            vTaskDelay(100);
+            printf("%s%s%s", TAG_MAIN, "Lecture de l'etat du  relais. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
+            printf("%s%s%u", TAG_MAIN, "Le niveau d'occupation est : ", getADCValueBusy(MachineAddress));
+            printf("\n");
 
-            printf("%s%s%s%u", TAG_MAIN, "Ecriture de délai overbusy a", setDelayOverBusy(MachineAddress, 60) ? "réussi." : "echoué" , 60);
-            
+            printf("%s%s%s%u", TAG_MAIN, "Ecriture de délai overbusy a ", setDelayOverBusy(MachineAddress, 60) ? "réussi : " : "echoué : ", 60);
+            vTaskDelay(1 * SECONDE);
+            printf("%s%s%u%s", TAG_MAIN, "Valeur du délai d'overlay : ", getDelayOverBusy(MachineAddress), " secondes.");
+
             //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))
             {

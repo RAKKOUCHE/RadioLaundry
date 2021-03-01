@@ -4,5 +4,9 @@
         "future": "cpp",
         "adc.h": "c"
     },
-    "C_Cpp.vcFormat.indent.caseLabels": true
+    "C_Cpp.vcFormat.indent.caseLabels": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "diffEditor.codeLens": true
 }

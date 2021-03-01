@@ -136,7 +136,7 @@ bool saveMachineNumber(const uint8_t address)
 }
 
 /*!
-* \fn bool saveDelayOverBusy(const uint32_t delay)
+* \fn bool saveDelayOverBusy(const uint16_t delay)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  01/03/2021
@@ -145,23 +145,38 @@ bool saveMachineNumber(const uint8_t address)
 * \param delay 
 * \return 
 */
-int nb_lus;
 bool saveDelayOverBusy(const uint16_t delay)
 {
-    uint32_t result;
-    if ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
-        (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
-        (fflush(filedata) == 0))
+    uint16_t result;
+    return ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
+            (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
+            (fflush(filedata) == 0) &&
+            (fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
+            (fread(&result, sizeof(result), 1, filedata) == 1) &&
+            (result == delay));
+}
+
+/*!
+* \fn uint16_t getDelayOverBusy(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  01/03/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+int nb_lus;
+uint16_t getDelayOverBusy(void)
+{
+    uint16_t result;
+    
+    if ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0))
     {
-        if (fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0)
-        {
-            if ((fread(&result, sizeof(result), 1, filedata) == 1))
-            {
-                return ((result == delay));
-            }
-        }
+        nb_lus = fread(&result, sizeof(result), 1, filedata);
+        return result;
     }
-    return false;
+        return 0;
+
 }
 
 /*!

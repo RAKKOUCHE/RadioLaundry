@@ -118,6 +118,7 @@ static uint8_t macAddress[] = {0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF};
 * \brief Fonction locale appelée lors du dépassement du délai autorisé pour une réponse.
 * \remarks Positionne le flag indiquant que l'opération est terminéé
 * \param[in] handle du timer
+* \return 
 */
 static void CommandTO(const TimerHandle_t handle)
 {
@@ -201,6 +202,7 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 * \date  21/02/2021
 * \brief Fonction locale d'initialisation de l'API ESP32
 * \remarks Cette  fonction doit être appelée avant toute autre opération sur ESPNOW.
+* \return 
 */
 static void InitESPNOW(void)
 {
@@ -229,6 +231,7 @@ static void InitESPNOW(void)
 * \param[in] command Header de la commande
 * \param[in] len Nombre d'octets du paramètres
 * \param[in] message Buffer contenant les paramètres
+* \return 
 */
 static void formatSendMsg(const uint8_t addressRecipient, const Command_t command, uint8_t len, const uint8_t *message)
 {
@@ -236,10 +239,12 @@ static void formatSendMsg(const uint8_t addressRecipient, const Command_t comman
     uint8_t *buffer;
     buffer = malloc(sizeof(addressRecipient) + sizeof(command) + sizeof(len) + len + sizeof(uint16_t));
     buffer[0] = addressRecipient;
-    buffer[1] = len;
     buffer[2] = HOST;
     buffer[3] = command;
-    memmove(&buffer[4], message, len);
+    if ((buffer[1] = len))
+    {
+        memmove(&buffer[4], message, len);
+    }
     LCRC = wCRC16(buffer, len + 4);
     memmove(&buffer[len + 4], &LCRC, sizeof(uint16_t));
     printf("%s%s", TAG_ESPNOW, "Données envoyées : ");
@@ -261,6 +266,7 @@ static void formatSendMsg(const uint8_t addressRecipient, const Command_t comman
 * \brief Affecte un état à la variable ESPNOWTaskState
 * \remarks None
 * \param[in] state Etat à affecter à la tâche gérant les états du module.
+* \return 
 */
 static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 {
@@ -268,7 +274,7 @@ static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 }
 
 /*!
-* \fn void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const uint8_t *data)
+* \fn void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const void *data)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  25/02/2021
@@ -278,16 +284,15 @@ static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 * \param[in] header Commande a exécuter.
 * \param[in] len Nombre de paramètres contenu dans le buffer.
 * \param[in] data Buffer contenant les paramètres.
-* \return 
 */
 void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const void *data)
 {
     isCommandFinished = false;
     xTimerStart(hCommandTO, 1 * SECONDE);
+    memset(msg_received, 0, sizeof(msg_received));
     msg_address_recipient = address;
     msg_cmd = header;
-    msg_len = len;
-    if (len)
+    if ((msg_len = len))
     {
         memmove(msg_buffer, data, len);
     }
@@ -313,7 +318,7 @@ bool ESPNOWPoll(const uint8_t address)
 {
     printf("%s%s", TAG_ESPNOW, "Poll");
     prepareMessageToSend(address, SIMPLEPOLL, 0, NULL);
-    printf("%s%s%s", TAG_ESPNOW, "Pool ", (msg_received[0] == HOST) &&  (msg_received[3] == ACK) ? "résussi" : "échoué");
+    printf("%s%s%s", TAG_ESPNOW, "Pool ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "résussi" : "échoué");
     return msg_received[0] == HOST;
 }
 
@@ -356,7 +361,7 @@ uint32_t getESPNOWSerialNumber(const uint8_t address)
 }
 
 /*!
-* \fn bool setESPNOWMachineRelay(uint8_t address, bool isActive)
+* \fn bool setESPNOWMachineRelay(const uint8_t address, const bool isActive)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  25/02/2021
@@ -401,12 +406,41 @@ int getESPNOWStateMachineRelay(uint8_t address)
     }
 }
 
+/*!
+* \fn bool setDelayOverBusy(uint8_t address, uint16_t delay)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  01/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \param delay 
+* \return 
+*/
 bool setDelayOverBusy(uint8_t address, uint16_t delay)
 {
-    printf("%s%s%u", TAG_ESPNOW, "Enregistrement du dÉlai overbusy : ", delay);
+    printf("%s%s%u", TAG_ESPNOW, "Enregistrement du délai overbusy : ", delay);
     prepareMessageToSend(address, MODIFY_DELAY_OVER_BUSY, sizeof(delay), &delay);
     printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "réussie" : "échouée");
     return (msg_received[0] == HOST) && (msg_received[3] == ACK);
+}
+
+/*!
+* \fn uint16_t getDelayOverBusy(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  01/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
+uint16_t getDelayOverBusy(uint8_t address)
+{
+    printf("%s%s", TAG_ESPNOW, "Lecture du délai overbusy");
+    prepareMessageToSend(address, REQUEST_DELAY_OVER_BUSY, 0, NULL);
+    printf("%s%s%u", TAG_ESPNOW, "Le délai d'overbusy est de : ", msg_received[4] + (msg_received[5] * 0X100));
+    return (msg_received[4] + (msg_received[5] * 0X100));
 }
 
 /*!

@@ -61,7 +61,7 @@ uint8_t MachineAddress;
 
 bool saveMachineNumber(const uint8_t address);
 /*!
-* \fn bool saveDelayOverBusy(const uint32_t delay)
+* \fn bool saveDelayOverBusy(const uint16_t delay)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  01/03/2021
@@ -71,6 +71,17 @@ bool saveMachineNumber(const uint8_t address);
 * \return 
 */
 bool saveDelayOverBusy(const uint16_t delay);
+
+/*!
+* \fn uint16_t getDelayOverBusy(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  01/03/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+uint16_t getDelayOverBusy(void);
 
 /*!
 * \fn void initParameters(void)
