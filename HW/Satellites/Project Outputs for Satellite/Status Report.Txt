@@ -1,10 +1,20 @@
-Output: Bill of Materials
-Type  : BOM
+Output: Gerber Files
+Type  : Gerber
 From  : Variant [[No Variations]] of Project [Satellite.PrjPcb]
-   Generated File[Bill of Materials-Satellite.xls]
+   Generated File[Satellite.GTO]
+   Generated File[Satellite.GTP]
+   Generated File[Satellite.GTS]
+   Generated File[Satellite.GTL]
+   Generated File[Satellite.GBL]
+   Generated File[Satellite.GBO]
+   Generated File[Satellite.GM1]
+   Generated File[Satellite.GKO]
+   Generated File[Satellite.RUL]
+   Generated File[Satellite.EXTREP]
+   Generated File[Satellite.REP]
 
 
-Files Generated   : 1
+Files Generated   : 11
 Documents Printed : 0
 
-Finished Output Generation At 23:05:03 On 10/02/2021
+Finished Output Generation At 15:30:58 On 02/03/2021

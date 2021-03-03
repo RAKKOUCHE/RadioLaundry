@@ -49,7 +49,7 @@ typedef enum __attribute__((__packed__))
     MODIFY_MACHINE_RELAY_STATE = REQUEST_SERIAL_NUMBER - 1,       /*!< Active ou desactive le relais qui contrôle la machine.*/
     REQUEST_MACHINE_RELAY_STATE = MODIFY_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état du relais qui contrôle la machine.*/
 
-    REQUEST_MACHINE_BUSY_LEVEL = REQUEST_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre l'état d'occupation de la machine.*/
+    REQUEST_MACHINE_BUSY_LEVEL = REQUEST_MACHINE_RELAY_STATE - 1, /*!< Le satellite renvoie en paramètre la valeur d'occupation de la machine.*/
 
     MODIFY_DELAY_OVER_BUSY = REQUEST_MACHINE_BUSY_LEVEL - 1, /*!< Modifie le temps de suroccupation du satellite.*/
     REQUEST_DELAY_OVER_BUSY = MODIFY_DELAY_OVER_BUSY - 1,    /*!< Le satellite renvoie le temps suroccupation.*/
@@ -59,10 +59,10 @@ typedef enum __attribute__((__packed__))
 
     REQUEST_ISMAINPRESENT = REQUEST_BUSY_LEVEL - 1, /*!< Retourne la présence du secteur.*/
 
-    MODIFY_MAIN_POWER = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
-    REQUEST_MAIN_POWER = MODIFY_MAIN_POWER - 1,    /*!< Retourne la position du relais de fourniture de courant à la machine.*/
+    MODIFY_MAIN_RELAY = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
+    REQUEST_MAIN_RELAY = MODIFY_MAIN_RELAY - 1,    /*!< Retourne la position du relais de fourniture de courant à la machine.*/
 
-    REQUEST_MACHINE_LEVEL = REQUEST_MAIN_POWER - 1, /*!< Retourne le niveau des produits dans la machine.*/
+    REQUEST_MACHINE_LEVEL = REQUEST_MAIN_RELAY - 1, /*!< Retourne le niveau des produits dans la machine.*/
     REQUEST_FW_VERSION = REQUEST_MACHINE_LEVEL - 1, /*!<Retourne la version du satellite.*/
 
 } Command_t;

@@ -96,6 +96,7 @@ void app_main()
             printf("%s%s", TAG_MAIN, "Bouton utilisé");
             while (!gpio_get_level(BUTTON))
             {
+                vTaskDelay(1);
             };
         }
         //Arrête le glignotement de la led

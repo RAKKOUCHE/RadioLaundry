@@ -223,8 +223,7 @@ static void checkheader(const uint8_t *data)
     }
     case MODIFY_MACHINE_RELAY_STATE:
     {
-
-        printf("%s%s", TAG_ESPNOW, "Active ou desactive le relais");
+        printf("%s%s", TAG_ESPNOW, "Active ou desactive le relais d'activation");
         setIOState(data[4] ? IORELAYMACHINEON : IORELAYMACHINEOFF);
         while (getIOState() != IOTASKIDLE)
         {
@@ -244,7 +243,7 @@ static void checkheader(const uint8_t *data)
     }
     case REQUEST_MACHINE_RELAY_STATE:
     {
-        printf("%s%s", TAG_ESPNOW, "L'état du relais");
+        printf("%s%s", TAG_ESPNOW, "L'état du relais d'action");
         boardState = ACK;
         msg_len = 1;
         msg_buffer[0] = (uint8_t)gpio_get_level(CTRL_MACHINE);
@@ -279,6 +278,37 @@ static void checkheader(const uint8_t *data)
         boardState = ACK;
         msg_len = sizeof(delayOverBusy);
         memmove(msg_buffer, &delayOverBusy, sizeof(delayOverBusy));
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
+        break;
+    }
+    case MODIFY_MAIN_RELAY:
+    {
+        printf("%s%s", TAG_ESPNOW, "Active ou desactive le relais secteur\n");
+        setIOState(data[4] ? IORELAYMAINON : IORELAYMAINOFF);
+        while (getIOState() != IOTASKIDLE)
+        {
+            vTaskDelay(1);
+        };
+        if (gpio_get_level(CTRL_MACHINE) == data[4])
+        {
+            printf("%s%s%s.", TAG_ESPNOW, "Relais secteur ", data[4] ? "activé" : "desactivé");
+            vACK();
+        }
+        else
+        {
+            printf("%s%s", TAG_ESPNOW, "Echec d'activation du relais secteur.");
+            vNACK();
+        }
+        break;
+    }
+    case REQUEST_MAIN_RELAY:
+    {
+        printf("%s%s", TAG_ESPNOW, "L'état du relais secteur.");
+        boardState = ACK;
+        msg_len = 1;
+        msg_buffer[0] = (uint8_t)gpio_get_level(CTRL_MAIN);
+        printf("%s%s%s", TAG_ESPNOW, "Le relais secteur est ", gpio_get_level(CTRL_MAIN) ? "ON" : "OFF");
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
         break;

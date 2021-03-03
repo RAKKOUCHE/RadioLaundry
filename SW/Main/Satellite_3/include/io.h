@@ -107,6 +107,8 @@ typedef enum
     IOLEDOFF,
     IORELAYMACHINEON,
     IORELAYMACHINEOFF,
+    IORELAYMAINON,
+    IORELAYMAINOFF,
 } IOTaskState_t;
 
 /*!

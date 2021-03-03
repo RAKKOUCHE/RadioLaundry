@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
-PCB File : D:\Projets\RadioLaundry\HW\Satellites\Satellite.PcbDoc
-Date     : 12/02/2021
-Time     : 18:19:36
+PCB File : D:\Projets\RADIOLAUNDRY\HW\Satellites\Satellite.PcbDoc
+Date     : 03/03/2021
+Time     : 05:23:20
 
 Processing Rule : Clearance Constraint (Gap=10mil) (InNamedPolygon('GND_L01_P009')),(All)
 Rule Violations :0
@@ -69,4 +69,4 @@ Rule Violations :0
 
 Violations Detected : 0
 Waived Violations : 0
-Time Elapsed        : 00:00:02
+Time Elapsed        : 00:00:01

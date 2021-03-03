@@ -373,7 +373,7 @@ uint32_t getESPNOWSerialNumber(const uint8_t address)
 bool setESPNOWMachineRelay(const uint8_t address, const bool isActive)
 {
     uint8_t active = (uint8_t)isActive;
-    printf("%s%s%s", TAG_ESPNOW, isActive ? "Active" : "Desactive", " le relais");
+    printf("%s%s%s", TAG_ESPNOW, isActive ? "Active" : "Desactive", " le relais machine");
     prepareMessageToSend(address, MODIFY_MACHINE_RELAY_STATE, 1, &active);
     printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "réussie" : "échouée");
     return ((msg_received[0] == HOST) && (msg_received[3] == ACK)) ? isActive : false;
@@ -384,7 +384,7 @@ bool setESPNOWMachineRelay(const uint8_t address, const bool isActive)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  26/02/2021
-* \brief Renvoi l'état du relais.
+* \brief Renvoi l'état du relais machine
 * \remarks None
 * \param address 
 * \return 
@@ -440,6 +440,52 @@ uint16_t getDelayOverBusy(uint8_t address)
     prepareMessageToSend(address, REQUEST_DELAY_OVER_BUSY, 0, NULL);
     printf("%s%s%u", TAG_ESPNOW, "Le délai d'overbusy est de : ", msg_received[4] + (msg_received[5] * 0X100));
     return (msg_received[4] + (msg_received[5] * 0X100));
+}
+
+/*!
+* \fn bool setESPNOWMainRelay(const uint8_t address, const bool isActive)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  25/02/2021
+* \brief Active ou desactive le relais du secteur
+* \remarks None
+* \param[in] address Adresse de la machine sur laquelle l'action se produira
+* \param[in] isActive Flag indiquant si le relais sera activé ou relaché.
+* \return true si l'action s'est effectuée correctement.
+*/
+bool setESPNOWMainRelay(const uint8_t address, const bool isActive)
+{
+    uint8_t active = (uint8_t)isActive;
+    printf("%s%s%s", TAG_ESPNOW, isActive ? "Active" : "Desactive", " le relais secteur");
+    prepareMessageToSend(address, MODIFY_MAIN_RELAY, 1, &active);
+    printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "réussie" : "échouée");
+    return ((msg_received[0] == HOST) && (msg_received[3] == ACK)) ? isActive : false;
+}
+
+/*!
+* \fn int getESPNOWStateMainRelay(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  26/02/2021
+* \brief Renvoi l'état du relais secteur.
+* \remarks None
+* \param address 
+* \return 
+*/
+int getESPNOWStateMainRelay(uint8_t address)
+{
+    printf("%s%s", TAG_ESPNOW, "Demande l'état du relais secteur");
+    prepareMessageToSend(address, REQUEST_MAIN_RELAY, 0, NULL);
+    if ((msg_received[0] == HOST) && (msg_received[3] == ACK))
+    {
+        printf("%s%s%s", TAG_ESPNOW, "Le relais est : ", msg_received[4] ? "activé" : "repos");
+        return msg_received[4];
+    }
+    else
+    {
+        printf("%s%s", TAG_ESPNOW, "Echec de la demande");
+        return false;
+    }
 }
 
 /*!

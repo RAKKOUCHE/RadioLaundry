@@ -69,8 +69,7 @@ static void InitIO(void)
     ESP_ERROR_CHECK(gpio_set_level(LED_2, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MACHINE, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MAIN, LO));
-    printf("%s%s", TAG_IO, "IOs iinitialisés");
-    printf("\n");
+    printf("%s%s", TAG_IO, "IOs iinitialisés\n");
 }
 
 /*!
@@ -172,6 +171,20 @@ void vTaskIO(void *VParameter)
         case IORELAYMACHINEOFF:
         {
             gpio_set_level(CTRL_MACHINE, LO);
+            printf("%sRelais machine desactivé", TAG_IO);
+            setIOState(IOTASKIDLE);
+            break;
+        }
+        case IORELAYMAINON:
+        {
+            gpio_set_level(CTRL_MAIN, HI);
+            printf("%sRelais machine activé", TAG_IO);
+            setIOState(IOTASKIDLE);
+            break;
+        }
+        case IORELAYMAINOFF:
+        {
+            gpio_set_level(CTRL_MAIN, LO);
             printf("%sRelais machine desactivé", TAG_IO);
             setIOState(IOTASKIDLE);
             break;
