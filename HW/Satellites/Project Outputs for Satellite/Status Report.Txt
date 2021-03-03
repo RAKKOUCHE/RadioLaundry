@@ -1,20 +1,14 @@
-Output: Gerber Files
-Type  : Gerber
-From  : Variant [[No Variations]] of Project [Satellite.PrjPcb]
-   Generated File[Satellite.GTO]
-   Generated File[Satellite.GTP]
-   Generated File[Satellite.GTS]
-   Generated File[Satellite.GTL]
-   Generated File[Satellite.GBL]
-   Generated File[Satellite.GBO]
-   Generated File[Satellite.GM1]
-   Generated File[Satellite.GKO]
-   Generated File[Satellite.RUL]
-   Generated File[Satellite.EXTREP]
-   Generated File[Satellite.REP]
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Satellite2.PcbDoc]
+   Generated File[NC Drill Files-RoundHoles.TXT]
+   Generated File[NC Drill Files-SquareHoles.TXT]
+   Generated File[NC Drill Files-SlotHoles.TXT]
+   Generated File[NC Drill Files.LDP]
+   Generated File[NC Drill Files.DRR]
 
 
-Files Generated   : 11
+Files Generated   : 5
 Documents Printed : 0
 
-Finished Output Generation At 15:30:58 On 02/03/2021
+Finished Output Generation At 22:33:38 On 03/03/2021

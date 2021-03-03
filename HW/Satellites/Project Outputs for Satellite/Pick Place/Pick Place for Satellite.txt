@@ -1,78 +1,78 @@
 Altium Designer Pick and Place Locations
-D:\Projets\RadioLaundry\HW\Satellites\Project Outputs for Satellite\Pick Place\Pick Place for Satellite.txt
+D:\Projets\RADIOLAUNDRY\HW\Satellites\Project Outputs for Satellite\Pick Place\Pick Place for Satellite.txt
 
 ========================================================================================================================
 File Design Information:
 
-Date:       10/02/21
-Time:       23:04
-Revision:   Not in VersionControl
+Date:       03/03/21
+Time:       21:59
+Revision:   175a1896f976d8c4f5ffcfa6c89ef8ece4dc9346
 Variant:    No variations
 Units used: mil
 
 Designator Comment        Layer    Footprint         Center-X(mil) Center-Y(mil) Rotation Description                                                   
-P5         PROG           TopLayer HE10-6_TH-SMD     3085.000      290.000       180      "Header, 3-Pin, Dual row"                                     
-P6         JTAG           TopLayer HE10-10_TH-SMD    3355.000      1965.000      0        "Header, 5-Pin, Dual row"                                     
-V3         VIS            TopLayer HOLE_M4           200.000       3690.000      0        ""                                                            
-V4         VIS            TopLayer HOLE_M4           200.000       196.000       0        ""                                                            
-V2         VIS            TopLayer HOLE_M4           3600.000      200.000       0        ""                                                            
-V1         VIS            TopLayer HOLE_M4           3600.000      3690.000      0        ""                                                            
-P3         "CTRL MAIN"    TopLayer CO3P508_-_2       200.000       1785.000      270      "Header, 3-Pin"                                               
-P1         MACHINE        TopLayer CO5P508-RIGHT     196.000       2825.000      90       "Header, 5-Pin"                                               
-U2         "LM1117 ADJ"   TopLayer SOT223            1575.000      3655.000      270      "800mA Adjustable low-Dropout Linear Regulator, 3-pin TO-252" 
-P2         BUSY           TopLayer CO4P508           206.500       836.000       270      "Header, 4-Pin"                                               
-P4         220VAC         TopLayer CO3P381_-_RIGHT   835.000       205.000       180      "Header, 3-Pin"                                               
-U3         ESP32-WROOM-32 TopLayer ESP32-WROOM-32X   2974.646      3255.315      360      ""                                                            
-U1         ACS712         TopLayer SOIC8             625.000       835.000       0        "HALL EFFECT CURRENT SENSOR"                                  
-S1         "SW DIP-2"     TopLayer DIP_SWITCH_2_POS  3500.000      880.000       270      "DIP Switch, 2 Position, SPST"                                
-R23        56K            TopLayer R0805             1925.000      430.000       360      Resistor                                                      
-R22        1K             TopLayer R_0805(2012)      2070.000      350.000       360      "Resistor SMD 0805 1K"                                        
-R21        100            TopLayer R_0805(2012)      3685.000      1865.000      360      "Resistor SMD 0805 100"                                       
-R20        100            TopLayer R_0805(2012)      2820.000      2595.000      90       "Resistor SMD 0805 100"                                       
-R19        150            TopLayer R_0805(2012)      1965.000      200.000       360      "Resistor SMD 0805 150"                                       
-R18        100            TopLayer R_0805(2012)      2920.000      2595.000      90       "Resistor SMD 0805 100"                                       
-R17        56K            TopLayer R_0805(2012)      2390.000      425.000       360      Resistor                                                      
-R16        4.7K           TopLayer R_0805(2012)      1790.000      3345.000      270      "Resistor SMD 0805 4.7K"                                      
-R15        100            TopLayer R_0805(2012)      3020.000      2595.000      90       "Resistor SMD 0805 100"                                       
-R14        1K             TopLayer R_0805(2012)      2540.000      345.000       360      "Resistor SMD 0805 1K"                                        
-R13        150            TopLayer R_0805(2012)      2430.000      200.000       360      "Resistor SMD 0805 150"                                       
-R12        10K            TopLayer R_0805(2012)      3200.000      2595.000      270      "Resistor SMD 0805 10K"                                       
-R11        4.7K           TopLayer R_0805(2012)      1965.000      3345.000      90       "Resistor SMD 0805 4.7K"                                      
-R10        10K            TopLayer R_0805(2012)      2165.000      3540.000      360      "Resistor SMD 0805 10K"                                       
-R9         2.2K           TopLayer R_0805(2012)      1180.000      3740.000      360      "Resistor SMD 0805 2.2K"                                      
-R8         150            TopLayer R_0805(2012)      2365.000      2675.000      180      "Resistor SMD 0805 150"                                       
-R7         1.5K           TopLayer R_0805(2012)      1255.000      3655.000      360      "Resistor SMD 0805 1.5K"                                      
-R6         56K            TopLayer R0805             1730.000      1545.000      270      Resistor                                                      
-R5         150            TopLayer R_0805(2012)      1660.000      1965.000      0        "Resistor SMD 0805 150"                                       
-R4         56K            TopLayer R0805             1745.000      2480.000      270      Resistor                                                      
-R3         150            TopLayer R_0805(2012)      1765.000      2675.000      360      "Resistor SMD 0805 150"                                       
-R2         1K             TopLayer R_0805(2012)      1880.000      2980.000      180      "Resistor SMD 0805 1K"                                        
-R1         56K            TopLayer R_0805(2012)      2050.000      3020.000      90       "Resistor SMD 0805 56K"                                       
-Q4         2N7002         TopLayer SOT23             1925.000      310.000       360      "N-channel Enhancement Mode Field-effect Transistor"          
-Q3         2N7002         TopLayer SOT23             2390.000      305.000       360      "N-channel Enhancement Mode Field-effect Transistor"          
-Q2         2N7002         TopLayer SOT23             1605.000      1545.000      270      "N-channel Enhancement Mode Field-effect Transistor"          
-Q1         2N7002         TopLayer SOT23             1630.000      2480.000      270      "N-channel Enhancement Mode Field-effect Transistor"          
-PU1        IRM-05-5       TopLayer IRM-05-X.X        2588.386      1457.874      90       "POWER SUPPLY 5V 1A"                                          
-L1         47µH           TopLayer SELF_DO3316P      730.000       3425.000      90       ""                                                            
-K2         "RELAY NAISJS" TopLayer RELAIG5L          1039.800      1776.200      180      ""                                                            
-K1         "RELAY NAISJS" TopLayer RELAIG5L          1044.800      2661.200      180      ""                                                            
-F1         1A             TopLayer FUS5X20           1465.000      750.000       270      "Fuse holder 5x20 SMD"                                        
-D9         RED            TopLayer 0603-LEDR         2115.000      225.000       270      "Surface Mount Chip LED, Red"                                 
-D8         RED            TopLayer 0603-LEDR         2575.000      230.000       270      "Surface Mount Chip LED, Red"                                 
-D7         BAT54S         TopLayer SOT23             2165.000      3660.000      180      "Schottky Barrier Double Diode"                               
-D6         RED            TopLayer 0603-LEDR         2355.000      2510.000      180      "Surface Mount Chip LED, Red"                                 
-D5         BAT54S         TopLayer SOT23             1520.000      2005.000      270      "Schottky Barrier Double Diode"                               
-D4         RED            TopLayer 0603-LEDR         1675.000      2045.000      0        "Surface Mount Chip LED, Red"                                 
-D3         BAT54S         TopLayer SOT23             1620.000      2715.000      270      "Schottky Barrier Double Diode"                               
-D2         RED            TopLayer 0603-LEDR         1775.000      2755.000      0        "Surface Mount Chip LED, Red"                                 
-D1         BAT54S         TopLayer SOT23             2180.000      2930.000      270      "Schottky Barrier Double Diode"                               
-C10        100nF          TopLayer C_0805(2012)X0.65 1880.000      3345.000      270      Capacitor                                                     
-C9         10µF           TopLayer C_0805(2012)X0.65 2495.000      3575.000      90       "Capacitor non polarized 10µF SMD 0805"                       
-C8         100nF          TopLayer C_0805(2012)X0.65 2400.000      3575.000      270      Capacitor                                                     
-C7         10µF           TopLayer C_0805(2012)X0.65 2295.000      3575.000      90       "Capacitor non polarized 10µF SMD 0805"                       
-C6         10µF           TopLayer C_0805(2012)X0.65 1220.000      3525.000      270      "Capacitor non polarized 10µF SMD 0805"                       
-C5         10µF           TopLayer C_0805(2012)X0.65 2565.000      2510.000      360      "Capacitor non polarized 10µF SMD 0805"                       
-C4         100µF          TopLayer KEMET_63          1370.000      3295.000      180      "SMD Polarized Capacitor 16V"                                 
-C2         100nF          TopLayer C_0805(2012)X0.65 2050.000      2870.000      90       Capacitor                                                     
-C3         1nF            TopLayer C_0805(2012)X0.65 905.000       810.000       360      Capacitor                                                     
-C1         100nF          TopLayer C_0805(2012)X0.65 905.000       910.000       180      Capacitor                                                     
+U3         ESP32-WROOM-32 TopLayer ESP32-WROOM-32X   2974.646      3100.315      360      ""                                                            
+P4         220VAC         TopLayer CO3P381_-_RIGHT   830.000       200.000       180      "Header, 3-Pin"                                               
+PU1        IRM-05-5       TopLayer IRM-05-X.X        2396.457      1487.874      90       "POWER SUPPLY 5V 1A"                                          
+P5         PROG           TopLayer HE10-6_TH-SMD     3040.000      295.000       180      "Header, 3-Pin, Dual row"                                     
+P6         JTAG           TopLayer HE10-10_TH-SMD    3350.000      1995.000      0        "Header, 5-Pin, Dual row"                                     
+V3         VIS            TopLayer HOLE_M4           174.000       3372.000      0        ""                                                            
+V4         VIS            TopLayer HOLE_M4           173.166       177.166       0        ""                                                            
+V2         VIS            TopLayer HOLE_M4           3550.000      180.000       0        ""                                                            
+V1         VIS            TopLayer HOLE_M4           3550.000      3375.000      0        ""                                                            
+P3         "CTRL MAIN"    TopLayer CO3P508_-_2       210.000       1670.000      270      "Header, 3-Pin"                                               
+P1         MACHINE        TopLayer CO5P508-RIGHT     206.000       2625.000      90       "Header, 5-Pin"                                               
+U2         "LM1117 ADJ"   TopLayer SOT223            1905.000      3220.000      270      "800mA Adjustable low-Dropout Linear Regulator, 3-pin TO-252" 
+P2         BUSY           TopLayer CO4P508           211.500       821.000       270      "Header, 4-Pin"                                               
+U1         ACS712         TopLayer SOIC8             675.000       865.000       0        "HALL EFFECT CURRENT SENSOR"                                  
+S1         "SW DIP-2"     TopLayer DIP_SWITCH_2_POS  3200.000      980.000       270      "DIP Switch, 2 Position, SPST"                                
+R23        56K            TopLayer R_0805(2012)      1920.000      460.000       360      Resistor                                                      
+R22        1K             TopLayer R_0805(2012)      2065.000      380.000       360      "Resistor SMD 0805 1K"                                        
+R21        100            TopLayer R_0805(2012)      3315.000      1450.000      180      "Resistor SMD 0805 100"                                       
+R20        100            TopLayer R_0805(2012)      2800.000      2600.000      90       "Resistor SMD 0805 100"                                       
+R19        150            TopLayer R_0805(2012)      1960.000      230.000       360      "Resistor SMD 0805 150"                                       
+R18        100            TopLayer R_0805(2012)      2480.000      2795.000      360      "Resistor SMD 0805 100"                                       
+R17        56K            TopLayer R_0805(2012)      2385.000      455.000       360      Resistor                                                      
+R16        4.7K           TopLayer R_0805(2012)      1600.000      2195.000      270      "Resistor SMD 0805 4.7K"                                      
+R15        100            TopLayer R_0805(2012)      2475.000      2875.000      360      "Resistor SMD 0805 100"                                       
+R14        1K             TopLayer R_0805(2012)      2535.000      375.000       360      "Resistor SMD 0805 1K"                                        
+R13        150            TopLayer R_0805(2012)      2425.000      230.000       360      "Resistor SMD 0805 150"                                       
+R12        10K            TopLayer R_0805(2012)      3295.000      2600.000      270      "Resistor SMD 0805 10K"                                       
+R11        4.7K           TopLayer R_0805(2012)      1775.000      2195.000      90       "Resistor SMD 0805 4.7K"                                      
+R10        10K            TopLayer R_0805(2012)      2405.000      3170.000      180      "Resistor SMD 0805 10K"                                       
+R9         2.2K           TopLayer R_0805(2012)      1540.000      3270.000      90       "Resistor SMD 0805 2.2K"                                      
+R8         150            TopLayer R_0805(2012)      2345.000      2705.000      180      "Resistor SMD 0805 150"                                       
+R7         1.5K           TopLayer R_0805(2012)      1625.000      3270.000      270      "Resistor SMD 0805 1.5K"                                      
+R6         56K            TopLayer R_0805(2012)      1740.000      1675.000      270      Resistor                                                      
+R5         150            TopLayer R_0805(2012)      1735.000      1935.000      0        "Resistor SMD 0805 150"                                       
+R4         56K            TopLayer R_0805(2012)      1740.000      2510.000      270      Resistor                                                      
+R3         150            TopLayer R_0805(2012)      1760.000      2705.000      360      "Resistor SMD 0805 150"                                       
+R2         1K             TopLayer R_0805(2012)      725.000       3135.000      180      "Resistor SMD 0805 1K"                                        
+R1         56K            TopLayer R_0805(2012)      2075.000      2805.000      90       "Resistor SMD 0805 56K"                                       
+Q4         2N7002         TopLayer SOT23             1920.000      340.000       360      "N-channel Enhancement Mode Field-effect Transistor"          
+Q3         2N7002         TopLayer SOT23             2385.000      335.000       360      "N-channel Enhancement Mode Field-effect Transistor"          
+Q2         2N7002         TopLayer SOT23             1595.000      1675.000      270      "N-channel Enhancement Mode Field-effect Transistor"          
+Q1         2N7002         TopLayer SOT23             1615.000      2510.000      270      "N-channel Enhancement Mode Field-effect Transistor"          
+L1         47µH           TopLayer SELF4.5X4X3.2     1905.000      2930.000      90       ""                                                            
+K2         "RELAY NAISJS" TopLayer RELAIG5L          1034.800      1806.200      180      ""                                                            
+K1         "RELAY NAISJS" TopLayer RELAIG5L          1039.800      2691.200      180      ""                                                            
+F1         1A             TopLayer FUS5X20           1360.000      865.000       270      "Fuse holder 5x20 SMD"                                        
+D9         RED            TopLayer 0603-LEDR         2110.000      260.000       270      "Surface Mount Chip LED, Red"                                 
+D8         RED            TopLayer 0603-LEDR         2570.000      255.000       270      "Surface Mount Chip LED, Red"                                 
+D7         BAT54S         TopLayer SOT23             2405.000      3305.000      90       "Schottky Barrier Double Diode"                               
+D6         RED            TopLayer 0603-LEDR         2310.000      2475.000      90       "Surface Mount Chip LED, Red"                                 
+D5         BAT54S         TopLayer SOT23             1595.000      1975.000      270      "Schottky Barrier Double Diode"                               
+D4         RED            TopLayer 0603-LEDR         1745.000      2015.000      0        "Surface Mount Chip LED, Red"                                 
+D3         BAT54S         TopLayer SOT23             1615.000      2745.000      270      "Schottky Barrier Double Diode"                               
+D2         RED            TopLayer 0603-LEDR         1825.000      2615.000      180      "Surface Mount Chip LED, Red"                                 
+D1         BAT54S         TopLayer SOT23             2195.000      2770.000      270      "Schottky Barrier Double Diode"                               
+C10        100nF          TopLayer C_0805(2012)X0.65 1685.000      2195.000      270      Capacitor                                                     
+C9         10µF           TopLayer C_0805(2012)X0.65 2250.000      2965.000      180      "Capacitor non polarized 10µF SMD 0805"                       
+C8         100nF          TopLayer C_0805(2012)X0.65 2250.000      3065.000      360      Capacitor                                                     
+C7         10µF           TopLayer C_0805(2012)X0.65 2245.000      3170.000      180      "Capacitor non polarized 10µF SMD 0805"                       
+C6         10µF           TopLayer C_0805(2012)X0.65 1610.000      3130.000      180      "Capacitor non polarized 10µF SMD 0805"                       
+C5         10µF           TopLayer C_0805(2012)X0.65 2525.000      2445.000      360      "Capacitor non polarized 10µF SMD 0805"                       
+C4         100µF          TopLayer KEMET_63          1220.000      3270.000      180      "SMD Polarized Capacitor 16V"                                 
+C2         100nF          TopLayer C_0805(2012)X0.65 2115.000      2620.000      180      Capacitor                                                     
+C3         1nF            TopLayer C_0805(2012)X0.65 960.000       840.000       360      Capacitor                                                     
+C1         100nF          TopLayer C_0805(2012)X0.65 960.000       940.000       180      Capacitor                                                     

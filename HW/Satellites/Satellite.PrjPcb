@@ -113,24 +113,7 @@ GenerateClassCluster=0
 DocumentUniqueId=COXLQAVC
 
 [Document5]
-DocumentPath=Satellite.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=WLTWXPOJ
-
-[Document6]
-DocumentPath=Satellite.OutJob
+DocumentPath=Satellite2.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -146,7 +129,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document7]
+[Document6]
 DocumentPath=Satellite.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -163,6 +146,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document7]
+DocumentPath=Satellite2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=FXEPLQXU
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Satellite\Test Points\Assembly Testpoint Report for Satellite.csv
 DItemRevisionGUID=
@@ -172,119 +172,111 @@ DocumentPath=Project Outputs for Satellite\BOM\Bill of Materials-Satellite.xls
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Satellite\Design Rule Check - Satellite.html
+DocumentPath=Project Outputs for Satellite\BOM\Bill of Materials.xls
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Satellite\Pick Place\Pick Place for Satellite.txt
+DocumentPath=Project Outputs for Satellite\Design Rule Check - Satellite2.html
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Satellite\NC Drill\Satellite-RoundHoles.TXT
+DocumentPath=Project Outputs for Satellite\Design Rule Check - Satellite.html
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Satellite\NC Drill\Satellite-SlotHoles.TXT
+DocumentPath=Project Outputs for Satellite\Pick Place\Generates pick and place files.txt
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Satellite\NC Drill\Satellite.DRR
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.EXTREP
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.EXTREP
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GBL
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GBL
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GBO
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GBO
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GBS
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GKO
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GKO
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.REP
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GM1
+DocumentPath=Project Outputs for Satellite\Gerber\Gerber Files.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GM1
+DocumentPath=Project Outputs for Satellite\NC Drill\NC Drill Files-RoundHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GTL
+DocumentPath=Project Outputs for Satellite\NC Drill\NC Drill Files-SlotHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GTL
+DocumentPath=Project Outputs for Satellite\NC Drill\NC Drill Files-SquareHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GTO
+DocumentPath=Project Outputs for Satellite\NC Drill\NC Drill Files.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GTO
+DocumentPath=Project Outputs for Satellite\NC Drill\NC Drill Files.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GTP
+DocumentPath=Project Outputs for Satellite\Pick Place\Pick Place for Satellite.txt
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.GTS
+DocumentPath=Project Outputs for Satellite\NC Drill\Satellite-RoundHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.GTS
+DocumentPath=Project Outputs for Satellite\NC Drill\Satellite-SlotHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for Satellite\NC Drill\Satellite.LDP
+DocumentPath=Project Outputs for Satellite\NC Drill\Satellite.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for Satellite\PCB 3D Print\Satellite.png
+DocumentPath=Project Outputs for Satellite\NC Drill\Satellite.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.REP
+DocumentPath=Project Outputs for Satellite\PCB 3D Print\Satellite.png
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.REP
-DItemRevisionGUID=
-
-[GeneratedDocument30]
-DocumentPath=Project Outputs for Satellite\Gerber\Satellite.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument31]
-DocumentPath=Project Outputs for Satellite\Gerber Output\Satellite.RUL
+DocumentPath=Project Outputs for Satellite\Test Points\Test Point Report.csv
 DItemRevisionGUID=
 
 [SearchPath1]
@@ -321,9 +313,6 @@ OutputJobsCount=0
 ContentTypeGUID=0D12F8DC-E60C-11DF-B822-12313F0024A2
 ConfigurationType=Assembly
 
-[Generic_EDE]
-OutputDir=
-
 [Generic_PCB]
 Collation=True
 Copies=1
@@ -340,6 +329,9 @@ PageDef.mmMarginLeft=10160
 PageDef.mmMarginRight=10160
 PageDef.mmMarginTop=6350
 PageDef.mmMarginBottom=6350
+
+[Generic_EDE]
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs

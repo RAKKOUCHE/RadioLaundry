@@ -616,12 +616,12 @@ OutputEnabled14_OutputMedium4=0
 OutputDefault14=0
 PageOptions14=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=2.13|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
 Configuration14_Name1=OutputConfigurationParameter1
-Configuration14_Item1=Record=Pcb3DPrintView|ResX=150|ResY=150|ViewX=38000000|ViewY=38900000|LookAtX=21640000|LookAtY=20050000|LookAtZ=0|UpX=0|UpY=1|UpZ=0|FOV=0|QuatX=0|QuatY=0|QuatZ=0|QuatW=1|Zoom=5.03341902313625E-5|UnitsPercent=True|UnitsDPI=True|LockResAspect=True|ViewConfigType=.config_3d|CustomCamera=False|ViewFromTop=True|ScreenWidth=0|ScreenHeight=0|ImageOutputType=4|ViewConfig= |DocumentPath=D:\Projets\RadioLaundry\HW\Satellites\Satellite.PcbDoc
+Configuration14_Item1=Record=Pcb3DPrintView|ResX=150|ResY=150|ViewX=38000000|ViewY=38900000|LookAtX=21640000|LookAtY=20050000|LookAtZ=0|UpX=0|UpY=1|UpZ=0|FOV=0|QuatX=0|QuatY=0|QuatZ=0|QuatW=1|Zoom=5.03341902313625E-5|UnitsPercent=True|UnitsDPI=True|LockResAspect=True|ViewConfigType=.config_3d|CustomCamera=False|ViewFromTop=True|ScreenWidth=0|ScreenHeight=0|ImageOutputType=1|ViewConfig= |DocumentPath=[PCB Document]
 
 [PublishSettings]
 OutputFilePath2=Project Outputs for Free Documents\PDF\Satellite.PDF
 ReleaseManaged2=1
-OutputBasePath2=Project Outputs for Satellite
+OutputBasePath2=Project Outputs for Free Documents
 OutputPathMedia2=[Media Name]
 OutputPathMediaValue2=
 OutputPathOutputer2=[Output Type]
@@ -646,9 +646,9 @@ ShowComponentParameters2=1
 GlobalBookmarks2=1
 PDFACompliance2=Disabled
 PDFVersion2=Default
-OutputFilePath3=D:\Projets\RadioLaundry\HW\Satellites\Project Outputs for Satellite\
+OutputFilePath3=Project Outputs for Free Documents\
 ReleaseManaged3=1
-OutputBasePath3=Project Outputs for Satellite
+OutputBasePath3=Project Outputs for Free Documents
 OutputPathMedia3=
 OutputPathMediaValue3=
 OutputPathOutputer3=[Output Type]
@@ -661,7 +661,7 @@ OutputFileNameSpecial3=
 OpenOutput3=1
 OutputFilePath4=
 ReleaseManaged4=1
-OutputBasePath4=Project Outputs for Satellite
+OutputBasePath4=Project Outputs for Free Documents
 OutputPathMedia4=
 OutputPathMediaValue4=
 OutputPathOutputer4=[Output Type]
@@ -700,7 +700,7 @@ WmvQuality4=80
 [GeneratedFilesSettings]
 RelativeOutputPath2=Project Outputs for Free Documents\PDF\Satellite.PDF
 OpenOutputs2=1
-RelativeOutputPath3=D:\Projets\RadioLaundry\HW\Satellites\Project Outputs for Satellite\
+RelativeOutputPath3=Project Outputs for Free Documents\
 OpenOutputs3=1
 AddToProject3=1
 TimestampFolder3=0
