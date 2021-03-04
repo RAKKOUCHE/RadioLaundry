@@ -1,0 +1,10 @@
+Output: Footprint Comparison Report
+Type  : FootprintComparison
+From  : PCB Document [Satellite2.PcbDoc]
+   Generated File[Footprint Comparison Report.html]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 22:14:19 On 04/03/2021

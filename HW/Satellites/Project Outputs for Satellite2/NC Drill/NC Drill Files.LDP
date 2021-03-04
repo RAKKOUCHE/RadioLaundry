@@ -1,0 +1,5 @@
+Layer Pairs Export File for PCB: D:\Projets\RADIOLAUNDRY\HW\Satellites\Satellite2.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=nc drill files-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Square_Holes|DrillFile=nc drill files-squareholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=nc drill files-slotholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Rect_Holes|DrillFile=nc drill files-rectholes.txt|DrillLayers=gtl,gbl

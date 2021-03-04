@@ -1,0 +1,92 @@
+Board Information Report
+Filename     : D:\Projets\RADIOLAUNDRY\HW\Satellites\Satellite2.PcbDoc
+Date         : 04/03/2021
+Time         : 20:04:20
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 3725milsx3550mils
+    Components on board, 65
+count : 2
+
+Routing Information
+    Routing completion, 100,00%
+    Connections, 151
+    Connections routed, 151
+    Connections remaining, 0
+count : 4
+
+Layer, Arcs, Pads, Vias, Tracks, Texts, Fills, Regions, ComponentBodies
+    Top Layer, 0, 152, 0, 365, 0, 22, 3, 0
+    Bottom Layer, 0, 0, 0, 73, 0, 10, 8, 0
+    Mechanical 1, 0, 0, 0, 186, 1, 0, 0, 10
+    Mechanical 3, 0, 0, 0, 0, 0, 0, 0, 19
+    Bottom 3D Body, 0, 0, 0, 0, 0, 0, 0, 0
+    Top 3D Body, 0, 0, 0, 0, 0, 0, 0, 32
+    Mechanical 15, 0, 0, 0, 2, 0, 0, 0, 0
+    Multi-Layer, 0, 85, 76, 0, 0, 0, 1, 0
+    Top Paste, 0, 0, 0, 0, 0, 0, 0, 0
+    Top Overlay, 4, 0, 0, 320, 158, 0, 15, 0
+    Top Solder, 0, 0, 0, 0, 0, 0, 0, 0
+    Bottom Solder, 0, 0, 0, 0, 0, 0, 0, 0
+    Bottom Overlay, 0, 0, 0, 0, 2, 0, 15, 0
+    Bottom Paste, 0, 0, 0, 0, 0, 0, 0, 0
+    Drill Guide, 0, 0, 0, 0, 0, 0, 0, 0
+    Keep-Out Layer, 0, 0, 0, 9, 0, 0, 0, 0
+    Drill Drawing, 0, 0, 0, 0, 0, 0, 0, 0
+count : 17
+
+Drill Pairs, Vias
+count : 0
+
+Layer, Sq.In., Sq.MM., Percent of layer
+    Top Layer, 5,224, 3370,015, 40%
+    Bottom Layer, 4,53, 2922,525, 34%
+count : 2
+
+Non-Plated Hole Size, Pads, Vias
+count : 0
+
+Plated Hole Size, Pads, Vias
+    0mils, 0, 0
+    28mils, 0, 0
+    30mils, 0, 0
+    40mils, 0, 0
+    43.307mils, 0, 0
+    47.244mils, 0, 0
+    51mils, 0, 0
+    55.118mils, 0, 0
+    60mils, 0, 0
+    140mils, 0, 0
+count : 10
+
+Non-Plated Slot Size / Length, Pads
+count : 0
+
+Plated Slot Size / Length, Pads
+    20mil / 200mil, 0
+    20mil / 250mil, 0
+    20mil / 300mil, 0
+    50mil / 200mil, 0
+    50mil / 400mil, 0
+    50mil / 450mil, 0
+    50mil / 500mil, 0
+    50mil / 700mil, 0
+    50mil / 800mil, 0
+    50mil / 1000mil, 0
+    50mil / 1700mil, 0
+count : 11
+
+Non-Plated Square Hole Size, Pads
+count : 0
+
+Plated Square Hole Size, Pads
+    40mils, 0
+    43.307mils, 0
+count : 2
+
+Pad Solder Mask, Count
+count : 0
+
+Via Solder Mask, Count
+count : 0

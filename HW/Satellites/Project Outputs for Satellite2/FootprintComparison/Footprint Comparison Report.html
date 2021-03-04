@@ -1,0 +1,598 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>Footprint Comparison Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://D:\ALTIUM\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Footprint Comparison Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">04/03/2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">22:14:12</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Projets\RADIOLAUNDRY\HW\Satellites\Satellite2.PcbDoc" class="file"><acronym title="D:\Projets\RADIOLAUNDRY\HW\Satellites\Satellite2.PcbDoc">D:\Projets\RADIOLAUNDRY\HW\Satellites\Satellite2.PcbDoc</acronym></a></td>
+</tr>
+</table><a name="IDU5BOPMICBRFC4HC21HLQJ4RPIQCCFYJEUMVQXIUIUIUE3YSR01E"><h2>Contents</h2></a><p class="contents_level1"><a href="#IDU5BOPMICBRFC4HC21HLQJ4RPIQCCFYJEUMVQXIUIUIUE3YSR01E">Contents</a></p>
+<p class="contents_level1"><a href="#IDY2XIH2ZM4XD1LMEHXZNRTHZQKHLDQINCAXSOAGISWCYEDOHKWBFN">Components Status Summary</a></p>
+<p class="contents_level2"><a href="#IDHO51BA21HHWHCSWKFWQJK4CGLEALKDYYZLPBEYPZOEO2BVVLLYVK">Matched Components List<br></a></p><br><a name="IDY2XIH2ZM4XD1LMEHXZNRTHZQKHLDQINCAXSOAGISWCYEDOHKWBFN"><h2>Components Status Summary</h2></a><h2>Matched Components List</h2><a name="IDHO51BA21HHWHCSWKFWQJK4CGLEALKDYYZLPBEYPZOEO2BVVLLYVK"><table>
+<tr>
+<th class="column1">Designator</th>
+<th class="column2">Footprint</th>
+<th class="column3">Footprint reference</th>
+<th class="column4">Footprint to reference Library</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C1</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C2</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C3</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C4</td>
+<td style="Width:20%" class="column2">KEMET_63</td>
+<td style="Width:20%" class="column3">Kemet_63</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C5</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C6</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C7</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C8</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">C9</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">C10</td>
+<td style="Width:20%" class="column2">C 0805(2012)X0.65</td>
+<td style="Width:20%" class="column3">C 0805(2012)x0.65</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D1</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D2</td>
+<td style="Width:20%" class="column2">0603-LEDR</td>
+<td style="Width:20%" class="column3">0603-LEDR</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D3</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D4</td>
+<td style="Width:20%" class="column2">0603-LEDR</td>
+<td style="Width:20%" class="column3">0603-LEDR</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D5</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D6</td>
+<td style="Width:20%" class="column2">0603-LEDR</td>
+<td style="Width:20%" class="column3">0603-LEDR</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D7</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">D8</td>
+<td style="Width:20%" class="column2">0603-LEDR</td>
+<td style="Width:20%" class="column3">0603-LEDR</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">D9</td>
+<td style="Width:20%" class="column2">0603-LEDR</td>
+<td style="Width:20%" class="column3">0603-LEDR</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">F1</td>
+<td style="Width:20%" class="column2">FUS5X20</td>
+<td style="Width:20%" class="column3">FUS5X20</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">K1</td>
+<td style="Width:20%" class="column2">RELAIG5L</td>
+<td style="Width:20%" class="column3">RELAIG5L</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">K2</td>
+<td style="Width:20%" class="column2">RELAIG5L</td>
+<td style="Width:20%" class="column3">RELAIG5L</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">L1</td>
+<td style="Width:20%" class="column2">SELF4.5X4X3.2</td>
+<td style="Width:20%" class="column3">SELF4.5X4X3.2</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">P1</td>
+<td style="Width:20%" class="column2">CO5P508-RIGHT</td>
+<td style="Width:20%" class="column3">CO5P508-RIGHT</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">P2</td>
+<td style="Width:20%" class="column2">CO4P508</td>
+<td style="Width:20%" class="column3">CO4P508</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">P3</td>
+<td style="Width:20%" class="column2">CO3P508 - 2</td>
+<td style="Width:20%" class="column3">CO3P508 - 2</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">P4</td>
+<td style="Width:20%" class="column2">CO3P381 - RIGHT</td>
+<td style="Width:20%" class="column3">CO3P381 - RIGHT</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">P5</td>
+<td style="Width:20%" class="column2">HE10-6 TH-SMD</td>
+<td style="Width:20%" class="column3">HE10-6 TH-SMD</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">P6</td>
+<td style="Width:20%" class="column2">HE10-10 TH-SMD</td>
+<td style="Width:20%" class="column3">HE10-10 TH-SMD</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">PU1</td>
+<td style="Width:20%" class="column2">IRM-05-X.X</td>
+<td style="Width:20%" class="column3">IRM-05-X.X</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Q1</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Q2</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Q3</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Q4</td>
+<td style="Width:20%" class="column2">SOT23</td>
+<td style="Width:20%" class="column3">SOT23</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R1</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R2</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R3</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R4</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R5</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R6</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R7</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R8</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R9</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R10</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R11</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R12</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R13</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R14</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R15</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R16</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R17</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R18</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R19</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R20</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R21</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">R22</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">R23</td>
+<td style="Width:20%" class="column2">R 0805(2012)</td>
+<td style="Width:20%" class="column3">R 0805(2012)</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">S1</td>
+<td style="Width:20%" class="column2">DIP SWITCH 2 POS</td>
+<td style="Width:20%" class="column3">DIP SWITCH 2 POS</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">U1</td>
+<td style="Width:20%" class="column2">SOIC8</td>
+<td style="Width:20%" class="column3">SOIC8</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">U2</td>
+<td style="Width:20%" class="column2">SOT223</td>
+<td style="Width:20%" class="column3">SOT223</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">U3</td>
+<td style="Width:20%" class="column2">ESP32-WROOM-32X</td>
+<td style="Width:20%" class="column3">ESP32-WROOM-32X</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">V1</td>
+<td style="Width:20%" class="column2">HOLE M4</td>
+<td style="Width:20%" class="column3">HOLE M4</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">V2</td>
+<td style="Width:20%" class="column2">HOLE M4</td>
+<td style="Width:20%" class="column3">HOLE M4</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">V3</td>
+<td style="Width:20%" class="column2">HOLE M4</td>
+<td style="Width:20%" class="column3">HOLE M4</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">V4</td>
+<td style="Width:20%" class="column2">HOLE M4</td>
+<td style="Width:20%" class="column3">HOLE M4</td>
+<td style="Width:60%" class="column4">D:\ALTIUM\Library\Rasoftware\BRA.PcbLib</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

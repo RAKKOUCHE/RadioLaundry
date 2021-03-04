@@ -11,5 +11,6 @@
     "user.info.name": "Rachid AKKOUCHE",
     "comments.info.fileExtension": ".c and .h",
     "comments.info.importationText": "Fichiers inclus",
-    "doxdocgen.file.copyrightTag": []
+    "doxdocgen.file.copyrightTag": [],
+    "cmake.configureOnOpen": false
 }

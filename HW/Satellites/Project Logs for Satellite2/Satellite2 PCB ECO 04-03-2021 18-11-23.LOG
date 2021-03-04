@@ -1,0 +1,6 @@
+Change Component Footprint: Designator=V1 Old Footprint=HOLE M4 New Footprint=VIS M3.5
+Change Component Footprint: Designator=V2 Old Footprint=HOLE M4 New Footprint=VIS M3.5
+Change Component Footprint: Designator=V3 Old Footprint=HOLE M4 New Footprint=VIS M3.5
+Change Component Footprint: Designator=V4 Old Footprint=HOLE M4 New Footprint=VIS M3.5
+Added Member To Class: ClassName=U_MCU Member=Component P6 JTAG
+Added Member To Class: ClassName=U_MCU Member=Component V1 VIS
