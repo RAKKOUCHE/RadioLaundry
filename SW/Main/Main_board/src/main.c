@@ -125,9 +125,10 @@ void app_main()
             printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du  relais secteur. Le relais est ", getESPNOWStateMainRelay(MachineAddress) ? "activé" : "repos");
             vTaskDelay(600);
             printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais secteur. Le relais est ", setESPNOWMainRelay(MachineAddress, false) ? "activé" : "repos");
-            vTaskDelay(100);
             printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du  relais secteur. Le relais est ", getESPNOWStateMainRelay(MachineAddress) ? "activé" : "repos");
-
+            vTaskDelay(100);
+            printf("%s%s%s%s%s", TAG_MAIN, "Lecture du niveau de la machine", " La machine ", isMachineEmpty(MachineAddress) ? "est" : "n'est pas", " vide\n");
+            vTaskDelay(1);
             //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))
             {

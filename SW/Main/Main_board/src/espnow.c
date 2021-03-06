@@ -489,6 +489,32 @@ int getESPNOWStateMainRelay(uint8_t address)
 }
 
 /*!
+* \fn bool isMachineEmpty(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  05/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
+bool isMachineEmpty(uint8_t address)
+{
+    printf("%s%s", TAG_ESPNOW, "Demande le niveau de la machine");
+    prepareMessageToSend(address, REQUEST_MACHINE_LEVEL, 0, NULL);
+    if ((msg_received[0] == HOST) && (msg_received[3] == ACK))
+    {
+        printf("%s%s%s%s", TAG_ESPNOW, " La machine ", msg_received[4] ? "est " : "n'est pas ", "vide");
+        return msg_received[4];
+    }
+    else
+    {
+        printf("%s%s", TAG_ESPNOW, "Echec de la demande");
+        return false;
+    }
+}
+
+/*!
 * \fn void TASKESPNOW(void *vParameter)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1

@@ -98,10 +98,11 @@ typedef enum __attribute__((__packed__))
     MODIFY_BUSY_LEVEL = REQUEST_DELAY_OVER_BUSY - 1, /*!Modifie le niveau permettant de définir une occupation de la machine.*/
     REQUEST_BUSY_LEVEL = MODIFY_BUSY_LEVEL - 1,      /*!< Renvoi le niveau permettant de définir une occupation de la machine.*/
 
-    REQUEST_ISMAINPRESENT = REQUEST_BUSY_LEVEL - 1, /*!< Retourne la présence du secteur.*/
+    //REQUEST_ISMAINPRESENT = REQUEST_BUSY_LEVEL - 1, /*!< Retourne la présence du secteur.*/
 
-    MODIFY_MAIN_RELAY = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
-    REQUEST_MAIN_RELAY = MODIFY_MAIN_RELAY - 1,    /*!< Retourne la position du relais de fourniture de courant à la machine.*/
+    MODIFY_MAIN_RELAY = REQUEST_BUSY_LEVEL - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
+    //MODIFY_MAIN_RELAY = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
+    REQUEST_MAIN_RELAY = MODIFY_MAIN_RELAY - 1, /*!< Retourne la position du relais de fourniture de courant à la machine.*/
 
     REQUEST_MACHINE_LEVEL = REQUEST_MAIN_RELAY - 1, /*!< Retourne le niveau des produits dans la machine.*/
     REQUEST_FW_VERSION = REQUEST_MACHINE_LEVEL - 1, /*!<Retourne la version du satellite.*/
@@ -265,5 +266,17 @@ bool setESPNOWMainRelay(const uint8_t address, const bool isActive);
 * \return 
 */
 int getESPNOWStateMainRelay(uint8_t address);
+
+/*!
+* \fn ibool isMachineEmpty(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  26/02/2021
+* \brief Renvoi le niveau de la machine.
+* \remarks None
+* \param address 
+* \return True si la machine est vide.
+*/
+bool isMachineEmpty(uint8_t address);
 
 #endif

@@ -58,9 +58,10 @@ typedef enum __attribute__((__packed__))
     REQUEST_BUSY_LEVEL = MODIFY_BUSY_LEVEL - 1,      /*!< Renvoi le niveau permettant de définir une occupation de la machine.*/
 
     //REQUEST_ISMAINPRESENT = REQUEST_BUSY_LEVEL - 1, /*!< Retourne la présence du secteur.*/
+    //MODIFY_MAIN_RELAY = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
 
-    MODIFY_MAIN_RELAY = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
-    REQUEST_MAIN_RELAY = MODIFY_MAIN_RELAY - 1,    /*!< Retourne la position du relais de fourniture de courant à la machine.*/
+    MODIFY_MAIN_RELAY = REQUEST_BUSY_LEVEL - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
+    REQUEST_MAIN_RELAY = MODIFY_MAIN_RELAY - 1, /*!< Retourne la position du relais de fourniture de courant à la machine.*/
 
     REQUEST_MACHINE_LEVEL = REQUEST_MAIN_RELAY - 1, /*!< Retourne le niveau des produits dans la machine.*/
     REQUEST_FW_VERSION = REQUEST_MACHINE_LEVEL - 1, /*!<Retourne la version du satellite.*/

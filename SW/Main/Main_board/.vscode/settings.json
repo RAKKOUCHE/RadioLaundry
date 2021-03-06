@@ -12,5 +12,6 @@
     "comments.info.fileExtension": ".c and .h",
     "comments.info.importationText": "Fichiers inclus",
     "doxdocgen.file.copyrightTag": [],
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "C_Cpp.errorSquiggles": "Enabled"
 }

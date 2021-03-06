@@ -313,6 +313,17 @@ static void checkheader(const uint8_t *data)
         xTaskNotifyGive(hTaskESPNOW);
         break;
     }
+    case REQUEST_MACHINE_LEVEL:
+    {
+        printf("%s%s", TAG_ESPNOW, "L'état du niveau des produits.");
+        boardState = ACK;
+        msg_len = 1;
+        msg_buffer[0] = !(uint8_t)gpio_get_level(EMPTY);
+        printf("%s%s%s%s", TAG_ESPNOW, "Le distributeur ", gpio_get_level(EMPTY) ? "n'est pas " : "est ", "vide");
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
+        break;
+    }
     default:
     {
         break;
@@ -375,6 +386,7 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
         }
         printf("%s%u", "Commande ", data[3]);
         checkheader(data);
+
         //Lance le clignotement
         setLED(LED_1);
         setIOState(IOLEDFLASH);
