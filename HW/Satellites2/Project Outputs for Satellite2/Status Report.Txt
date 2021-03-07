@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Satellite2.PrjPcb]
+   Generated File[Satellite2.TXT]
+   Generated File[Satellite2.LDP]
+   Generated File[Satellite2.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 02:06:47 On 07/03/2021

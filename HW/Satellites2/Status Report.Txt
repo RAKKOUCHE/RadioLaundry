@@ -1,0 +1,20 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [Satellite2.PcbDoc]
+   Generated File[Gerber Files.GTO]
+   Generated File[Gerber Files.GTP]
+   Generated File[Gerber Files.GTS]
+   Generated File[Gerber Files.GTL]
+   Generated File[Gerber Files.GBL]
+   Generated File[Gerber Files.GBS]
+   Generated File[Gerber Files.GBP]
+   Generated File[Gerber Files.GBO]
+   Generated File[Gerber Files.RUL]
+   Generated File[Gerber Files.EXTREP]
+   Generated File[Gerber Files.REP]
+
+
+Files Generated   : 11
+Documents Printed : 0
+
+Finished Output Generation At 23:01:28 On 03/03/2021
