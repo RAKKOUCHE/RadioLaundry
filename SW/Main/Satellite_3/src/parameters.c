@@ -109,13 +109,13 @@ static void checkFileParameters(void)
         printf("%s%s%u", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
         rewind(filedata);
 
-        //TODO: Supprimer cette partie
-        if (MachineAddress == 0xff)
-        {
-            MachineAddress = 11;
-            fwrite(&MachineAddress, sizeof(MachineAddress), 1, filedata);
-            fflush(filedata);
-        }
+        // //TODO: Supprimer cette partie
+        // if (MachineAddress == 0xff)
+        // {
+        //     MachineAddress = 11;
+        //     fwrite(&MachineAddress, sizeof(MachineAddress), 1, filedata);
+        //     fflush(filedata);
+        // }
         //****************************
     }
     printf("%s%s%u\n", TAG_PARAMETER, "Le délai de suroccupation est de : ", getDelayOverBusy());

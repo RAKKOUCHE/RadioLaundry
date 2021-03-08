@@ -1,4 +1,6 @@
 [ProjectGroup]
 Version=1.0
 [Project1]
-ProjectPath=Satellites2\Satellite2.PrjPcb
+ProjectPath=Satellites\Satellite2.PrjPcb
+[Project2]
+ProjectPath=MainBoard\MainBoard.PrjPcb
