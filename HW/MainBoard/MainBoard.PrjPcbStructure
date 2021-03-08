@@ -1,1 +1,2 @@
-Record=TopLevelDocument|FileName=PSU.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=AFFICHEUR.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=AFFICHEUR.SchDoc|FileName=PSU.SchDoc|SheetNumber=1
