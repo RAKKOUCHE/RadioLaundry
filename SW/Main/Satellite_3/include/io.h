@@ -16,6 +16,21 @@
 #include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "freertos/timers.h"
+#include "parameters.h"
+#include "espnow.h"
+
+/*!
+* \def LO
+* Description
+*/
+#define LO 0
+
+/*!
+* \def HI
+* Description
+*/
+#define HI 1
 
 /*!
 * \def POS_LED_1
@@ -96,6 +111,12 @@
 TaskHandle_t hTaskIO;
 
 /**
+ * @brief 
+ * 
+ */
+TimerHandle_t hTORelayMachine;
+
+/**
 *\brief
 */
 typedef enum
@@ -154,5 +175,16 @@ void setLED(const gpio_num_t led);
 * \param vParameter 
 */
 void vTaskIO(void *vParameter);
+
+/*!
+* \fn void vTORelay(xTimerHandle xTimer)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  09/03/2021
+* \brief 
+* \remarks None
+* \param xTimer 
+*/
+void vTORelay(xTimerHandle xTimer);
 
 #endif

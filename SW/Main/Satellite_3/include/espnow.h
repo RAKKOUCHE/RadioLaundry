@@ -26,6 +26,12 @@
  * @brief 
  * 
  */
+#define SECONDE (1000 / portTICK_PERIOD_MS)
+
+/**
+ * @brief 
+ * 
+ */
 typedef enum
 {
     ESPNOW_IDLE,
@@ -64,7 +70,11 @@ typedef enum __attribute__((__packed__))
     REQUEST_MAIN_RELAY = MODIFY_MAIN_RELAY - 1, /*!< Retourne la position du relais de fourniture de courant à la machine.*/
 
     REQUEST_MACHINE_LEVEL = REQUEST_MAIN_RELAY - 1, /*!< Retourne le niveau des produits dans la machine.*/
-    REQUEST_FW_VERSION = REQUEST_MACHINE_LEVEL - 1, /*!<Retourne la version du satellite.*/
+
+    MODIFY_DELAY_ACTIVATION = REQUEST_MACHINE_LEVEL - 1,    /*!<Modify le délai d'activation du relai de commande.*/
+    REQUEST_DELAY_ACTIVATION = MODIFY_DELAY_ACTIVATION - 1, /*!<Retourne le delai d'activation  du relais de commande.*/
+
+    REQUEST_FW_VERSION = REQUEST_DELAY_ACTIVATION - 1, /*!<Retourne la version du satellite.*/
 
 } Command_t;
 

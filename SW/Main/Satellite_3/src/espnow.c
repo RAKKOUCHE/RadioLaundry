@@ -324,6 +324,21 @@ static void checkheader(const uint8_t *data)
         xTaskNotifyGive(hTaskESPNOW);
         break;
     }
+    case MODIFY_DELAY_ACTIVATION:
+    {
+        printf("%s%s", TAG_ESPNOW, "Enregistrement du délais d'activation de la machine.'");
+        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais d'activation de la machine a ", saveDelayActivation(data[4] + (data[5] * 0x100) + (data[6] * 0x10000) + (data[7] * 0x1000000)) ? "résussi" : "échoué", (data[4] + (data[5] * 0x100) + (data[6] * 0x10000) + (data[7] * 0x1000000)));
+        vACK();
+        break;
+    }
+    case REQUEST_DELAY_ACTIVATION:
+    {
+        break;
+    }
+    case REQUEST_FW_VERSION:
+    {
+        break;
+    }
     default:
     {
         break;

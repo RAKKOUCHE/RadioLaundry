@@ -42,6 +42,8 @@ static void createTasks(void)
     xTaskCreate(vTaskESPNOW, "Task ESPNOW", 2304, NULL, 1, &hTaskESPNOW);
     //Création de la tâche ADC
     xTaskCreate(vTaskADC, "Tâche ADC", 1792, NULL, 1, &hTaskADC);
+    //Création du timer de gestion de l'activation du relay
+    hTORelayMachine = xTimerCreate("TO Relais", DEFAUTDELAYACTIVION, pdFALSE, 0, vTORelay);
 }
 
 /*!
@@ -57,12 +59,16 @@ static void initApp(void)
 {
     //Initialisation nécessaire de la flash
     initFlash();
-    //Lecture des paramètres
-    initParameters();
     //Initialisation du convertisseur ADC
     initADC();
+    //Lecture des paramètres
+    initParameters();
     //Creation des tâches
     createTasks();
+    while (getIOState() != IOTASKIDLE)
+    {
+        vTaskDelay(1);
+    }
     //Initialise le WIFI
     xTaskNotifyGive(hTaskESPNOW);
     //Initialise ESPNOW

@@ -19,22 +19,7 @@
 #include "freertos/task.h"
 #include "esp_spiffs.h"
 #include "esp_err.h"
-
-/*!
-* \def ADDRESS_POS
-* Description
-*/
-#define ADDRESS_POS 0
-/*!
-* \def ADDRESS_OVER_BUSY
-* Description
-*/
-#define ADDRESS_OVER_BUSY ADDRESS_POS + sizeof(uint8_t)
-/*!
-* \def ADDRESS_DELAY_RELAY
-* Description
-*/
-#define ADDRESS_DELAY_RELAY ADDRESS_OVER_BUSY + sizeof(uint32_t)
+#include "io.h"
 
 /*!
 * \def DEBUG
@@ -42,17 +27,62 @@
 */
 #define DEBUG
 
+/*!
+* \def DEFAUTDELAYACTIVION
+* Description
+*/
+#define DEFAUTDELAYACTIVION 1000
+
 /**
- * @brief 
- * 
+ * @brief Numéro de la machine.
  */
 uint8_t MachineAddress;
+
+/**
+ * @brief Delais d'indisponibilité après l'usage de la machine pour permettre le vidage de la machine.
+ * 
+ */
+uint16_t delayOverBusy;
+
+/**
+ * @brief Delai pendant lequel le relais sera activé.
+ * 
+ */
+uint32_t delayActivation;
 
 /**
  * @brief 
  * 
  */
-uint16_t delayOverBusy;
+uint8_t isRelayMachineActivated;
+
+/*!
+* \def ADDRESS_POS
+* Description
+*/
+#define ADDRESS_POS 0
+
+/*!
+* \def ADDRESS_OVER_BUSY
+* Description
+*/
+#define ADDRESS_OVER_BUSY ADDRESS_POS + sizeof(MachineAddress)
+
+/*!
+* \def ADDRESS_DELAY_RELAY
+* Description
+*/
+#define ADDRESS_DELAY_RELAY ADDRESS_OVER_BUSY + sizeof(delayOverBusy)
+
+/**
+ * @brief 
+ * 
+ */
+/*!
+* \def ADDRESS_STATE_RELAY_MACHINE
+* Description
+*/
+#define ADDRESS_STATE_RELAY_MACHINE ADDRESS_DELAY_RELAY + sizeof(delayActivation)
 
 /*!
 * \fn bool saveMachineNumber(const uint8_t address)
@@ -64,8 +94,8 @@ uint16_t delayOverBusy;
 * \param address 
 * \return 
 */
-
 bool saveMachineNumber(const uint8_t address);
+
 /*!
 * \fn bool saveDelayOverBusy(const uint16_t delay)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
@@ -79,6 +109,18 @@ bool saveMachineNumber(const uint8_t address);
 bool saveDelayOverBusy(const uint16_t delay);
 
 /*!
+* \fn bool saveDelayActivation(const uint32_t delay)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  01/03/2021
+* \brief 
+* \remarks None
+* \param delay 
+* \return 
+*/
+bool saveDelayActivation(const uint32_t delay);
+
+/*!
 * \fn uint16_t getDelayOverBusy(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
@@ -88,6 +130,18 @@ bool saveDelayOverBusy(const uint16_t delay);
 * \return 
 */
 uint16_t getDelayOverBusy(void);
+
+/*!
+* \fn bool saveRelayMachineState(const uint8_t state)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  09/03/2021
+* \brief 
+* \remarks None
+* \param state 
+* \return 
+*/
+bool saveRelayMachineState(const uint8_t state);
 
 /*!
 * \fn void initParameters(void)

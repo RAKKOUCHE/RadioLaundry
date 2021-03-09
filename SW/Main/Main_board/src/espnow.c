@@ -515,6 +515,24 @@ bool isMachineEmpty(uint8_t address)
 }
 
 /*!
+* \fn bool setDelayActivationRelayMachin(uint8_t address, uint32_t delay)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  05/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
+bool setDelayActivationRelayMachine(uint8_t address, uint32_t delay)
+{
+    printf("%s%s%u", TAG_ESPNOW, "Enregistrement du délai activation du relais machine : ", delay);
+    prepareMessageToSend(address, MODIFY_DELAY_ACTIVATION, sizeof(delay), &delay);
+    printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "réussie" : "échouée");
+    return (msg_received[0] == HOST) && (msg_received[3] == ACK);
+}
+
+/*!
 * \fn void TASKESPNOW(void *vParameter)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1

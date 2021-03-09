@@ -11,17 +11,6 @@
 #include "io.h"
 
 /*!
-* \def LO
-* Description
-*/
-#define LO 0
-/*!
-* \def HI
-* Description
-*/
-#define HI 1
-
-/*!
 * \def DELAY_TASK_IO
 * Description
 */
@@ -163,15 +152,17 @@ void vTaskIO(void *VParameter)
         }
         case IORELAYMACHINEON:
         {
-            gpio_set_level(CTRL_MACHINE, HI);
-            printf("%sRelais machine activé", TAG_IO);
+            // gpio_set_level(CTRL_MACHINE, HI);
+            // printf("%sRelais machine activé", TAG_IO);
+            saveRelayMachineState(HI);
             setIOState(IOTASKIDLE);
             break;
         }
         case IORELAYMACHINEOFF:
         {
-            gpio_set_level(CTRL_MACHINE, LO);
-            printf("%sRelais machine desactivé", TAG_IO);
+            // gpio_set_level(CTRL_MACHINE, LO);
+            // printf("%sRelais machine desactivé", TAG_IO);
+            saveRelayMachineState(LO);
             setIOState(IOTASKIDLE);
             break;
         }
@@ -179,6 +170,7 @@ void vTaskIO(void *VParameter)
         {
             gpio_set_level(CTRL_MAIN, HI);
             printf("%sRelais machine activé", TAG_IO);
+            xTimerChangePeriod(hTORelayMachine, delayActivation, 1 * SECONDE);
             setIOState(IOTASKIDLE);
             break;
         }
@@ -186,6 +178,7 @@ void vTaskIO(void *VParameter)
         {
             gpio_set_level(CTRL_MAIN, LO);
             printf("%sRelais machine desactivé", TAG_IO);
+            xTimerStop(hTORelayMachine, 1 * SECONDE);
             setIOState(IOTASKIDLE);
             break;
         }
@@ -196,4 +189,20 @@ void vTaskIO(void *VParameter)
         }
         vTaskDelayUntil(&xLastWakeTime, DELAY_TASK_IO);
     }
+}
+
+/*!
+* \fn static vTORelay(xTimerHandle xTimer)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  09/03/2021
+* \brief 
+* \remarks None
+* \param xTimer 
+* \return 
+*/
+void vTORelay(xTimerHandle xTimer)
+{
+    gpio_set_level(CTRL_MACHINE, LO); //Action à effetuer immédaitement.
+    setIOState(IORELAYMACHINEOFF);
 }

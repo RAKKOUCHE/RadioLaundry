@@ -22,6 +22,7 @@
 #include "esp_err.h"
 
 #define DEBUG
+
 /**
  * @brief 
  * 
@@ -99,13 +100,17 @@ typedef enum __attribute__((__packed__))
     REQUEST_BUSY_LEVEL = MODIFY_BUSY_LEVEL - 1,      /*!< Renvoi le niveau permettant de définir une occupation de la machine.*/
 
     //REQUEST_ISMAINPRESENT = REQUEST_BUSY_LEVEL - 1, /*!< Retourne la présence du secteur.*/
+    //MODIFY_MAIN_RELAY = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
 
     MODIFY_MAIN_RELAY = REQUEST_BUSY_LEVEL - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
-    //MODIFY_MAIN_RELAY = REQUEST_ISMAINPRESENT - 1, /*!< Défini la position du relais de fourniture de courant à la machine.*/
     REQUEST_MAIN_RELAY = MODIFY_MAIN_RELAY - 1, /*!< Retourne la position du relais de fourniture de courant à la machine.*/
 
     REQUEST_MACHINE_LEVEL = REQUEST_MAIN_RELAY - 1, /*!< Retourne le niveau des produits dans la machine.*/
-    REQUEST_FW_VERSION = REQUEST_MACHINE_LEVEL - 1, /*!<Retourne la version du satellite.*/
+
+    MODIFY_DELAY_ACTIVATION = REQUEST_MACHINE_LEVEL - 1,    /*!<Modify le délai d'activation du relai de commande.*/
+    REQUEST_DELAY_ACTIVATION = MODIFY_DELAY_ACTIVATION - 1, /*!<Retourne le delai d'activation  du relais de commande.*/
+
+    REQUEST_FW_VERSION = REQUEST_DELAY_ACTIVATION - 1, /*!<Retourne la version du satellite.*/
 
 } Command_t;
 
@@ -278,5 +283,17 @@ int getESPNOWStateMainRelay(uint8_t address);
 * \return True si la machine est vide.
 */
 bool isMachineEmpty(uint8_t address);
+
+/*!
+* \fn bool setDelayActivationRelayMachine(uint8_t address, uint32_t delay)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  05/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
+bool setDelayActivationRelayMachine(uint8_t address, uint32_t delay);
 
 #endif
