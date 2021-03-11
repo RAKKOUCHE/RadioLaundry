@@ -69,15 +69,15 @@ static bool setVFS_SPIFFS(void)
     {
         if (err == ESP_FAIL)
         {
-            printf("%sFailed to mount or format filesystem", TAG_PARAMETER);
+            printf("%s%s", TAG_PARAMETER, "Failed to mount or format filesystem");
         }
         else if (err == ESP_ERR_NOT_FOUND)
         {
-            printf("%sFailed to find SPIFFS partition", TAG_PARAMETER);
+            printf("%s%s", TAG_PARAMETER, "Failed to find SPIFFS partition");
         }
         else
         {
-            printf("%sFailed to initialize SPIFFS (%s)", TAG_PARAMETER, esp_err_to_name(err));
+            printf("%s%s(%s)", TAG_PARAMETER, "Failed to initialize SPIFFS ", esp_err_to_name(err));
         }
     }
     else
@@ -110,7 +110,7 @@ static void InitNewDevice(void)
 }
 
 /*!
-* \fn static int readDelayOverBusy(void)
+* \fn static uint32_t readDelayOverBusy(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  08/03/2021
@@ -118,14 +118,14 @@ static void InitNewDevice(void)
 * \remarks None
 * \return 
 */
-static int readDelayOverBusy(void)
+static uint32_t readDelayOverBusy(void)
 {
     fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET);
     return fread(&delayOverBusy, sizeof(delayOverBusy), 1, filedata);
 }
 
 /*!
-* \fn static int readDelayActivation(void)
+* \fn static uint32_t readDelayActivation(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  08/03/2021
@@ -133,7 +133,7 @@ static int readDelayOverBusy(void)
 * \remarks None
 * \return 
 */
-static int readDelayActivation(void)
+static uint32_t readDelayActivation(void)
 {
     fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET);
     return fread(&delayActivation, sizeof(delayActivation), 1, filedata);
@@ -152,20 +152,6 @@ static uint8_t readStateRelayMachine(void)
 {
     fseek(filedata, ADDRESS_STATE_RELAY_MACHINE, SEEK_SET);
     return fread(&isRelayMachineActivated, sizeof(isRelayMachineActivated), 1, filedata);
-}
-
-/*!
-* \fn static int getDelayActivation(void)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  08/03/2021
-* \brief 
-* \remarks None
-* \return 
-*/
-static int getDelayActivation(void)
-{
-    return delayActivation;
 }
 
 /*!
@@ -203,7 +189,7 @@ static void checkFileParameters(void)
 
         printf("%s%s%u", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
         rewind(filedata);
-        saveMachineNumber(MachineAddress = 255);
+        //saveMachineNumber(MachineAddress = 11);
 
         if (MachineAddress == NEWDEVICE)
         {
@@ -215,20 +201,24 @@ static void checkFileParameters(void)
         printf("%s%s%u%s\n", TAG_PARAMETER, "Le délai d'activation du relay machine est de :: ", getDelayActivation(), " millisecondes");
         readStateRelayMachine();
         setIOState(isRelayMachineActivated ? IORELAYMACHINEON : IORELAYMACHINEOFF);
-        printf("%s%s", "Le relais machine est ", gpio_get_level(CTRL_MACHINE) ? "activé" : "desactivé");
-
-        //saveMachineNumber(MachineAddress = 11);
-        // //TODO: Supprimer cette partie
-        // if (MachineAddress == 0xff)X
-        // {
-        // MachineAddress = 0XFF;
-        // fwrite(&MachineAddress, sizeof(MachineAddress), 1, filedata);
-        // fflush(filedata);
-        // fclose(filedata);
-        // }
+        printf("%s%s%s", TAG_PARAMETER, "Le relais machine est ", gpio_get_level(CTRL_MACHINE) ? "activé" : "desactivé");
         printf("\n");
         //****************************
     }
+}
+
+/*!
+* \fn uint32_t getDelayActivation(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  08/03/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+uint32_t getDelayActivation(void)
+{
+    return delayActivation;
 }
 
 /*!

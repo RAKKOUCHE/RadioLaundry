@@ -515,13 +515,14 @@ bool isMachineEmpty(uint8_t address)
 }
 
 /*!
-* \fn bool setDelayActivationRelayMachin(uint8_t address, uint32_t delay)
+* \fn bool setDelayActivationRelayMachine(uint8_t address, uint32_t delay)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  05/03/2021
 * \brief 
 * \remarks None
 * \param address 
+* \param delay
 * \return 
 */
 bool setDelayActivationRelayMachine(uint8_t address, uint32_t delay)
@@ -530,6 +531,42 @@ bool setDelayActivationRelayMachine(uint8_t address, uint32_t delay)
     prepareMessageToSend(address, MODIFY_DELAY_ACTIVATION, sizeof(delay), &delay);
     printf("%s%s%s", TAG_ESPNOW, "L'opération a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "réussie" : "échouée");
     return (msg_received[0] == HOST) && (msg_received[3] == ACK);
+}
+
+/*!
+* \fn uint32_t getDelayActivationRelayMachine(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  11/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
+uint32_t getDelayActivationRelayMachine(uint8_t address)
+{
+    printf("%s%s", TAG_ESPNOW, "Lecture du délai d'activation du relais machine");
+    prepareMessageToSend(address, REQUEST_DELAY_ACTIVATION, 0, NULL);
+    printf("%s%s%u", TAG_ESPNOW, "Le délai d'activation du re;ai : ", msg_received[4] + (msg_received[5] * 0X100) + (msg_received[6] * 0X100000) + (msg_received[7] * 0X1000000));
+    return (msg_received[4] + (msg_received[5] * 0X100) + (msg_received[6] * 0X100000) + (msg_received[7] * 0X1000000));
+}
+
+/*!
+* \fn uint32_t getDelayActivationRelayMachine(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  11/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \return 
+*/
+uint32_t getRestActivationRelayMachine(uint8_t address)
+{
+    printf("%s%s", TAG_ESPNOW, "Lecture du délai restant d'activation du relais machine");
+    prepareMessageToSend(address, REQUEST_REST_ACTIVATION, 0, NULL);
+    printf("%s%s%u", TAG_ESPNOW, "Le délai restant d'activation est : ", msg_received[4] + (msg_received[5] * 0X100) + (msg_received[6] * 0X100000) + (msg_received[7] * 0X1000000));
+    return (msg_received[4] + (msg_received[5] * 0X100) + (msg_received[6] * 0X100000) + (msg_received[7] * 0X1000000));
 }
 
 /*!

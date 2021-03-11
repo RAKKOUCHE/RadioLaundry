@@ -85,6 +85,17 @@ uint8_t isRelayMachineActivated;
 #define ADDRESS_STATE_RELAY_MACHINE ADDRESS_DELAY_RELAY + sizeof(delayActivation)
 
 /*!
+* \fn uint32_t getDelayActivation(void)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  08/03/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+uint32_t getDelayActivation(void);
+
+/*!
 * \fn bool saveMachineNumber(const uint8_t address)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1

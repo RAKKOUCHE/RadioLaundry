@@ -37,11 +37,11 @@ static void createTasks(void)
 {
     printf("%s%s", TAG_MAIN, "Création des  tâches\n");
     //Création la tâche des entrées sorties
-    xTaskCreate(vTaskIO, "Task IO", 1792, NULL, 1, &hTaskIO);
+    xTaskCreate(vTaskIO, "Task IO", 2048, NULL, 1, &hTaskIO);
     //Création de la tâche ESPNOW
-    xTaskCreate(vTaskESPNOW, "Task ESPNOW", 2304, NULL, 1, &hTaskESPNOW);
+    xTaskCreate(vTaskESPNOW, "Task ESPNOW", 2304, NULL, 2, &hTaskESPNOW);
     //Création de la tâche ADC
-    xTaskCreate(vTaskADC, "Tâche ADC", 1792, NULL, 1, &hTaskADC);
+    xTaskCreate(vTaskADC, "Tâche ADC", 2048, NULL, 1, &hTaskADC);
     //Création du timer de gestion de l'activation du relay
     hTORelayMachine = xTimerCreate("TO Relais", DEFAUTDELAYACTIVION, pdFALSE, 0, vTORelay);
 }
@@ -65,6 +65,7 @@ static void initApp(void)
     initParameters();
     //Creation des tâches
     createTasks();
+    //Attend que le relais machine soit positionné.
     while (getIOState() != IOTASKIDLE)
     {
         vTaskDelay(1);

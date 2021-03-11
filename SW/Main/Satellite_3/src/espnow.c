@@ -76,7 +76,7 @@ static uint8_t msg_len;
 /**
 * \brief
 */
-static uint8_t msg_buffer[64];
+static uint8_t msg_buffer[32];
 
 /**
  * @brief 
@@ -199,7 +199,7 @@ static void checkheader(const uint8_t *data)
     {
     case SIMPLEPOLL:
     {
-        printf("%sSIMPLE POLL", TAG_ESPNOW);
+        printf("%s%s", TAG_ESPNOW, "SIMPLE POLL");
         vACK();
         break;
     }
@@ -231,7 +231,7 @@ static void checkheader(const uint8_t *data)
         };
         if (gpio_get_level(CTRL_MACHINE) == data[4])
         {
-            printf("%s%s%s.", TAG_ESPNOW, "Relais machine ", data[4] ? "activé" : "desactivé");
+            printf("%s%s%s", TAG_ESPNOW, "Relais machine ", data[4] ? "activé" : "desactivé");
             vACK();
         }
         else
@@ -243,7 +243,7 @@ static void checkheader(const uint8_t *data)
     }
     case REQUEST_MACHINE_RELAY_STATE:
     {
-        printf("%s%s", TAG_ESPNOW, "L'état du relais d'action");
+        printf("%s%s", TAG_ESPNOW, "L'état du relais d'activation");
         boardState = ACK;
         msg_len = 1;
         msg_buffer[0] = (uint8_t)gpio_get_level(CTRL_MACHINE);
@@ -333,6 +333,26 @@ static void checkheader(const uint8_t *data)
     }
     case REQUEST_DELAY_ACTIVATION:
     {
+        uint32_t result = getDelayActivation();
+        printf("%s%s", TAG_ESPNOW, "Lecture du délai d'activation");
+        printf("%s%s%u", TAG_ESPNOW, "Le délai d'activation est de :", result);
+        boardState = ACK;
+        msg_len = sizeof(result);
+        memmove(msg_buffer, &result, sizeof(result));
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
+        break;
+    }
+    case REQUEST_REST_ACTIVATION:
+    {
+        uint32_t result = xTimerGetExpiryTime(hTORelayMachine) - xTaskGetTickCount();
+        printf("%s%s", TAG_ESPNOW, "Lecture du délai d'activation restant");
+        printf("%s%s%u", TAG_ESPNOW, "Le délai d'activation restant est de :", result);
+        boardState = ACK;
+        msg_len = sizeof(result);
+        memmove(msg_buffer, &result, sizeof(result));
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
         break;
     }
     case REQUEST_FW_VERSION:
@@ -351,6 +371,7 @@ static void checkheader(const uint8_t *data)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  21/02/2021
+
 * \brief 
 * \remarks None
 * \param data
@@ -375,7 +396,7 @@ static bool isMsgValid(const uint8_t *data, uint8_t len)
 */
 static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 {
-    printf("%sresult : %d", TAG_ESPNOW, (uint8_t)status);
+    printf("%s%s%d", TAG_ESPNOW, " result : ", (uint8_t)status);
 }
 
 /*!

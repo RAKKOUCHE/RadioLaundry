@@ -133,6 +133,17 @@ typedef enum
 } IOTaskState_t;
 
 /*!
+* \fn void vTORelay(xTimerHandle xTimer)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  09/03/2021
+* \brief 
+* \remarks None
+* \param xTimer 
+*/
+void vTORelay(xTimerHandle xTimer);
+
+/*!
 * \fn void setIOState(IOTaskState_t state)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
@@ -175,16 +186,5 @@ void setLED(const gpio_num_t led);
 * \param vParameter 
 */
 void vTaskIO(void *vParameter);
-
-/*!
-* \fn void vTORelay(xTimerHandle xTimer)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  09/03/2021
-* \brief 
-* \remarks None
-* \param xTimer 
-*/
-void vTORelay(xTimerHandle xTimer);
 
 #endif

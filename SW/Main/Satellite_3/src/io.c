@@ -62,6 +62,22 @@ static void InitIO(void)
 }
 
 /*!
+* \fn static vTORelay(xTimerHandle xTimer)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  09/03/2021
+* \brief 
+* \remarks None
+* \param xTimer 
+* \return 
+*/
+void vTORelay(xTimerHandle xTimer)
+{
+    gpio_set_level(CTRL_MACHINE, LO); //Action à effetuer immédaitement.
+    setIOState(IORELAYMACHINEOFF);
+}
+
+/*!
 * \fn void setIOState(IOTaskState_t state)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
@@ -133,27 +149,30 @@ void vTaskIO(void *VParameter)
         case IOLEDFLASH:
         {
             gpio_set_level(LED, !gpio_get_level(LED));
-            printf("%sLed %d : %s\n", TAG_IO, LED, (gpio_get_level(LED) ? "ON" : "OFF"));
+            printf("%s%s%d%s", TAG_IO, "Led ", LED, (gpio_get_level(LED) ? " ON" : " OFF"));
             break;
         }
         case IOLEDOFF:
         {
             setIOState(IOTASKIDLE);
             gpio_set_level(LED, LO);
-            printf("%sLed %d : %s", TAG_IO, LED, "OFF\n");
+            printf("%s%s%d%s", TAG_IO, "Led ", LED, " : OFF\n");
             break;
         }
         case IOLEDON:
         {
             setIOState(IOTASKIDLE);
             gpio_set_level(LED, HI);
-            printf("%sLed %d : %s", TAG_IO, LED, "ON");
+            printf("%s%s%d%s", TAG_IO, "Led ", LED, " : ON");
             break;
         }
         case IORELAYMACHINEON:
         {
+
             // gpio_set_level(CTRL_MACHINE, HI);
-            // printf("%sRelais machine activé", TAG_IO);
+            printf("%s%s", TAG_IO, "Relais machine activé");
+            xTimerChangePeriod(hTORelayMachine, delayActivation, 1 * SECONDE);
+
             saveRelayMachineState(HI);
             setIOState(IOTASKIDLE);
             break;
@@ -161,7 +180,7 @@ void vTaskIO(void *VParameter)
         case IORELAYMACHINEOFF:
         {
             // gpio_set_level(CTRL_MACHINE, LO);
-            // printf("%sRelais machine desactivé", TAG_IO);
+            printf("%s%s", TAG_IO, "Relais machine desactivé");
             saveRelayMachineState(LO);
             setIOState(IOTASKIDLE);
             break;
@@ -169,16 +188,15 @@ void vTaskIO(void *VParameter)
         case IORELAYMAINON:
         {
             gpio_set_level(CTRL_MAIN, HI);
-            printf("%sRelais machine activé", TAG_IO);
-            xTimerChangePeriod(hTORelayMachine, delayActivation, 1 * SECONDE);
+            printf("%s%s", TAG_IO, "Relais secteur activé");
             setIOState(IOTASKIDLE);
+            xTimerStop(hTORelayMachine, 1 * SECONDE);
             break;
         }
         case IORELAYMAINOFF:
         {
             gpio_set_level(CTRL_MAIN, LO);
-            printf("%sRelais machine desactivé", TAG_IO);
-            xTimerStop(hTORelayMachine, 1 * SECONDE);
+            printf("%s%s", TAG_IO, "Relais secteur desactivé");
             setIOState(IOTASKIDLE);
             break;
         }
@@ -189,20 +207,4 @@ void vTaskIO(void *VParameter)
         }
         vTaskDelayUntil(&xLastWakeTime, DELAY_TASK_IO);
     }
-}
-
-/*!
-* \fn static vTORelay(xTimerHandle xTimer)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  09/03/2021
-* \brief 
-* \remarks None
-* \param xTimer 
-* \return 
-*/
-void vTORelay(xTimerHandle xTimer)
-{
-    gpio_set_level(CTRL_MACHINE, LO); //Action à effetuer immédaitement.
-    setIOState(IORELAYMACHINEOFF);
 }

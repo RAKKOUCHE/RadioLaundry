@@ -107,11 +107,11 @@ typedef enum __attribute__((__packed__))
 
     REQUEST_MACHINE_LEVEL = REQUEST_MAIN_RELAY - 1, /*!< Retourne le niveau des produits dans la machine.*/
 
-    MODIFY_DELAY_ACTIVATION = REQUEST_MACHINE_LEVEL - 1,    /*!<Modify le délai d'activation du relai de commande.*/
+    MODIFY_DELAY_ACTIVATION = REQUEST_MACHINE_LEVEL - 1,    /*!<Modify le délai d'activation du relais de commande.*/
     REQUEST_DELAY_ACTIVATION = MODIFY_DELAY_ACTIVATION - 1, /*!<Retourne le delai d'activation  du relais de commande.*/
+    REQUEST_REST_ACTIVATION = REQUEST_DELAY_ACTIVATION - 1, /*!<Retourne le délai restant pour l'activation du relais de commande.*/
 
-    REQUEST_FW_VERSION = REQUEST_DELAY_ACTIVATION - 1, /*!<Retourne la version du satellite.*/
-
+    REQUEST_FW_VERSION = REQUEST_REST_ACTIVATION - 1, /*!<Retourne la version du satellite.*/
 } Command_t;
 
 /**
@@ -295,5 +295,31 @@ bool isMachineEmpty(uint8_t address);
 * \return 
 */
 bool setDelayActivationRelayMachine(uint8_t address, uint32_t delay);
+
+/*!
+* \fn uint32_t getDelayActivationRelayMachine(uint8_t address)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  11/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \param delay 
+* \return 
+*/
+uint32_t getDelayActivationRelayMachine(uint8_t address);
+
+/*!
+* \fn uint32_t getDelayActivationRelayMachine(uint8_t address, uint32_t delay)
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  11/03/2021
+* \brief 
+* \remarks None
+* \param address 
+* \param delay 
+* \return 
+*/
+uint32_t getRestActivationRelayMachine(uint8_t address);
 
 #endif

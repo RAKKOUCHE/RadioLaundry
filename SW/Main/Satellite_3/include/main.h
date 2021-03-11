@@ -24,6 +24,6 @@
 #include "parameters.h"
 #include "adc.h"
 
-int delayBlink;
+uint8_t delayBlink;
 
 #endif

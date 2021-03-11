@@ -106,8 +106,11 @@ void app_main()
             //Activation du relais de la machine
             printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais machine. Le relais est ", setESPNOWMachineRelay(MachineAddress, true) ? "activé" : "repos");
             vTaskDelay(100);
+
             printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du  relais machine. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
-            vTaskDelay(600);
+            vTaskDelay(10000);
+            printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du  relais machine. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
+            vTaskDelay(100);
             printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", setESPNOWMachineRelay(MachineAddress, false) ? "activé" : "repos");
             vTaskDelay(100);
             printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du  relais machine. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
@@ -130,6 +133,12 @@ void app_main()
             printf("%s%s%s%s%s", TAG_MAIN, "Lecture du niveau de la machine", " La machine ", isMachineEmpty(MachineAddress) ? "est" : "n'est pas", " vide\n");
             printf(" %s%s%s", TAG_MAIN, "L'écriture du délai d'activation du relais machine a ", setDelayActivationRelayMachine(MachineAddress, 5000) ? "réussi" : "échoué");
 
+            vTaskDelay(100);
+
+            printf("%s%s%u%s\n", TAG_MAIN, "Valeur du délai d'activation du relais : ", getDelayActivationRelayMachine(MachineAddress), "millisecondes.");
+            printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du relais machine. Le relais est ", setESPNOWMachineRelay(MachineAddress, true) ? "activé" : "repos");
+            vTaskDelay(2000);
+            printf("%s%s%u%s\n", TAG_MAIN, "Déai d'activation restant : ", (getRestActivationRelayMachine(MachineAddress) + 500) / 1000, " millisecondes.");
             //Attend le relachement du bouton.
             while (!gpio_get_level(BUTTON))
             {

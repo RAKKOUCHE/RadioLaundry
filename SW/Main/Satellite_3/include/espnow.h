@@ -71,10 +71,11 @@ typedef enum __attribute__((__packed__))
 
     REQUEST_MACHINE_LEVEL = REQUEST_MAIN_RELAY - 1, /*!< Retourne le niveau des produits dans la machine.*/
 
-    MODIFY_DELAY_ACTIVATION = REQUEST_MACHINE_LEVEL - 1,    /*!<Modify le délai d'activation du relai de commande.*/
+    MODIFY_DELAY_ACTIVATION = REQUEST_MACHINE_LEVEL - 1,    /*!<Modify le délai d'activation du relais de commande.*/
     REQUEST_DELAY_ACTIVATION = MODIFY_DELAY_ACTIVATION - 1, /*!<Retourne le delai d'activation  du relais de commande.*/
+    REQUEST_REST_ACTIVATION = REQUEST_DELAY_ACTIVATION - 1, /*!<Retourne le délai restant pour l'activation du relais de commande.*/
 
-    REQUEST_FW_VERSION = REQUEST_DELAY_ACTIVATION - 1, /*!<Retourne la version du satellite.*/
+    REQUEST_FW_VERSION = REQUEST_REST_ACTIVATION - 1, /*!<Retourne la version du satellite.*/
 
 } Command_t;
 
