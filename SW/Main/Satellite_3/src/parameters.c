@@ -98,12 +98,6 @@ static bool setVFS_SPIFFS(void)
 */
 static void InitNewDevice(void)
 {
-    // delayOverBusy = DEFAUTDELAYOVERBUSY;
-    // delayActivation = DEFAULDELAYACTIVION;
-    // fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET);
-    // fwrite(&delayOverBusy, sizeof(delayOverBusy), 1, filedata);
-    // fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET);
-    // fwrite(&delayActivation, sizeof(delayActivation), 1, filedata);
     saveDelayOverBusy((delayOverBusy = DEFAUTDELAYOVERBUSY));
     saveDelayActivation(delayActivation = DEFAUTDELAYACTIVION);
     saveRelayMachineState(LO);
@@ -189,12 +183,13 @@ static void checkFileParameters(void)
 
         printf("%s%s%u", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
         rewind(filedata);
-        //saveMachineNumber(MachineAddress = 11);
 
         if (MachineAddress == NEWDEVICE)
         {
             InitNewDevice();
         }
+        saveMachineNumber(MachineAddress = 11);
+
         readDelayOverBusy();
         printf("%s%s%u%s\n", TAG_PARAMETER, "Le délai de suroccupation est de : ", getDelayOverBusy(), " secondes");
         readDelayActivation();
