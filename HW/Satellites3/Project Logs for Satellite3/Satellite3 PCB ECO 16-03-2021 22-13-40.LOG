@@ -1,0 +1,20 @@
+Added Component: Designator=F1(FUS5X20)
+Add component (AddParameter): Name = "Fuse Current"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fuse Holder Type"; Value = "Cartridge Fuse Holder"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fuse Size Held"; Value = "5mm x 20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Holder Terminals"; Value = "Solder Lug"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "LITTELFUSE WICKMANN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "65800001009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No. of Fuses"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=1,39, 10=1,31, 100=1,25, 250=1,19, 500=1,12, 1000=1,05 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1716677"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating VAC"; Value = "250"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating VDC"; Value = "250"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MAIN.L Pin=F1-1
+Added Pin To Net: NetName=NetF1_2 Pin=F1-2
+Added Pin To Net: NetName=MAIN.N Pin=H-LINK  5-2
+Added Pin To Net: NetName=+5 Pin=H-LINK  5-3
+Added Pin To Net: NetName=GND Pin=H-LINK  5-4
+Added Member To Class: ClassName=U_PSU Member=Component F1 Fuse

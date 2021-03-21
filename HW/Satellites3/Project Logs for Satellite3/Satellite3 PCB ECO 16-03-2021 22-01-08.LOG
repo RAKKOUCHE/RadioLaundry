@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=MAIN.L Pin=F1-2
+Added Component: Designator=H-LINK  5(H-LINK)
+Added Net: Name=NetF1_2
+Added Member To Class: ClassName=U_PSU Member=Component H-LINK  5 HLINK 5V/1A

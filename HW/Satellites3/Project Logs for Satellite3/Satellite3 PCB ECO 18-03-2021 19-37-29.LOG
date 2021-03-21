@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=NetK2_1 Pin=U1-1
+Removed Pin From Net: NetName=NetK2_1 Pin=U1-2
+Removed Pin From Net: NetName=MAIN.L Pin=U1-3
+Removed Pin From Net: NetName=MAIN.L Pin=U1-4
+Added Pin To Net: NetName=MAIN.L Pin=U1-1
+Added Pin To Net: NetName=MAIN.L Pin=U1-2
+Added Pin To Net: NetName=NetK2_1 Pin=U1-3
+Added Pin To Net: NetName=NetK2_1 Pin=U1-4
+Added Rule: Name=Schematic Width Constraint
+Added Rule: Name=Schematic Width Constraint_1
+Added Rule: Name=Schematic Width Constraint_2
+Added Rule: Name=Schematic Width Constraint_3
+Change Rule Scope 1 : Old Scope=InNet('+5') or InNet('VCC') or InNet('GND') or InNet('NetC6_1') New Scope=InNet('+5')
+Change Rule Scope 1 : Old Scope=InNet('MAIN.N') or InNet('MAIN.L') New Scope=InNet('MAIN.N')

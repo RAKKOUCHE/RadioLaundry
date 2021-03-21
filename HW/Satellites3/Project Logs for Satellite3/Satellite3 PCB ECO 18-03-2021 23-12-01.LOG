@@ -1,0 +1,40 @@
+Removed Pin From Net: NetName=EN_2 Pin=P5-01
+Removed Pin From Net: NetName=VCC Pin=P5-02
+Removed Pin From Net: NetName=TX_2 Pin=P5-03
+Removed Pin From Net: NetName=GND Pin=P5-04
+Removed Pin From Net: NetName=RX_2 Pin=P5-05
+Removed Pin From Net: NetName=VCC Pin=P6-01
+Removed Pin From Net: NetName=GND Pin=P6-03
+Removed Pin From Net: NetName=GND Pin=P6-05
+Removed Pin From Net: NetName=GND Pin=P6-07
+Removed Pin From Net: NetName=GND Pin=P6-09
+Change Component Footprint: Designator=P5 Old Footprint= New Footprint=SAMTEC_FTSH-103-02-F-DV
+Change Component Footprint: Designator=P6 Old Footprint= New Footprint=SAMTEC_FTSH-105-XX-X-DV
+Change Component Comment : Designator=P6 Old Comment=JTAG New Comment=FTSH-105-XX-X-DV
+Change Component Comment : Designator=P5 Old Comment=PROG New Comment=FTSH-103-02-F-DV
+Added Pin To Net: NetName=EN_2 Pin=P5-1
+Added Pin To Net: NetName=VCC Pin=P5-2
+Added Pin To Net: NetName=TX_2 Pin=P5-3
+Added Pin To Net: NetName=GND Pin=P5-4
+Added Pin To Net: NetName=RX_2 Pin=P5-5
+Added Pin To Net: NetName=VCC Pin=P6-1
+Added Pin To Net: NetName=GND Pin=P6-3
+Added Pin To Net: NetName=GND Pin=P6-5
+Added Pin To Net: NetName=GND Pin=P6-7
+Added Pin To Net: NetName=GND Pin=P6-9
+Added Pin To Net: NetName=NetP5_6 Pin=P5-6
+Added Pin To Net: NetName=NetP5_6 Pin=R12-1
+Added Pin To Net: NetName=NetP5_6 Pin=U3-25
+Added Net: Name=NetP5_6
+Added Pin To Net: NetName=NetP6_2 Pin=P6-2
+Added Pin To Net: NetName=NetP6_2 Pin=R15-1
+Added Net: Name=NetP6_2
+Added Pin To Net: NetName=NetP6_4 Pin=P6-4
+Added Pin To Net: NetName=NetP6_4 Pin=R18-1
+Added Net: Name=NetP6_4
+Added Pin To Net: NetName=NetP6_6 Pin=P6-6
+Added Pin To Net: NetName=NetP6_6 Pin=R20-1
+Added Net: Name=NetP6_6
+Added Pin To Net: NetName=NetP6_8 Pin=P6-8
+Added Pin To Net: NetName=NetP6_8 Pin=R21-1
+Added Net: Name=NetP6_8

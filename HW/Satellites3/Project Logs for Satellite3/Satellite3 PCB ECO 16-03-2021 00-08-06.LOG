@@ -1,0 +1,13 @@
+Change Component Footprint: Designator=P3 Old Footprint=CO4P508 New Footprint=HDR1X4
+Change Component Comment : Designator=P3 Old Comment=220VAC(OUT) New Comment=Header 4
+Added Pin To Net: NetName=GND Pin=K2-3
+Added Pin To Net: NetName=GND Pin=P3-4
+Added Pin To Net: NetName=MAIN.L Pin=F1-2
+Added Pin To Net: NetName=MAIN.L Pin=P4-1
+Added Pin To Net: NetName=MAIN.L Pin=U1-1
+Added Pin To Net: NetName=MAIN.L Pin=U1-2
+Added Net: Name=MAIN.L
+Added Pin To Net: NetName=MAIN.N Pin=P3-3
+Added Pin To Net: NetName=MAIN.N Pin=P4-3
+Added Pin To Net: NetName=MAIN.N Pin=PU1-1
+Added Net: Name=MAIN.N

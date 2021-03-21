@@ -1,0 +1,48 @@
+Removed Pin From Net: NetName=VCC Pin=P6-1
+Removed Pin From Net: NetName=VCC Pin=P6-1
+Removed Pin From Net: NetName=GND Pin=P6-3
+Removed Pin From Net: NetName=GND Pin=P6-3
+Removed Pin From Net: NetName=GND Pin=P6-5
+Removed Pin From Net: NetName=GND Pin=P6-5
+Removed Pin From Net: NetName=GND Pin=P6-7
+Removed Pin From Net: NetName=GND Pin=P6-7
+Removed Pin From Net: NetName=GND Pin=P6-9
+Removed Pin From Net: NetName=GND Pin=P6-9
+Removed Pin From Net: NetName=NetP6_10 Pin=P6-10
+Removed Pin From Net: NetName=NetP6_10 Pin=P6-10
+Change Component Comment : Designator=P5 Old Comment=FTSH-103-02-F-DV New Comment=PROG
+Added Component: Designator=P6(SAMTEC_FTSH-105-XX-X-DV)
+Add component (AddParameter): Name = "Availability"; Value = "Bad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/FTSH-105-01-L-DV/Samtec/view-part/4795786/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "FTSH-105-01-L-DV"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/FTSH-105-01-L-DV/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/FTSH-105-01-L-DV/Samtec/view-part/4795786/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=EN_2 Pin=P5-01
+Added Pin To Net: NetName=VCC Pin=P5-02
+Added Pin To Net: NetName=NetP5_03 Pin=P5-03
+Added Pin To Net: NetName=GND Pin=P5-04
+Added Pin To Net: NetName=NetP5_05 Pin=P5-05
+Added Pin To Net: NetName=NetP5_06 Pin=P5-06
+Added Pin To Net: NetName=VCC Pin=P6-01
+Added Pin To Net: NetName=GND Pin=P6-03
+Added Pin To Net: NetName=GND Pin=P6-05
+Added Pin To Net: NetName=GND Pin=P6-07
+Added Pin To Net: NetName=GND Pin=P6-09
+Added Pin To Net: NetName=NetP6_10 Pin=P6-10
+Added Pin To Net: NetName=NetP6_02 Pin=P6-02
+Added Pin To Net: NetName=NetP6_02 Pin=R15-1
+Added Net: Name=NetP6_02
+Added Pin To Net: NetName=NetP6_04 Pin=P6-04
+Added Pin To Net: NetName=NetP6_04 Pin=R18-1
+Added Net: Name=NetP6_04
+Added Pin To Net: NetName=NetP6_06 Pin=P6-06
+Added Pin To Net: NetName=NetP6_06 Pin=R20-1
+Added Net: Name=NetP6_06
+Added Pin To Net: NetName=NetP6_08 Pin=P6-08
+Added Pin To Net: NetName=NetP6_08 Pin=R21-1
+Added Net: Name=NetP6_08
+Added Member To Class: ClassName=U_MCU Member=Component P5 PROG

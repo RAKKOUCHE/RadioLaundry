@@ -1,0 +1,38 @@
+Added Component: Designator=U1(SOIC8)
+Add component (AddParameter): Name = "Category"; Value = "Capteurs de Hall"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.tme.eu/fr/details/acs712elctr20at/capteurs-de-hall/allegro-microsystems/acs712elctr-20a-t/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.tme.eu/fr/details/acs712elctr20at/capteurs-de-hall/allegro-microsystems/acs712elctr-20a-t/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant d'entrée"; Value = "± 20A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fabricant"; Value = "ALLEGRO MICROSYSTEMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "ALLEGRO MICROSYSTEMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ACS712ELCTR-20A-T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3,39, 3=3,16, 10=2,92 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "844"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "ACS712ELCTR20AT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de travail"; Value = "-40...85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension d'alimentation"; Value = "8V DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de capteur"; Value = "Hall effet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0,336"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=MAIN.L Pin=U1-1
+Added Pin To Net: NetName=MAIN.L Pin=U1-2
+Added Pin To Net: NetName=NetK2_1 Pin=U1-3
+Added Pin To Net: NetName=NetK2_1 Pin=U1-4
+Added Pin To Net: NetName=GND Pin=U1-5
+Added Pin To Net: NetName=NetC3_1 Pin=U1-6
+Added Pin To Net: NetName=BUSY Pin=U1-7
+Added Pin To Net: NetName=+5 Pin=U1-8
+Added Member To Class: ClassName=U_IO Member=Component U1 ACS712
+Added Rule: Name=Schematic Width Constraint
+Added Rule: Name=Schematic Width Constraint_1
+Added Rule: Name=Schematic Width Constraint_2
+Added Rule: Name=Schematic Width Constraint_3
+Added Rule: Name=Schematic Width Constraint_4
+Added Rule: Name=Schematic Width Constraint_5
+Added Rule: Name=Schematic Width Constraint_6
+Added Rule: Name=Schematic Width Constraint_7

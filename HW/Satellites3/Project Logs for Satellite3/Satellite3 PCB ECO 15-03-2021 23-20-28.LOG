@@ -1,0 +1,1530 @@
+Added Component: Designator=C1(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MCCA000296"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0,01, 500=0,008, 1000=0,006, 4000=0,005 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1759167"; VariantName = "[No Variations]"
+Added Component: Designator=C2(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MCCA000296"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0,01, 500=0,008, 1000=0,006, 4000=0,005 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1759167"; VariantName = "[No Variations]"
+Added Component: Designator=C3(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "Boîtier"; Value = "0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacité"; Value = "1nF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Condensateurs MLCC SMD 0402"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.tme.eu/fr/details/cl05b102kb5nnnc/condensateurs-mlcc-smd-0402/samsung/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.tme.eu/fr/details/cl05b102kb5nnnc/condensateurs-mlcc-smd-0402/samsung/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Diélectrique"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fabricant"; Value = "SAMSUNG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "SAMSUNG"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CL05B102KB5NNNC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "300"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "300=0,00208, 1000=0,00124, 10000=0,00069, 40000=0,00066, 100000=0,00064 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "25000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "10000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CL05B102KB5NNNC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de travail"; Value = "-55...125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension de travail"; Value = "50V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance"; Value = "±10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tye de condensateur"; Value = "MLCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de condensateur"; Value = "céramique"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0,012"; VariantName = "[No Variations]"
+Added Component: Designator=C4(Kemet_63)
+Add component (AddParameter): Name = "Capacité"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.epcos.com/inf/20/30/db/alu_x/B41142.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.epcos.com/inf/20/30/db/alu_x/B41142.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant d'ondulation c.a."; Value = "300"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant d'ondulation c.a. à  100Hz"; Value = "300"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Diamètre"; Value = "6.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Durée de vie @ température"; Value = "2000 heures @ 105"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fréquence, impédance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Hauteur"; Value = "7.7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Impédance"; Value = "0.26"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur/hauteur"; Value = "7.7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "EPCOS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "B41142A4107M"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "10=0,123, 50=0,095, 100=0,078, 250=0,07, 1000=0,062 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "EPCOS - B41142 Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance, ESR"; Value = "0.16"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1735328"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-55°C à +105"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "105"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, courant ondulatoire"; Value = "105"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, ESR"; Value = "20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, impédance"; Value = "20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-55"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "16"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de capacité"; Value = "± 20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de condensateur"; Value = "Radial Can - SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Added Component: Designator=C5(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "Capacitance"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CL21A106KOQNNNE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness"; Value = "0.055inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.049inch"; VariantName = "[No Variations]"
+Added Component: Designator=C6(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "Capacitance"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CL21A106KOQNNNE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness"; Value = "0.055inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.049inch"; VariantName = "[No Variations]"
+Added Component: Designator=C7(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "Capacitance"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CL21A106KOQNNNE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness"; Value = "0.055inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.049inch"; VariantName = "[No Variations]"
+Added Component: Designator=C8(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MCCA000296"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0,01, 500=0,008, 1000=0,006, 4000=0,005 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1759167"; VariantName = "[No Variations]"
+Added Component: Designator=C9(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "Capacitance"; Value = "10uF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.tme.eu/en/details/cc0805kkx5r5106/0805-mlcc-smd-capacitors/yageo/cc0805kkx5r5bb106/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "1.25mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CL21A106KOQNNNE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness"; Value = "0.055inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.049inch"; VariantName = "[No Variations]"
+Added Component: Designator=C10(C 0805(2012)x0.65)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1520827.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MCCA000296"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0,01, 500=0,008, 1000=0,006, 4000=0,005 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1759167"; VariantName = "[No Variations]"
+Added Component: Designator=D1(0603-LEDR)
+Add component (AddParameter): Name = "Angle, vision"; Value = "170°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur"; Value = "RED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur de LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur, LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, direct, If"; Value = "20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dissipation de puissance"; Value = "65"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forme de lentille"; Value = "Rectangulaire"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse"; Value = "17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse min. à  If"; Value = "2.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse typique"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Largeur (externe)"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde dominante"; Value = "639"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde typ."; Value = "626"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde, crête"; Value = "630"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur/hauteur"; Value = "1.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "AVAGO TECHNOLOGIES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "HSMH-C190."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Matière"; Value = "AlGaAs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage LED"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 2A - 4 semaines"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation de montage opto"; Value = "Dessus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation sortie de lumière"; Value = "Top Emitting"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,06, 25=0,059, 100=0,057, 250=0,052, 500=0,047 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Profondeur"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "8554641"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Taille de lampe"; Value = "0.8mm x 1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-30°C à +85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage min."; Value = "-40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, direct à  If"; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "2.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf min."; Value = "2.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf typ."; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de LED"; Value = "Standard"; VariantName = "[No Variations]"
+Added Component: Designator=D2(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Configuration diode"; Value = "Dual Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "courant Ifsm"; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If moy."; Value = "200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If, Vf"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ifs max."; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ir, max.."; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Diode Type"; Value = "Schottky"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "BAT54S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Marquage, CMS"; Value = "L44"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "10=0,102, 250=0,074, 1000=0,06, 3000=0,053 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "52055"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1621835"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temps trr max."; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-55°C à +150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, Tj max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-55"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "400"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vrrm"; Value = "30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier diode"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de terminaison"; Value = "SMD"; VariantName = "[No Variations]"
+Added Component: Designator=D3(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Configuration diode"; Value = "Dual Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "courant Ifsm"; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If moy."; Value = "200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If, Vf"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ifs max."; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ir, max.."; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Diode Type"; Value = "Schottky"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "BAT54S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Marquage, CMS"; Value = "L44"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "10=0,102, 250=0,074, 1000=0,06, 3000=0,053 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "52055"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1621835"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temps trr max."; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-55°C à +150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, Tj max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-55"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "400"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vrrm"; Value = "30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier diode"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de terminaison"; Value = "SMD"; VariantName = "[No Variations]"
+Added Component: Designator=D4(0603-LEDR)
+Add component (AddParameter): Name = "Angle, vision"; Value = "170°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur"; Value = "RED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur de LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur, LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, direct, If"; Value = "20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dissipation de puissance"; Value = "65"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forme de lentille"; Value = "Rectangulaire"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse"; Value = "17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse min. à  If"; Value = "2.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse typique"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Largeur (externe)"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde dominante"; Value = "639"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde typ."; Value = "626"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde, crête"; Value = "630"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur/hauteur"; Value = "1.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "AVAGO TECHNOLOGIES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "HSMH-C190."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Matière"; Value = "AlGaAs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage LED"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 2A - 4 semaines"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation de montage opto"; Value = "Dessus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation sortie de lumière"; Value = "Top Emitting"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,06, 25=0,059, 100=0,057, 250=0,052, 500=0,047 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Profondeur"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "8554641"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Taille de lampe"; Value = "0.8mm x 1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-30°C à +85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage min."; Value = "-40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, direct à  If"; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "2.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf min."; Value = "2.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf typ."; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de LED"; Value = "Standard"; VariantName = "[No Variations]"
+Added Component: Designator=D5(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Configuration diode"; Value = "Dual Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "courant Ifsm"; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If moy."; Value = "200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If, Vf"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ifs max."; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ir, max.."; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Diode Type"; Value = "Schottky"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "BAT54S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Marquage, CMS"; Value = "L44"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "10=0,102, 250=0,074, 1000=0,06, 3000=0,053 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "52055"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1621835"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temps trr max."; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-55°C à +150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, Tj max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-55"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "400"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vrrm"; Value = "30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier diode"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de terminaison"; Value = "SMD"; VariantName = "[No Variations]"
+Added Component: Designator=D6(0603-LEDR)
+Add component (AddParameter): Name = "Angle, vision"; Value = "170°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur"; Value = "RED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur de LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur, LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, direct, If"; Value = "20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dissipation de puissance"; Value = "65"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forme de lentille"; Value = "Rectangulaire"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse"; Value = "17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse min. à  If"; Value = "2.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse typique"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Largeur (externe)"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde dominante"; Value = "639"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde typ."; Value = "626"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde, crête"; Value = "630"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur/hauteur"; Value = "1.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "AVAGO TECHNOLOGIES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "HSMH-C190."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Matière"; Value = "AlGaAs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage LED"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 2A - 4 semaines"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation de montage opto"; Value = "Dessus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation sortie de lumière"; Value = "Top Emitting"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,06, 25=0,059, 100=0,057, 250=0,052, 500=0,047 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Profondeur"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "8554641"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Taille de lampe"; Value = "0.8mm x 1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-30°C à +85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage min."; Value = "-40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, direct à  If"; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "2.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf min."; Value = "2.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf typ."; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de LED"; Value = "Standard"; VariantName = "[No Variations]"
+Added Component: Designator=D7(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1317753.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Configuration diode"; Value = "Dual Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "courant Ifsm"; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If moy."; Value = "200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, If, Vf"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ifs max."; Value = "600"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, Ir, max.."; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Diode Type"; Value = "Schottky"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "BAT54S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Marquage, CMS"; Value = "L44"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "10=0,102, 250=0,074, 1000=0,06, 3000=0,053 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "52055"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1621835"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temps trr max."; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-55°C à +150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, Tj max.."; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-55"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "400"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vrrm"; Value = "30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier diode"; Value = "SOT-23"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de terminaison"; Value = "SMD"; VariantName = "[No Variations]"
+Added Component: Designator=D8(0603-LEDR)
+Add component (AddParameter): Name = "Angle, vision"; Value = "170°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur"; Value = "RED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur de LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur, LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, direct, If"; Value = "20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dissipation de puissance"; Value = "65"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forme de lentille"; Value = "Rectangulaire"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse"; Value = "17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse min. à  If"; Value = "2.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse typique"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Largeur (externe)"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde dominante"; Value = "639"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde typ."; Value = "626"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde, crête"; Value = "630"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur/hauteur"; Value = "1.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "AVAGO TECHNOLOGIES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "HSMH-C190."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Matière"; Value = "AlGaAs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage LED"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 2A - 4 semaines"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation de montage opto"; Value = "Dessus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation sortie de lumière"; Value = "Top Emitting"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,06, 25=0,059, 100=0,057, 250=0,052, 500=0,047 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Profondeur"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "8554641"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Taille de lampe"; Value = "0.8mm x 1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-30°C à +85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage min."; Value = "-40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, direct à  If"; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "2.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf min."; Value = "2.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf typ."; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de LED"; Value = "Standard"; VariantName = "[No Variations]"
+Added Component: Designator=D9(0603-LEDR)
+Add component (AddParameter): Name = "Angle, vision"; Value = "170°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/313031.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/55927.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur"; Value = "RED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur de LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Couleur, LED"; Value = "Rouge"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant, direct, If"; Value = "20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dissipation de puissance"; Value = "65"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forme de lentille"; Value = "Rectangulaire"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse"; Value = "17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse min. à  If"; Value = "2.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Intensité lumineuse typique"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Largeur (externe)"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde dominante"; Value = "639"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde typ."; Value = "626"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur d'onde, crête"; Value = "630"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Longueur/hauteur"; Value = "1.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "AVAGO TECHNOLOGIES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "HSMH-C190."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Matière"; Value = "AlGaAs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage LED"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 2A - 4 semaines"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nombre de broches"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation de montage opto"; Value = "Dessus"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation sortie de lumière"; Value = "Top Emitting"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,06, 25=0,059, 100=0,057, 250=0,052, 500=0,047 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Profondeur"; Value = "0.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "8554641"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (19-Dec-2012)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Taille de lampe"; Value = "0.8mm x 1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement"; Value = "-30°C à +85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de fonctionnement max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage max.."; Value = "85"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température, stockage min."; Value = "-40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température d'utilisation min"; Value = "-30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, direct à  If"; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf max.."; Value = "2.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf min."; Value = "2.1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, Vf typ."; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de LED"; Value = "Standard"; VariantName = "[No Variations]"
+Added Component: Designator=F1(FUS5X20)
+Add component (AddParameter): Name = "Fuse Current"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fuse Holder Type"; Value = "Cartridge Fuse Holder"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fuse Size Held"; Value = "5mm x 20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Holder Terminals"; Value = "Solder Lug"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "LITTELFUSE WICKMANN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "65800001009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No. of Fuses"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=1,39, 10=1,31, 100=1,25, 250=1,19, 500=1,12, 1000=1,05 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1716677"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating VAC"; Value = "250"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating VDC"; Value = "250"; VariantName = "[No Variations]"
+Added Component: Designator=K1(RELAIG5L)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1648381.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1648381.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Configuration des contacts"; Value = "SPST-NO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant de bobine"; Value = "30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant de contact max.."; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Hauteur, dimension externe"; Value = "15.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Largeur (externe)"; Value = "15.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "OMRON ELECTRONIC COMPONENTS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "G5LA1A412DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage relais"; Value = "Traversant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,84, 10=0,74, 50=0,66, 100=0,59, 250=0,54 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Profondeur"; Value = "19.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance de fonctionnement nominale"; Value = "360"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance, bobine"; Value = "400"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2213790"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (20-Jun-2013)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension AC nominale du contact"; Value = "250"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension DC nominale du contact"; Value = "24"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, bobine c.c. nom."; Value = "12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de bobine"; Value = "CC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de relais"; Value = "Puissance"; VariantName = "[No Variations]"
+Added Component: Designator=K2(RELAIG5L)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1648381.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1648381.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Configuration des contacts"; Value = "SPST-NO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant de bobine"; Value = "30"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant de contact max.."; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Hauteur, dimension externe"; Value = "15.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Largeur (externe)"; Value = "15.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "OMRON ELECTRONIC COMPONENTS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "G5LA1A412DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Montage relais"; Value = "Traversant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0,84, 10=0,74, 50=0,66, 100=0,59, 250=0,54 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Profondeur"; Value = "19.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance de fonctionnement nominale"; Value = "360"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance, bobine"; Value = "400"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2213790"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (20-Jun-2013)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension AC nominale du contact"; Value = "250"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension DC nominale du contact"; Value = "24"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension, bobine c.c. nom."; Value = "12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de bobine"; Value = "CC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de relais"; Value = "Puissance"; VariantName = "[No Variations]"
+Added Component: Designator=L1(SELF4.5X4X3.2)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1681904.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1681904.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DC Resistance Max"; Value = "0.14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Inductance"; Value = "47"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Inductance Tolerance"; Value = "± 20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Inductor Construction"; Value = "Unshielded"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "COILCRAFT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "DO3316P-473MLD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Inductor Case"; Value = "12.95mm x 9.4mm x 5.21"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.981, 500=0.722 (GBP)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "DO3316"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RMS Current (Irms)"; Value = "1.8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Saturation Current (Isat)"; Value = "1.6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Self Resonant Frequency Min"; Value = "12MHz<!--FANDB--><div class="features-and-benefits-container"><div class="features-and-benefits-description"><span class="features-benefits-value">The DO3316P-473MLD is a surface mount unshielded Power Inductor with ferrite core. This inductor features gold over nickel over phosphor bronze terminations and is resistance to soldering heat maximum three 40 seconds reflows at +260°C, parts cooled to room temperature between cycles. This inductor also features moisture sensitivity level (MSL) of 1, failures in time (FIT)/mean time between failures (MTBF) is 38 per billion hours/26,315,789 hours, calculated per Telcordia SR-332 and only pure water or alcohol recommended for wash. Current at 25°C causes an inductance drop of 10% typical from its value without current. ±20"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "2601"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2287252"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (12-Jan-2017)"; VariantName = "[No Variations]"
+Added Component: Designator=P1(CO3P381 - RIGHT)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P2(CO2P381-screw)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P3(CO4P508)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P4(CO3P508 - 2)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/cad/1652960.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/cad/1652960.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/1650926.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/1650926.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE CONNECTIVITY / BUCHANAN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "796636-3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "10=0,68, 100=0,51, 500=0,43, 1000=0,36, 2000=0,35, 5000=0,33 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2059780"; VariantName = "[No Variations]"
+Added Component: Designator=P5(HE10-6 TH-SMD)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P6(HE10-10 TH-SMD)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=PU1(IRM-05-X.X)
+Added Component: Designator=Q1(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "FAIRCHILD SEMICONDUCTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "2N7002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,138, 25=0,13, 100=0,059, 1000=0,049, 3000=0,026, 6000=0,0234 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "9845313"; VariantName = "[No Variations]"
+Added Component: Designator=Q2(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "FAIRCHILD SEMICONDUCTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "2N7002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,138, 25=0,13, 100=0,059, 1000=0,049, 3000=0,026, 6000=0,0234 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "9845313"; VariantName = "[No Variations]"
+Added Component: Designator=Q3(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "FAIRCHILD SEMICONDUCTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "2N7002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,138, 25=0,13, 100=0,059, 1000=0,049, 3000=0,026, 6000=0,0234 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "9845313"; VariantName = "[No Variations]"
+Added Component: Designator=Q4(SOT23)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/660093.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/410597.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "FAIRCHILD SEMICONDUCTOR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "2N7002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5=0,138, 25=0,13, 100=0,059, 1000=0,049, 3000=0,026, 6000=0,0234 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "9845313"; VariantName = "[No Variations]"
+Added Component: Designator=R1(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%56KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "(Non Applicable)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Terminals"; Value = "(Non Disponible)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "56"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129258"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R2(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%1KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129113"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R 0805(2012))
+Add component (AddParameter): Name = "Case"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "0805 SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0805JR-07150KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. operating voltage"; Value = "150V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. overload voltage"; Value = "300V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating temperature"; Value = "-55...155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.125W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0.00566, 1000=0.0034, 5000=0.00111, 15000=0.00102, 50000=0.00088 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "150kO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor type"; Value = "thick film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "6800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "RC0805JR-07150K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.028"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%56KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "(Non Applicable)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Terminals"; Value = "(Non Disponible)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "56"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129258"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R5(R 0805(2012))
+Add component (AddParameter): Name = "Case"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "0805 SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0805JR-07150KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. operating voltage"; Value = "150V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. overload voltage"; Value = "300V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating temperature"; Value = "-55...155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.125W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0.00566, 1000=0.0034, 5000=0.00111, 15000=0.00102, 50000=0.00088 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "150kO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor type"; Value = "thick film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "6800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "RC0805JR-07150K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.028"; VariantName = "[No Variations]"
+Added Component: Designator=R6(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%56KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "(Non Applicable)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Terminals"; Value = "(Non Disponible)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "56"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129258"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R7(R 0805(2012))
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "2012"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Composition"; Value = "Thick Film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Rating"; Value = "125mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "REACH SVHC"; Value = "Unknown"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "1.5kR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2446909"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "100ppm/°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VALUE"; Value = "1.5K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "150V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "150V"; VariantName = "[No Variations]"
+Added Component: Designator=R8(R 0805(2012))
+Add component (AddParameter): Name = "Case"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "0805 SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0805JR-07150KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. operating voltage"; Value = "150V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. overload voltage"; Value = "300V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating temperature"; Value = "-55...155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.125W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0.00566, 1000=0.0034, 5000=0.00111, 15000=0.00102, 50000=0.00088 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "150kO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor type"; Value = "thick film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "6800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "RC0805JR-07150K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.028"; VariantName = "[No Variations]"
+Added Component: Designator=R9(R 0805(2012))
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.bourns.com/engineering/CHPREZTR/cr0805.stp"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.bourns.com/engineering/CHPREZTR/cr0805.stp"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/datasheets/2178762.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/datasheets/2178762.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "BOURNS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CR0805-FX-2201ELF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "10=0.035, 100=0.0233, 500=0.0162, 1000=0.0141, 2500=0.012, 5000=0.0105, 25000=0.0065 (GBP)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "2028"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2333585"; VariantName = "[No Variations]"
+Added Component: Designator=R10(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%10KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129195"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R11(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1729047.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1729047.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC01W080514K7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "(Non Applicable)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "4.7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129167"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (20-Jun-2013)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R12(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%10KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129195"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R13(R 0805(2012))
+Add component (AddParameter): Name = "Case"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "0805 SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0805JR-07150KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. operating voltage"; Value = "150V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. overload voltage"; Value = "300V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating temperature"; Value = "-55...155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.125W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0.00566, 1000=0.0034, 5000=0.00111, 15000=0.00102, 50000=0.00088 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "150kO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor type"; Value = "thick film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "6800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "RC0805JR-07150K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.028"; VariantName = "[No Variations]"
+Added Component: Designator=R14(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%1KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129113"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R15(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%100RFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129034"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R16(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1729047.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1729047.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC01W080514K7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "(Non Applicable)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "4.7"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129167"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SVHC"; Value = "No SVHC (20-Jun-2013)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R17(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%56KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "(Non Applicable)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Terminals"; Value = "(Non Disponible)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "56"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129258"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R18(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%100RFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129034"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R19(R 0805(2012))
+Add component (AddParameter): Name = "Case"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "0805 SMD Resistors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://static.tme.eu/products_pics/6/6/c/66cc5cd64257edd80ca8e9fd2040972d/56038.jpg"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "YAGEO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "RC0805JR-07150KL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. operating voltage"; Value = "150V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max. overload voltage"; Value = "300V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating temperature"; Value = "-55...155°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = "0.125W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "100=0.00566, 1000=0.0034, 5000=0.00111, 15000=0.00102, 50000=0.00088 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistance"; Value = "150kO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor type"; Value = "thick film"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "6800"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "RC0805JR-07150K"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.028"; VariantName = "[No Variations]"
+Added Component: Designator=R20(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%100RFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129034"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R21(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 200"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%100RFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129034"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R22(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%1KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "MSL 1 - Illimité"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129113"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=R23(R 0805(2012))
+Add component (AddParameter): Name = "Coefficient de température"; Value = "± 100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1716700.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "MC0.1W08051%56KFR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MSL"; Value = "(Non Applicable)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "5000=0,001 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MC Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Puissance"; Value = "100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Mounting"; Value = "CMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Resistor Terminals"; Value = "(Non Disponible)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Résistance"; Value = "56"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "2129258"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension"; Value = "150"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolérance de résistance"; Value = "± 1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de boîtier de résistance"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de packaging"; Value = "Full Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de résistance"; Value = "Couche épaisse"; VariantName = "[No Variations]"
+Added Component: Designator=S1(DIP SWITCH 2 POS)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "DIP-4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=U1(SOIC8)
+Add component (AddParameter): Name = "Category"; Value = "Capteurs de Hall"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.tme.eu/fr/details/acs712elctr20at/capteurs-de-hall/allegro-microsystems/acs712elctr-20a-t/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.tme.eu/fr/details/acs712elctr20at/capteurs-de-hall/allegro-microsystems/acs712elctr-20a-t/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Courant d'entrée"; Value = "± 20A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Fabricant"; Value = "ALLEGRO MICROSYSTEMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "ALLEGRO MICROSYSTEMS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "ACS712ELCTR-20A-T"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MinAmount"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Multiples"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price Type"; Value = "NET"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=3,39, 3=3,16, 10=2,92 (EUR)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "844"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliedAmount"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "TME"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "ACS712ELCTR20AT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Température de travail"; Value = "-40...85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tension d'alimentation"; Value = "8V DC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type de capteur"; Value = "Hall effet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Unit"; Value = "pcs"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0,336"; VariantName = "[No Variations]"
+Added Component: Designator=U2(SOT223)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.ti.com/lit/ds/symlink/tlv1117.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ti.com/lit/ds/symlink/tlv1117.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "http://www.farnell.com/cad/1614300.zip"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.farnell.com/cad/1614300.zip"; VariantName = "[No Variations]"
+Added Component: Designator=U3(ESP32-WROOM-32X)
+Added Component: Designator=V1(HOLE M4)
+Added Component: Designator=V2(HOLE M4)
+Added Component: Designator=V3(HOLE M4)
+Added Component: Designator=V4(HOLE M4)
+Added Pin To Net: NetName=+5 Pin=C2-2
+Added Pin To Net: NetName=+5 Pin=C5-1
+Added Pin To Net: NetName=+5 Pin=D1-1
+Added Pin To Net: NetName=+5 Pin=D2-2
+Added Pin To Net: NetName=+5 Pin=D4-1
+Added Pin To Net: NetName=+5 Pin=D5-2
+Added Pin To Net: NetName=+5 Pin=D6-1
+Added Pin To Net: NetName=+5 Pin=D8-1
+Added Pin To Net: NetName=+5 Pin=D9-1
+Added Pin To Net: NetName=+5 Pin=K1-2
+Added Pin To Net: NetName=+5 Pin=K2-2
+Added Pin To Net: NetName=+5 Pin=L1-1
+Added Pin To Net: NetName=+5 Pin=P5-2
+Added Pin To Net: NetName=+5 Pin=P5-2
+Added Pin To Net: NetName=+5 Pin=PU1-4
+Added Pin To Net: NetName=+5 Pin=PU1-4
+Added Pin To Net: NetName=+5 Pin=U1-8
+Added Net: Name=+5
+Added Pin To Net: NetName=BUSY Pin=C10-2
+Added Pin To Net: NetName=BUSY Pin=R11-1
+Added Pin To Net: NetName=BUSY Pin=R16-2
+Added Pin To Net: NetName=BUSY Pin=U1-7
+Added Pin To Net: NetName=BUSY Pin=U3-6
+Added Net: Name=BUSY
+Added Pin To Net: NetName=CTRL_MACHINE Pin=Q1-1
+Added Pin To Net: NetName=CTRL_MACHINE Pin=R4-2
+Added Pin To Net: NetName=CTRL_MACHINE Pin=U3-10
+Added Net: Name=CTRL_MACHINE
+Added Pin To Net: NetName=CTRL_MAIN Pin=Q2-1
+Added Pin To Net: NetName=CTRL_MAIN Pin=R6-2
+Added Pin To Net: NetName=CTRL_MAIN Pin=U3-8
+Added Net: Name=CTRL_MAIN
+Added Pin To Net: NetName=EMPTY Pin=C1-2
+Added Pin To Net: NetName=EMPTY Pin=D3-3
+Added Pin To Net: NetName=EMPTY Pin=R1-1
+Added Pin To Net: NetName=EMPTY Pin=R2-1
+Added Pin To Net: NetName=EMPTY Pin=S1-2
+Added Pin To Net: NetName=EMPTY Pin=S1-2
+Added Pin To Net: NetName=EMPTY Pin=U3-9
+Added Net: Name=EMPTY
+Added Pin To Net: NetName=GND Pin=C1-1
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-2
+Added Pin To Net: NetName=GND Pin=C6-2
+Added Pin To Net: NetName=GND Pin=C7-2
+Added Pin To Net: NetName=GND Pin=C8-1
+Added Pin To Net: NetName=GND Pin=C9-2
+Added Pin To Net: NetName=GND Pin=C10-1
+Added Pin To Net: NetName=GND Pin=D3-1
+Added Pin To Net: NetName=GND Pin=P2-2
+Added Pin To Net: NetName=GND Pin=P3-2
+Added Pin To Net: NetName=GND Pin=P4-2
+Added Pin To Net: NetName=GND Pin=P5-4
+Added Pin To Net: NetName=GND Pin=P5-4
+Added Pin To Net: NetName=GND Pin=P5-6
+Added Pin To Net: NetName=GND Pin=P5-6
+Added Pin To Net: NetName=GND Pin=P6-3
+Added Pin To Net: NetName=GND Pin=P6-3
+Added Pin To Net: NetName=GND Pin=P6-5
+Added Pin To Net: NetName=GND Pin=P6-5
+Added Pin To Net: NetName=GND Pin=P6-7
+Added Pin To Net: NetName=GND Pin=P6-7
+Added Pin To Net: NetName=GND Pin=P6-9
+Added Pin To Net: NetName=GND Pin=P6-9
+Added Pin To Net: NetName=GND Pin=PU1-3
+Added Pin To Net: NetName=GND Pin=PU1-3
+Added Pin To Net: NetName=GND Pin=Q1-2
+Added Pin To Net: NetName=GND Pin=Q2-2
+Added Pin To Net: NetName=GND Pin=Q3-2
+Added Pin To Net: NetName=GND Pin=Q4-2
+Added Pin To Net: NetName=GND Pin=R4-1
+Added Pin To Net: NetName=GND Pin=R6-1
+Added Pin To Net: NetName=GND Pin=R8-1
+Added Pin To Net: NetName=GND Pin=R9-1
+Added Pin To Net: NetName=GND Pin=R16-1
+Added Pin To Net: NetName=GND Pin=R17-1
+Added Pin To Net: NetName=GND Pin=R23-1
+Added Pin To Net: NetName=GND Pin=S1-3
+Added Pin To Net: NetName=GND Pin=S1-3
+Added Pin To Net: NetName=GND Pin=S1-4
+Added Pin To Net: NetName=GND Pin=S1-4
+Added Pin To Net: NetName=GND Pin=U1-5
+Added Pin To Net: NetName=GND Pin=U3-1
+Added Pin To Net: NetName=GND Pin=U3-15
+Added Pin To Net: NetName=GND Pin=U3-38
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=U3-39
+Added Pin To Net: NetName=GND Pin=V1-1
+Added Pin To Net: NetName=GND Pin=V2-1
+Added Pin To Net: NetName=GND Pin=V3-1
+Added Pin To Net: NetName=GND Pin=V4-1
+Added Net: Name=GND
+Added Pin To Net: NetName=LIVE_1 Pin=U1-1
+Added Pin To Net: NetName=LIVE_1 Pin=U1-2
+Added Net: Name=LIVE_1
+Added Pin To Net: NetName=LIVE_3 Pin=F1-2
+Added Pin To Net: NetName=LIVE_3 Pin=P4-1
+Added Net: Name=LIVE_3
+Added Pin To Net: NetName=NetC3_1 Pin=C3-1
+Added Pin To Net: NetName=NetC3_1 Pin=U1-6
+Added Net: Name=NetC3_1
+Added Pin To Net: NetName=NetC6_1 Pin=C6-1
+Added Pin To Net: NetName=NetC6_1 Pin=L1-2
+Added Pin To Net: NetName=NetC6_1 Pin=U2-3
+Added Net: Name=NetC6_1
+Added Pin To Net: NetName=NetC9_1 Pin=C9-1
+Added Pin To Net: NetName=NetC9_1 Pin=D7-1
+Added Pin To Net: NetName=NetC9_1 Pin=D7-3
+Added Pin To Net: NetName=NetC9_1 Pin=R10-1
+Added Pin To Net: NetName=NetC9_1 Pin=U3-3
+Added Net: Name=NetC9_1
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Pin To Net: NetName=NetD1_2 Pin=R3-2
+Added Net: Name=NetD1_2
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=D2-3
+Added Pin To Net: NetName=NetD2_1 Pin=K1-5
+Added Pin To Net: NetName=NetD2_1 Pin=Q1-3
+Added Pin To Net: NetName=NetD2_1 Pin=R3-1
+Added Net: Name=NetD2_1
+Added Pin To Net: NetName=NetD4_2 Pin=D4-2
+Added Pin To Net: NetName=NetD4_2 Pin=R5-2
+Added Net: Name=NetD4_2
+Added Pin To Net: NetName=NetD5_1 Pin=D5-1
+Added Pin To Net: NetName=NetD5_1 Pin=D5-3
+Added Pin To Net: NetName=NetD5_1 Pin=K2-5
+Added Pin To Net: NetName=NetD5_1 Pin=Q2-3
+Added Pin To Net: NetName=NetD5_1 Pin=R5-1
+Added Net: Name=NetD5_1
+Added Pin To Net: NetName=NetD6_2 Pin=D6-2
+Added Pin To Net: NetName=NetD6_2 Pin=R8-2
+Added Net: Name=NetD6_2
+Added Pin To Net: NetName=NetD8_2 Pin=D8-2
+Added Pin To Net: NetName=NetD8_2 Pin=R13-2
+Added Net: Name=NetD8_2
+Added Pin To Net: NetName=NetD9_2 Pin=D9-2
+Added Pin To Net: NetName=NetD9_2 Pin=R19-2
+Added Net: Name=NetD9_2
+Added Pin To Net: NetName=NetF1_1 Pin=F1-1
+Added Pin To Net: NetName=NetF1_1 Pin=PU1-2
+Added Pin To Net: NetName=NetF1_1 Pin=PU1-2
+Added Net: Name=NetF1_1
+Added Pin To Net: NetName=NetK1_1 Pin=K1-1
+Added Pin To Net: NetName=NetK1_1 Pin=P1-2
+Added Net: Name=NetK1_1
+Added Pin To Net: NetName=NetK1_3 Pin=K1-3
+Added Pin To Net: NetName=NetK1_3 Pin=P1-3
+Added Net: Name=NetK1_3
+Added Pin To Net: NetName=NetK1_4 Pin=K1-4
+Added Pin To Net: NetName=NetK1_4 Pin=P1-1
+Added Net: Name=NetK1_4
+Added Pin To Net: NetName=NetK2_1 Pin=K2-1
+Added Pin To Net: NetName=NetK2_1 Pin=U1-3
+Added Pin To Net: NetName=NetK2_1 Pin=U1-4
+Added Net: Name=NetK2_1
+Added Pin To Net: NetName=NetK2_3 Pin=K2-3
+Added Pin To Net: NetName=NetK2_3 Pin=P3-4
+Added Net: Name=NetK2_3
+Added Pin To Net: NetName=NetK2_4 Pin=K2-4
+Added Pin To Net: NetName=NetK2_4 Pin=P3-1
+Added Net: Name=NetK2_4
+Added Pin To Net: NetName=NetP2_1 Pin=P2-1
+Added Pin To Net: NetName=NetP2_1 Pin=R2-2
+Added Net: Name=NetP2_1
+Added Pin To Net: NetName=NetP5_1 Pin=P5-1
+Added Pin To Net: NetName=NetP5_1 Pin=P5-1
+Added Pin To Net: NetName=NetP5_1 Pin=U3-35
+Added Net: Name=NetP5_1
+Added Pin To Net: NetName=NetP5_3 Pin=P5-3
+Added Pin To Net: NetName=NetP5_3 Pin=P5-3
+Added Pin To Net: NetName=NetP5_3 Pin=U3-34
+Added Net: Name=NetP5_3
+Added Pin To Net: NetName=NetP5_5 Pin=P5-5
+Added Pin To Net: NetName=NetP5_5 Pin=P5-5
+Added Pin To Net: NetName=NetP5_5 Pin=R12-1
+Added Pin To Net: NetName=NetP5_5 Pin=U3-25
+Added Net: Name=NetP5_5
+Added Pin To Net: NetName=NetP6_2 Pin=P6-2
+Added Pin To Net: NetName=NetP6_2 Pin=P6-2
+Added Pin To Net: NetName=NetP6_2 Pin=R15-1
+Added Net: Name=NetP6_2
+Added Pin To Net: NetName=NetP6_4 Pin=P6-4
+Added Pin To Net: NetName=NetP6_4 Pin=P6-4
+Added Pin To Net: NetName=NetP6_4 Pin=R18-1
+Added Net: Name=NetP6_4
+Added Pin To Net: NetName=NetP6_6 Pin=P6-6
+Added Pin To Net: NetName=NetP6_6 Pin=P6-6
+Added Pin To Net: NetName=NetP6_6 Pin=R20-1
+Added Net: Name=NetP6_6
+Added Pin To Net: NetName=NetP6_8 Pin=P6-8
+Added Pin To Net: NetName=NetP6_8 Pin=P6-8
+Added Pin To Net: NetName=NetP6_8 Pin=R21-1
+Added Net: Name=NetP6_8
+Added Pin To Net: NetName=NetP6_10 Pin=P6-10
+Added Pin To Net: NetName=NetP6_10 Pin=P6-10
+Added Net: Name=NetP6_10
+Added Pin To Net: NetName=NetQ3_1 Pin=Q3-1
+Added Pin To Net: NetName=NetQ3_1 Pin=R14-1
+Added Pin To Net: NetName=NetQ3_1 Pin=R17-2
+Added Net: Name=NetQ3_1
+Added Pin To Net: NetName=NetQ3_3 Pin=Q3-3
+Added Pin To Net: NetName=NetQ3_3 Pin=R13-1
+Added Net: Name=NetQ3_3
+Added Pin To Net: NetName=NetQ4_1 Pin=Q4-1
+Added Pin To Net: NetName=NetQ4_1 Pin=R22-1
+Added Pin To Net: NetName=NetQ4_1 Pin=R23-2
+Added Net: Name=NetQ4_1
+Added Pin To Net: NetName=NetQ4_3 Pin=Q4-3
+Added Pin To Net: NetName=NetQ4_3 Pin=R19-1
+Added Net: Name=NetQ4_3
+Added Pin To Net: NetName=NetR7_1 Pin=R7-1
+Added Pin To Net: NetName=NetR7_1 Pin=R9-2
+Added Pin To Net: NetName=NetR7_1 Pin=U2-1
+Added Net: Name=NetR7_1
+Added Pin To Net: NetName=NetR14_2 Pin=R14-2
+Added Pin To Net: NetName=NetR14_2 Pin=U3-29
+Added Net: Name=NetR14_2
+Added Pin To Net: NetName=NetR15_2 Pin=R15-2
+Added Pin To Net: NetName=NetR15_2 Pin=U3-13
+Added Net: Name=NetR15_2
+Added Pin To Net: NetName=NetR18_2 Pin=R18-2
+Added Pin To Net: NetName=NetR18_2 Pin=U3-14
+Added Net: Name=NetR18_2
+Added Pin To Net: NetName=NetR20_2 Pin=R20-2
+Added Pin To Net: NetName=NetR20_2 Pin=U3-16
+Added Net: Name=NetR20_2
+Added Pin To Net: NetName=NetR21_2 Pin=R21-2
+Added Pin To Net: NetName=NetR21_2 Pin=U3-23
+Added Net: Name=NetR21_2
+Added Pin To Net: NetName=NetR22_2 Pin=R22-2
+Added Pin To Net: NetName=NetR22_2 Pin=U3-24
+Added Net: Name=NetR22_2
+Added Pin To Net: NetName=NetS1_1 Pin=S1-1
+Added Pin To Net: NetName=NetS1_1 Pin=S1-1
+Added Pin To Net: NetName=NetS1_1 Pin=U3-26
+Added Net: Name=NetS1_1
+Added Pin To Net: NetName=NetU3_4 Pin=U3-4
+Added Net: Name=NetU3_4
+Added Pin To Net: NetName=NetU3_5 Pin=U3-5
+Added Net: Name=NetU3_5
+Added Pin To Net: NetName=NetU3_7 Pin=U3-7
+Added Net: Name=NetU3_7
+Added Pin To Net: NetName=NetU3_11 Pin=U3-11
+Added Net: Name=NetU3_11
+Added Pin To Net: NetName=NetU3_12 Pin=U3-12
+Added Net: Name=NetU3_12
+Added Pin To Net: NetName=NetU3_17 Pin=U3-17
+Added Net: Name=NetU3_17
+Added Pin To Net: NetName=NetU3_18 Pin=U3-18
+Added Net: Name=NetU3_18
+Added Pin To Net: NetName=NetU3_19 Pin=U3-19
+Added Net: Name=NetU3_19
+Added Pin To Net: NetName=NetU3_20 Pin=U3-20
+Added Net: Name=NetU3_20
+Added Pin To Net: NetName=NetU3_21 Pin=U3-21
+Added Net: Name=NetU3_21
+Added Pin To Net: NetName=NetU3_22 Pin=U3-22
+Added Net: Name=NetU3_22
+Added Pin To Net: NetName=NetU3_27 Pin=U3-27
+Added Net: Name=NetU3_27
+Added Pin To Net: NetName=NetU3_28 Pin=U3-28
+Added Net: Name=NetU3_28
+Added Pin To Net: NetName=NetU3_30 Pin=U3-30
+Added Net: Name=NetU3_30
+Added Pin To Net: NetName=NetU3_31 Pin=U3-31
+Added Net: Name=NetU3_31
+Added Pin To Net: NetName=NetU3_32 Pin=U3-32
+Added Net: Name=NetU3_32
+Added Pin To Net: NetName=NetU3_33 Pin=U3-33
+Added Net: Name=NetU3_33
+Added Pin To Net: NetName=NetU3_36 Pin=U3-36
+Added Net: Name=NetU3_36
+Added Pin To Net: NetName=NetU3_37 Pin=U3-37
+Added Net: Name=NetU3_37
+Added Pin To Net: NetName=NEUTRAL_1 Pin=P3-3
+Added Net: Name=NEUTRAL_1
+Added Pin To Net: NetName=NEUTRAL_3 Pin=P4-3
+Added Pin To Net: NetName=NEUTRAL_3 Pin=PU1-1
+Added Net: Name=NEUTRAL_3
+Added Pin To Net: NetName=VCC Pin=C4-1
+Added Pin To Net: NetName=VCC Pin=C7-1
+Added Pin To Net: NetName=VCC Pin=C8-2
+Added Pin To Net: NetName=VCC Pin=D3-2
+Added Pin To Net: NetName=VCC Pin=D7-2
+Added Pin To Net: NetName=VCC Pin=P6-1
+Added Pin To Net: NetName=VCC Pin=P6-1
+Added Pin To Net: NetName=VCC Pin=R1-2
+Added Pin To Net: NetName=VCC Pin=R7-2
+Added Pin To Net: NetName=VCC Pin=R10-2
+Added Pin To Net: NetName=VCC Pin=R11-2
+Added Pin To Net: NetName=VCC Pin=R12-2
+Added Pin To Net: NetName=VCC Pin=U2-2
+Added Pin To Net: NetName=VCC Pin=U2-4
+Added Pin To Net: NetName=VCC Pin=U3-2
+Added Net: Name=VCC
+Added Class: Name=U_IO
+Added Class: Name=U_MCU
+Added Class: Name=U_PSU
+Added Rule: Name=Schematic Width Constraint
+Added Rule: Name=Schematic Width Constraint_1
+Added Rule: Name=Schematic Width Constraint_2
+Added Rule: Name=Schematic Width Constraint_3

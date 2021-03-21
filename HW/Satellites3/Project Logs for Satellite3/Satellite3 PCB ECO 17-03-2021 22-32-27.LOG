@@ -1,0 +1,56 @@
+Removed Pin From Net: NetName=NetC9_1 Pin=C9-1
+Removed Pin From Net: NetName=GND Pin=C9-2
+Removed Pin From Net: NetName=+5 Pin=P5-2
+Removed Pin From Net: NetName=+5 Pin=P5-2
+Removed Pin From Net: NetName=GND Pin=P5-4
+Removed Pin From Net: NetName=GND Pin=P5-4
+Removed Pin From Net: NetName=GND Pin=P5-6
+Removed Pin From Net: NetName=GND Pin=P5-6
+Change Component Footprint: Designator=C9 Old Footprint=C 0805(2012)x0.65 New Footprint=SAMTEC_FTSH-103-02-F-DV
+Change Component Footprint: Designator=P5 Old Footprint=HE10-6 TH-SMD New Footprint=C 0805(2012)x0.65
+Change Component Comment : Designator=F1 Old Comment=1A New Comment=Fuse
+Change Component Comment : Designator=C9 Old Comment=10µF New Comment=FTSH-103-02-F-DV
+Change Component Comment : Designator=P5 Old Comment=PROG New Comment=1uF
+Change Component Designator: OldDesignator=C9 NewDesignator=P5
+Change Component Designator: OldDesignator=P5 NewDesignator=C9
+Change component parameters: Designator = "P5" ("C9"); Footprint = "HE10-6 TH-SMD"; UniqueID = "\WGJRKOAG\TNWSDLKS" ("\WGJRKOAG\TNWSDLKS")
+Change component parameters (AddParameter): Name = "Capacitor Terminals"; Value = "SMD"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Capacité"; Value = "1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.farnell.com/datasheets/1723208.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.farnell.com/datasheets/1723208.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Diélectrique"; Value = "Y5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "MULTICOMP"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "MCCA000549"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "100=0,018, 500=0,012, 1000=0,009, 3000=0,006 (EUR)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Product Range"; Value = "MULTICOMP - MCCA Series"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "YES"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "1759429"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SVHC"; Value = "No SVHC (20-Jun-2013)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Température de fonctionnement"; Value = "-30°C à +85"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolérance de capacité"; Value = "+80%, -20%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type de boîtier de condensateur"; Value = "0805 [2012 Metric]"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Type de packaging"; Value = "Cut Tape"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C9" ("P5"); Footprint = "C 0805(2012)x0.65"; UniqueID = "\WGJRKOAG\CHPJXBOZ" ("\WGJRKOAG\CHPJXBOZ")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "FTSH-103-02-F-DV"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC9_1 Pin=C9-1
+Added Pin To Net: NetName=GND Pin=C9-2
+Added Pin To Net: NetName=NetC9_1 Pin=P5-01
+Added Pin To Net: NetName=VCC Pin=P5-02
+Added Pin To Net: NetName=GND Pin=P5-04
+Change Net Name : Old Net Name=NetC9_1 New Net Name=EN_2
+Added Pin To Net: NetName=NetP5_03 Pin=P5-03
+Added Pin To Net: NetName=NetP5_03 Pin=U3-35
+Added Net: Name=NetP5_03
+Added Pin To Net: NetName=NetP5_05 Pin=P5-05
+Added Pin To Net: NetName=NetP5_05 Pin=U3-34
+Added Net: Name=NetP5_05
+Added Pin To Net: NetName=NetP5_06 Pin=P5-06
+Added Pin To Net: NetName=NetP5_06 Pin=R12-1
+Added Pin To Net: NetName=NetP5_06 Pin=U3-25
+Added Net: Name=NetP5_06

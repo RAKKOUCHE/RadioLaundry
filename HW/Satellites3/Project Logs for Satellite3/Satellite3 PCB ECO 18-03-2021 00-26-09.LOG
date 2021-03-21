@@ -1,0 +1,15 @@
+Removed Pin From Net: NetName=MAIN.L Pin=P4-1
+Removed Pin From Net: NetName=MAIN.N Pin=P4-3
+Change Component Designator: OldDesignator= NewDesignator=V1
+Change Component Designator: OldDesignator= NewDesignator=V4
+Added Pin To Net: NetName=MAIN.N Pin=P4-1
+Added Pin To Net: NetName=MAIN.L Pin=P4-3
+Added Member To Class: ClassName=U_MCU Member=Component R15 100
+Added Member To Class: ClassName=U_MCU Member=Component V1 VIS
+Added Member To Class: ClassName=U_MCU Member=Component V4 VIS
+Added Rule: Name=Schematic Width Constraint
+Added Rule: Name=Schematic Width Constraint_1
+Added Rule: Name=Schematic Width Constraint_2
+Added Rule: Name=Schematic Width Constraint_3
+Change Rule Scope 1 : Old Scope=InNet('VCC') or InNet('+5') or InNet('GND') New Scope=InNet('+5')
+Change Rule Scope 1 : Old Scope=InNet('MAIN.N') Or InNet('MAIN.L') New Scope=InNet('MAIN.N')
