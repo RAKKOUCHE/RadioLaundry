@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "Satellite_3",
+			"path": "..\\..\\Main\\Satellite_3"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"gpio.h": "c",
+			"esp_err.h": "c"
+		}
+	}
+}
