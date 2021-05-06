@@ -4,7 +4,8 @@
         "future": "cpp",
         "adc.h": "c",
         "functional": "c",
-        "io.h": "c"
+        "io.h": "c",
+        "espnow.h": "c"
     },
     "C_Cpp.vcFormat.indent.caseLabels": true,
     "editor.formatOnPaste": true,

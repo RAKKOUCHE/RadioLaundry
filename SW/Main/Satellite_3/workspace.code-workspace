@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "Satellite_3",
+			"path": "."
+		}
+	],
+	"settings": {
+		"doxdocgen.generic.dateFormat": "DD-MM-YYYY",
+		"doxdocgen.file.versionTag": "@version 0.9",
+		"doxdocgen.generic.authorEmail": "rachid.akkouche@wanadoo.fr",
+		"doxdocgen.generic.authorName": "Rachid AKKOUCHE",
+		"doxdocgen.generic.customTags": [],
+		"doxdocgen.generic.filteredKeywords": [],
+		"user.info.email": "rachid.akkouche@wanadoo.fr",
+		"user.info.name": "Rachid AKKOUCHE",
+		"comments.info.fileExtension": ".c and .h",
+		"comments.info.importationText": "Fichiers inclus",
+		"doxdocgen.file.copyrightTag": [],
+		"files.associations": {
+			"cstdio": "cpp",
+			"main.h": "c"
+		}
+	}
+}

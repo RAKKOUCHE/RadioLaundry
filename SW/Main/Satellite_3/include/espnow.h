@@ -77,6 +77,10 @@ typedef enum __attribute__((__packed__))
 
     REQUEST_FW_VERSION = REQUEST_REST_ACTIVATION - 1, /*!<Retourne la version du satellite.*/
 
+    REQUEST_CONFIG = REQUEST_FW_VERSION - 1, /*!<Retourne la configuration du satellite.*/
+
+    MODIFY_CONFIG = REQUEST_CONFIG - 1, /*!<Enregistre la configuration du module.*/
+
 } Command_t;
 
 /**

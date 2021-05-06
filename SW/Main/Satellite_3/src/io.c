@@ -58,7 +58,7 @@ static void InitIO(void)
     ESP_ERROR_CHECK(gpio_set_level(LED_2, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MACHINE, LO));
     ESP_ERROR_CHECK(gpio_set_level(CTRL_MAIN, LO));
-    printf("%s%s", TAG_IO, "IOs iinitialisés\n");
+    printf("%s%s", TAG_IO, "IOs initialisées\n");
 }
 
 /*!
@@ -73,6 +73,7 @@ static void InitIO(void)
 */
 void vTORelay(xTimerHandle xTimer)
 {
+    printf("%s%s", TAG_IO, "Le relais d'activation est desactivé parce-que le délai est atteint.");
     gpio_set_level(CTRL_MACHINE, LO); //Action à effetuer immédaitement.
     setIOState(IORELAYMACHINEOFF);
 }
@@ -130,6 +131,7 @@ void setLED(const gpio_num_t led)
 */
 void vTaskIO(void *VParameter)
 {
+    uint8_t delay_flash = 4;
     setIOState(IOTASKINIT);
     TickType_t xLastWakeTime = xTaskGetTickCount();
     while (1)
@@ -148,8 +150,15 @@ void vTaskIO(void *VParameter)
         }
         case IOLEDFLASH:
         {
+            if ((LED == LED_2) && --delay_flash)
+            {
+                break;
+            }
+
+            delay_flash = 10;
             gpio_set_level(LED, !gpio_get_level(LED));
             printf("%s%s%d%s", TAG_IO, "Led ", LED, (gpio_get_level(LED) ? " ON" : " OFF"));
+
             break;
         }
         case IOLEDOFF:
@@ -171,7 +180,7 @@ void vTaskIO(void *VParameter)
 
             // gpio_set_level(CTRL_MACHINE, HI);
             printf("%s%s", TAG_IO, "Relais machine activé");
-            xTimerChangePeriod(hTORelayMachine, delayActivation, 1 * SECONDE);
+            xTimerChangePeriod(hTORelayMachine, machineConfig.config.lPulseInMS, 1 * SECONDE);
 
             saveRelayMachineState(HI);
             setIOState(IOTASKIDLE);

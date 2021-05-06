@@ -7,8 +7,6 @@
 * \remarks None
 */
 
-//TODO: Supprimer l'enregistrement du numéro 11 dans la version release.
-
 /*! Fichiers inclus*/
 #include "main.h"
 
@@ -43,7 +41,7 @@ static void createTasks(void)
     //Création de la tâche ADC
     xTaskCreate(vTaskADC, "Tâche ADC", 2048, NULL, 1, &hTaskADC);
     //Création du timer de gestion de l'activation du relay
-    hTORelayMachine = xTimerCreate("TO Relais", DEFAUTDELAYACTIVION, pdFALSE, 0, vTORelay);
+    hTORelayMachine = xTimerCreate("TO Relais", DEFAULTDELAYACTIVION, pdFALSE, 0, vTORelay);
 }
 
 /*!
@@ -87,30 +85,42 @@ static void initApp(void)
 * \brief Point d'entrée du programme
 * \remarks None
 */
+
+/**
+ * @brief 
+ * @return (void)
+ */
 void app_main()
 {
+
     printf("%s%s", TAG_MAIN, "Debut du programme");
-    delayBlink = 5;
+    delayBlink = 11;
+
     //Initialisation du programme
     initApp();
 
     //Boucle permanente
     while (1)
     {
-        //Si le bouton est utilisé
-        if (!gpio_get_level(BUTTON))
-        {
-            printf("%s%s", TAG_MAIN, "Bouton utilisé");
-            while (!gpio_get_level(BUTTON))
-            {
-                vTaskDelay(1);
-            };
-        }
+        // //Si le bouton est utilisé
+        // if (!gpio_get_level(BUTTON))
+        // {
+        //     printf("%s%s", TAG_MAIN, "Bouton utilisé");
+        //     while (!gpio_get_level(BUTTON))
+        //     {
+        //         vTaskDelay(1);
+        //     };
+        // }
         //Arrête le glignotement de la led
         if (delayBlink && (--delayBlink == 0))
         {
             setLED(LED_1);
             setIOState(IOLEDOFF);
+        }
+        if (getIOState() == IOTASKIDLE)
+        {
+            setLED(LED_2);
+            setIOState(IOLEDFLASH);
         }
         vTaskDelay(pdMS_TO_TICKS(250));
     }

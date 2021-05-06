@@ -11,18 +11,6 @@
 /*! Fichier inclus*/
 #include "parameters.h"
 
-/**
-* \def NEWDEVICE
- * 
- */
-#define NEWDEVICE 0XFF
-
-/*!
-* \def DEFAUTDELAYOVERBUSY
-* Description
-*/
-#define DEFAUTDELAYOVERBUSY 30
-
 /*!
 * \def TAG_PARAMETER
 * Description
@@ -38,13 +26,15 @@ static const char *filename = "/data/parameters";
 *\brief
  */
 static FILE *filedata;
+
 /**
 *\brief
  */
 static esp_err_t err;
 
 /**
-*\brief
+ * @brief 
+ * 
  */
 static esp_vfs_spiffs_conf_t conf;
 
@@ -88,53 +78,55 @@ static bool setVFS_SPIFFS(void)
 }
 
 /*!
-* \fn static void InitNewDevice(void)
+* \fn bool saveMachineConfig(MACHINECONFIG machineconfig.
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
-* \date  08/03/2021
+* \date  04/05/2021
 * \brief 
 * \remarks None
+* \param machineconfig.
 * \return 
 */
-static void InitNewDevice(void)
+bool saveMachineConfig(MACHINECONFIG machineConfig)
 {
-    saveDelayOverBusy((delayOverBusy = DEFAUTDELAYOVERBUSY));
-    saveDelayActivation(delayActivation = DEFAUTDELAYACTIVION);
-    saveRelayMachineState(LO);
+    return ((fwrite(&machineConfig, sizeof(machineConfig), 1, filedata) > 0) &&
+            !fflush(filedata) &&
+            saveRelayMachineState(LO));
 }
 
-/*!
-* \fn static uint32_t readDelayOverBusy(void)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  08/03/2021
-* \brief 
-* \remarks None
-* \return 
-*/
-static uint32_t readDelayOverBusy(void)
-{
-    fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET);
-    return fread(&delayOverBusy, sizeof(delayOverBusy), 1, filedata);
-}
+// /*!
+// * \fn static uint32_t readDelayOverBusy(void)
+// * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+// * \version 0.1
+// * \date  08/03/2021
+// * \brief
+// * \remarks None
+// * \return
+// */
+// static uint32_t readDelayOverBusy(void)
+// {
+//     fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET);
+//     fread(&machineconfig.delayOverBusy, sizeof(machineconfig.delayOverBusy), 1, filedata);
+//     return machineconfig.delayOverBusy;
+// }
+
+// /*!
+// * \fn static uint32_t readDelayActivation(void)
+// * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+// * \version 0.1
+// * \date  08/03/2021
+// * \brief
+// * \remarks None
+// * \return
+// */
+// static uint32_t readDelayActivation(void)
+// {
+//     fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET);
+//     return fread(&machineconfig.lPulseInMS, sizeof(machineconfig.lPulseInMS), 1, filedata);
+// }
 
 /*!
-* \fn static uint32_t readDelayActivation(void)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  08/03/2021
-* \brief 
-* \remarks None
-* \return 
-*/
-static uint32_t readDelayActivation(void)
-{
-    fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET);
-    return fread(&delayActivation, sizeof(delayActivation), 1, filedata);
-}
-
-/*!
-* \fn static uint8_t readStateRelayMachine(void)
+* \fn static bool readStateRelayMachine(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  09/03/2021
@@ -142,10 +134,48 @@ static uint32_t readDelayActivation(void)
 * \remarks None
 * \return 
 */
-static uint8_t readStateRelayMachine(void)
+static bool readStateRelayMachine(void)
 {
     fseek(filedata, ADDRESS_STATE_RELAY_MACHINE, SEEK_SET);
     return fread(&isRelayMachineActivated, sizeof(isRelayMachineActivated), 1, filedata);
+}
+
+/*!
+* \fn static void initNewDevice()
+* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+* \version 0.1
+* \date  04/05/2021
+* \brief 
+* \remarks None
+* \return 
+*/
+static void initNewDevice()
+{
+    memset(machineConfig.buffer, 0, sizeof(machineConfig));
+    machineConfig.config.address = NEWDEVICE;
+    machineConfig.config.wCashPrice = DEFAULTCASHPRICE;
+    machineConfig.config.wCashLessPrice = DEFAULTCLPRICE;
+    machineConfig.config.wCashPriceHH = DEFAULTCASHPRICEHH;
+    machineConfig.config.wCashLessPriceHH = DEFAULTCLPRICEHH;
+    machineConfig.config.lPulseInMS = DEFAULTPULSE;
+    machineConfig.config.delayOverBusy = DEFAULTOVERBUSY;
+    machineConfig.config.lTimeToDisplay = DEFAULTTIMETODISPLAY;
+    machineConfig.config.BusyLevel = DEFAULTBUSYLEVEL;
+
+    machineConfig.config.BeginSelect.heures = DEFAULTDEBUTH;
+    machineConfig.config.BeginSelect.minutes = DEFAULTDEBUTM;
+    machineConfig.config.FinSelect.heures = DEFAULTFINH;
+    machineConfig.config.FinSelect.minutes = DEFAULTFINM;
+
+    machineConfig.config.BeginHH.heures = DEFAULTBEGINHHH;
+    machineConfig.config.BeginHH.minutes = DEFAULTBEGINHHM;
+    machineConfig.config.EndHH.heures = DEFAULTENDHHH;
+    machineConfig.config.EndHH.minutes = DEFAULTENDHHM;
+    machineConfig.config.isCumulEnable = false;
+    machineConfig.config.isDisplayedTimeRemaining = false;
+    machineConfig.config.isMachinePowered = true;
+    machineConfig.config.isBillAccepted = true;
+    saveMachineConfig(machineConfig);
 }
 
 /*!
@@ -167,113 +197,93 @@ static void checkFileParameters(void)
     if (stat(filename, &s) < 0)
     {
         printf("%s%s", TAG_PARAMETER, "Le fichier n'existe pas!");
-        MachineAddress = NEWDEVICE;
-        fwrite(&MachineAddress, sizeof(MachineAddress), 1, (filedata = fopen(filename, "wb+")));
-        fflush(filedata);
+        filedata = fopen(filename, "wb+");
+        initNewDevice();
         fclose(filedata);
         filedata = NULL;
     }
 
-    if (!fread(&MachineAddress, sizeof(MachineAddress), 1, filedata = fopen(filename, "rb+")))
+    if (!fread(&machineConfig, sizeof(machineConfig), 1, (filedata = fopen(filename, "rb+"))))
     {
-        printf("%s%s", TAG_PARAMETER, "La lecture du numéro de la machine a échoué");
+        initNewDevice();
+        printf("%s%s", TAG_PARAMETER, "La lecture de la configuration de la machine a échouée");
     }
     else
     {
+        //initNewDevice();
 
-        printf("%s%s%u", TAG_PARAMETER, "Le numéro de la machine est : ", MachineAddress);
+        printf("%s%s%u", TAG_PARAMETER, "Le numéro de la machine est : ", machineConfig.config.address);
         rewind(filedata);
 
-        if (MachineAddress == NEWDEVICE)
+        if (machineConfig.config.address == NEWDEVICE)
         {
-            InitNewDevice();
+            initNewDevice();
         }
-        saveMachineNumber(MachineAddress = 11);
-
-        readDelayOverBusy();
-        printf("%s%s%u%s\n", TAG_PARAMETER, "Le délai de suroccupation est de : ", getDelayOverBusy(), " secondes");
-        readDelayActivation();
-        printf("%s%s%u%s\n", TAG_PARAMETER, "Le délai d'activation du relay machine est de :: ", getDelayActivation(), " millisecondes");
+        printf("%s%s%u%s\n", TAG_PARAMETER, "Le délai de suroccupation est de : ", machineConfig.config.delayOverBusy, " secondes");
+        printf("%s%s%u%s\n", TAG_PARAMETER, "Le délai d'activation du relay machine est de :: ", machineConfig.config.lPulseInMS, " millisecondes");
         readStateRelayMachine();
         setIOState(isRelayMachineActivated ? IORELAYMACHINEON : IORELAYMACHINEOFF);
-        printf("%s%s%s", TAG_PARAMETER, "Le relais machine est ", gpio_get_level(CTRL_MACHINE) ? "activé" : "desactivé");
-        printf("\n");
+        printf("%s%s%s\n", TAG_PARAMETER, "Le relais machine est ", gpio_get_level(CTRL_MACHINE) ? "activé" : "desactivé");
+
         //****************************
     }
 }
 
-/*!
-* \fn uint32_t getDelayActivation(void)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  08/03/2021
-* \brief 
-* \remarks None
-* \return 
-*/
-uint32_t getDelayActivation(void)
-{
-    return delayActivation;
-}
+// /*!
+// * \fn uint32_t getDelayActivation(void)
+// * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+// * \version 0.1
+// * \date  08/03/2021
+// * \brief
+// * \remarks None
+// * \return
+// */
+// uint32_t getDelayActivation(void)
+// {
+//     return machineconfig.lPulseInMS;
+// }
 
-/*!
-* \fn bool saveMachineNumber(const uint8_t address)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  24/02/2021
-* \brief Enregistre l'adresse du module
-* \remarks None
-* \param address 
-* \return 
-*/
-bool saveMachineNumber(const uint8_t address)
-{
-    rewind(filedata);
-    fwrite(&address, sizeof(address), 1, filedata);
-    fflush(filedata);
-    fseek(filedata, 0, SEEK_SET);
-    return (fread(&MachineAddress, sizeof(MachineAddress), 1, filedata) && (MachineAddress == address));
-}
+// /*!
+// * \fn bool saveDelayOverBusy(const uint16_t delay)
+// * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+// * \version 0.1
+// * \date  01/03/2021
+// * \brief
+// * \remarks None
+// * \param delay
+// * \return
+// */
+// bool saveDelayOverBusy(const uint16_t delay)
+// {
+//     printf("%s%s%u\n", TAG_PARAMETER, " Enregistrement du délai de suroccupation : ", delay);
+//     return ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
+//             (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
+//             (fflush(filedata) == 0) &&
+//             (fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
+//             (fread(&machineconfig.delayOverBusy, sizeof(machineconfig.delayOverBusy), 1, filedata) == 1) &&
+//             (machineconfig.delayOverBusy == delay));
+// }
 
-/*!
-* \fn bool saveDelayOverBusy(const uint16_t delay)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  01/03/2021
-* \brief 
-* \remarks None
-* \param delay 
-* \return 
-*/
-bool saveDelayOverBusy(const uint16_t delay)
-{
-    return ((fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
-            (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
-            (fflush(filedata) == 0) &&
-            (fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET) == 0) &&
-            (fread(&delayOverBusy, sizeof(delayOverBusy), 1, filedata) == 1) &&
-            (delayOverBusy == delay));
-}
-
-/*!
-* \fn bool saveDelayActivation(const uint32_t delay)
-* \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-* \version 0.1
-* \date  01/03/2021
-* \brief 
-* \remarks None
-* \param delay 
-* \return 
-*/
-bool saveDelayActivation(const uint32_t delay)
-{
-    return ((fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET) == 0) &&
-            (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
-            (fflush(filedata) == 0) &&
-            (fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET) == 0) &&
-            (fread(&delayActivation, sizeof(delayActivation), 1, filedata) == 1) &&
-            (delayActivation == delay));
-}
+// /*!
+// * \fn bool saveDelayActivation(const uint32_t delay)
+// * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
+// * \version 0.1
+// * \date  01/03/2021
+// * \brief
+// * \remarks None
+// * \param delay
+// * \return
+// */
+// bool saveDelayActivation(const uint32_t delay)
+// {
+//     printf("%s%s%u\n", TAG_PARAMETER, " Enregistrement du délai d'occupation : ", delay);
+//     return ((fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET) == 0) &&
+//             (fwrite(&delay, sizeof(delay), 1, filedata) == 1) &&
+//             (fflush(filedata) == 0) &&
+//             (fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET) == 0) &&
+//             (fread(&machineconfig.lPulseInMS, sizeof(machineconfig.lPulseInMS), 1, filedata) == 1) &&
+//             (machineconfig.lPulseInMS == delay));
+// }
 
 /*!
 * \fn bool saveRelayMachineState(const uint8_t state)
@@ -308,7 +318,7 @@ bool saveRelayMachineState(const uint8_t state)
 */
 uint16_t getDelayOverBusy(void)
 {
-    return delayOverBusy;
+    return machineConfig.config.delayOverBusy;
 }
 
 /*!

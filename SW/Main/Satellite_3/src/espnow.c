@@ -10,6 +10,8 @@
 /*! Fichiers inclus*/
 #include "espnow.h"
 
+const char version[8] = "V0.1";
+
 /*!
 * \def TAG_ESPNOW
 * Description
@@ -76,7 +78,7 @@ static uint8_t msg_len;
 /**
 * \brief
 */
-static uint8_t msg_buffer[32];
+static uint8_t msg_buffer[128];
 
 /**
  * @brief 
@@ -140,10 +142,12 @@ static void formatSendAnswer(const board_Answer_t state, const uint8_t len, cons
 {
     uint16_t LCRC;
     uint8_t *buffer;
-    buffer = malloc(1 + sizeof(len) + sizeof(MachineAddress) + 1 + len + sizeof(uint16_t));
+    uint8_t bufferSize = 1 + sizeof(len) + sizeof(machineConfig.config.address) + 1 + len + sizeof(uint16_t);
+    buffer = malloc(bufferSize);
+    memset(buffer, 0, bufferSize);
     buffer[0] = HOST;
     buffer[1] = len;
-    buffer[2] = MachineAddress;
+    buffer[2] = machineConfig.config.address;
     buffer[3] = (uint8_t)state;
     memmove(&buffer[4], message, len);
     LCRC = wCRC16(buffer, len + 4);
@@ -205,7 +209,8 @@ static void checkheader(const uint8_t *data)
     }
     case MODIFY_MACHINE_NUMBER:
     {
-        printf("%s%s%s%s%u", TAG_ESPNOW, "L'enregistrement du numéro de la machine a ", saveMachineNumber(data[4]) ? "résussi" : "échoué:", " Le nouveau numéro est : ", MachineAddress);
+        machineConfig.config.address = data[4];
+        printf("%s%s%s%s%u", TAG_ESPNOW, "L'enregistrement du numéro de la machine a ", saveMachineConfig(machineConfig) ? "résussi" : "échoué:", " Le nouveau numéro est : ", machineConfig.config.address);
         vACK();
         break;
     }
@@ -267,17 +272,19 @@ static void checkheader(const uint8_t *data)
     case MODIFY_DELAY_OVER_BUSY:
     {
         printf("%s%s", TAG_ESPNOW, "Enregistrement du délais de suroccupation");
-        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais de suroccupation a ", saveDelayOverBusy(data[4] + (data[5] * 0x100)) ? "résussi" : "échoué", data[4] + (data[5] * 0x100));
+        machineConfig.config.delayOverBusy = data[4] + (data[5] * 0x100);
+        saveMachineConfig(machineConfig);
+        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais de suroccupation a ", (machineConfig.config.delayOverBusy) ? "résussi" : "échoué", data[4] + (data[5] * 0x100));
         vACK();
         break;
     }
     case REQUEST_DELAY_OVER_BUSY:
     {
         printf("%s%s", TAG_ESPNOW, "Lecture du délai de suroccupation");
-        printf("%s%s%u", TAG_ESPNOW, "Le délai d'overbusy est de :", (delayOverBusy = getDelayOverBusy()));
+        printf("%s%s%u", TAG_ESPNOW, "Le délai d'overbusy est de :", machineConfig.config.delayOverBusy);
         boardState = ACK;
-        msg_len = sizeof(delayOverBusy);
-        memmove(msg_buffer, &delayOverBusy, sizeof(delayOverBusy));
+        msg_len = sizeof(machineConfig.config.delayOverBusy);
+        memmove(msg_buffer, &machineConfig.config.delayOverBusy, sizeof(machineConfig.config.delayOverBusy));
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
         break;
@@ -327,13 +334,14 @@ static void checkheader(const uint8_t *data)
     case MODIFY_DELAY_ACTIVATION:
     {
         printf("%s%s", TAG_ESPNOW, "Enregistrement du délais d'activation de la machine.'");
-        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais d'activation de la machine a ", saveDelayActivation(data[4] + (data[5] * 0x100) + (data[6] * 0x10000) + (data[7] * 0x1000000)) ? "résussi" : "échoué", (data[4] + (data[5] * 0x100) + (data[6] * 0x10000) + (data[7] * 0x1000000)));
+        machineConfig.config.lPulseInMS = data[4] + (data[5] * 0x100) + (data[6] * 0x10000) + (data[7] * 0x1000000);
+        printf("%s%s%s : %u", TAG_ESPNOW, "L'enregistrement du délais d'activation de la machine a ", saveMachineConfig(machineConfig) ? "résussi" : "échoué", machineConfig.config.lPulseInMS);
         vACK();
         break;
     }
     case REQUEST_DELAY_ACTIVATION:
     {
-        uint32_t result = getDelayActivation();
+        uint32_t result = machineConfig.config.lPulseInMS;
         printf("%s%s", TAG_ESPNOW, "Lecture du délai d'activation");
         printf("%s%s%u", TAG_ESPNOW, "Le délai d'activation est de :", result);
         boardState = ACK;
@@ -357,7 +365,31 @@ static void checkheader(const uint8_t *data)
     }
     case REQUEST_FW_VERSION:
     {
+        printf("%s%s%s", TAG_ESPNOW, "lecture de la versio du FW : ", version);
+        boardState = ACK;
+        msg_len = sizeof(version);
+        memmove(msg_buffer, version, sizeof(version));
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
+
         break;
+    }
+    case REQUEST_CONFIG:
+    {
+        printf("%s%s", TAG_ESPNOW, "Lecture de la configuration.");
+        boardState = ACK;
+        msg_len = sizeof(MACHINECONFIG);
+        memmove(msg_buffer, &machineConfig, sizeof(MACHINECONFIG));
+        setESPNOWTaskState(ESPNOWANSWER);
+        xTaskNotifyGive(hTaskESPNOW);
+        break;
+    }
+    case MODIFY_CONFIG:
+    {
+        printf("%s%s", TAG_ESPNOW, "Enregistrement de la configuration du module.");
+        boardState = ACK;
+        memmove(machineConfig.buffer, &data[4], data[1]);
+        vACK();
     }
     default:
     {
@@ -381,7 +413,7 @@ static void checkheader(const uint8_t *data)
 static bool isMsgValid(const uint8_t *data, uint8_t len)
 {
     uint16_t LCRC = wCRC16(data, len - 2);
-    return ((data[0] == MachineAddress) && (data[2] == HOST) && (LCRC == (data[len - 2] + (data[len - 1] * 0x100))));
+    return ((data[0] == machineConfig.config.address) && (data[2] == HOST) && (LCRC == (data[len - 2] + (data[len - 1] * 0x100))));
 }
 
 /*!
@@ -413,14 +445,14 @@ static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 */
 static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 {
+    printf("\n%s%s%02X:%02X:%02X:%02X:%02X:%02X : - ", TAG_ESPNOW, "Données reçues de ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
+    for (uint8_t i = 0; i < len; i++)
+    {
+        printf("%02u ", data[i]);
+    }
+    printf("%s%u\n", "Commande ", data[3]);
     if (isMsgValid(data, len))
     {
-        printf("\n%s%s%02X:%02X:%02X:%02X:%02X:%02X : - ", TAG_ESPNOW, "Données reçues de ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
-        for (uint8_t i = 0; i < len; i++)
-        {
-            printf("%02u ", data[i]);
-        }
-        printf("%s%u", "Commande ", data[3]);
         checkheader(data);
 
         //Lance le clignotement
@@ -428,6 +460,10 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
         setIOState(IOLEDFLASH);
         delayBlink = 5;
         //---------------
+    }
+    else
+    {
+        printf("%s", "Message invalide\n");
     }
 }
 
