@@ -140,6 +140,7 @@ static uint16_t wCRC16(const void *byData, const uint8_t byLen)
 */
 static void formatSendAnswer(const board_Answer_t state, const uint8_t len, const uint8_t *message)
 {
+    uint8_t i;
     uint16_t LCRC;
     uint8_t *buffer;
     uint8_t bufferSize = 1 + sizeof(len) + sizeof(machineConfig.config.address) + 1 + len + sizeof(uint16_t);
@@ -153,6 +154,12 @@ static void formatSendAnswer(const board_Answer_t state, const uint8_t len, cons
     LCRC = wCRC16(buffer, len + 4);
     memmove(&buffer[len + 4], &LCRC, sizeof(uint16_t));
     ESP_ERROR_CHECK(esp_now_send(macAddress, buffer, len + 6));
+    printf("%s%s%d%s", TAG_ESPNOW, "Module ", machineConfig.config.address, " envoie message :");
+    for (i = 0; i < bufferSize; i++)
+    {
+        printf("%02u ", buffer[i]);
+    }
+    printf("\n");
     free(buffer);
 }
 
@@ -203,7 +210,7 @@ static void checkheader(const uint8_t *data)
     {
     case SIMPLEPOLL:
     {
-        printf("%s%s", TAG_ESPNOW, "SIMPLE POLL");
+        printf("%s%s\n", TAG_ESPNOW, "SIMPLE POLL");
         vACK();
         break;
     }
@@ -266,7 +273,7 @@ static void checkheader(const uint8_t *data)
         memmove(msg_buffer, &result, sizeof(result));
         setESPNOWTaskState(ESPNOWANSWER);
         xTaskNotifyGive(hTaskESPNOW);
-        printf("%s%s%u", TAG_ESPNOW, "La valeur d'occupation est : ", getADCValue());
+        printf("%s%s%u", TAG_ESPNOW, "La valeur d'occupation est : ", result);
         break;
     }
     case MODIFY_DELAY_OVER_BUSY:
@@ -389,6 +396,7 @@ static void checkheader(const uint8_t *data)
         printf("%s%s", TAG_ESPNOW, "Enregistrement de la configuration du module.");
         boardState = ACK;
         memmove(machineConfig.buffer, &data[4], data[1]);
+        printf("%s%s%u%s", TAG_ESPNOW, "L'enregistrement de la configuration de la machine : ", machineConfig.config.address, saveMachineConfig(machineConfig) ? " a résussi" : " a échoué ");
         vACK();
     }
     default:
@@ -428,7 +436,7 @@ static bool isMsgValid(const uint8_t *data, uint8_t len)
 */
 static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 {
-    printf("%s%s%d", TAG_ESPNOW, " result : ", (uint8_t)status);
+    printf("%s%s%d\n", TAG_ESPNOW, " result : ", (uint8_t)status);
 }
 
 /*!

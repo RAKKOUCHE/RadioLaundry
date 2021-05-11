@@ -28,7 +28,7 @@
  * @brief 
  * 
  */
-#define SECONDE (1000 / portTICK_PERIOD_MS)
+#define SECONDE (1000 * portTICK_PERIOD_MS)
 
 /**
  * @brief 
@@ -92,8 +92,14 @@ TaskHandle_t hTaskESPNOW;
 
 /**
  * @brief 
+ * 
  */
-uint8_t msg_received[32];
+xSemaphoreHandle hSemaphore;
+
+/**
+ * @brief 
+ */
+uint8_t msg_received[64];
 
 /*!
 * \fn void TASKESPNOW(void *vParameter)
@@ -292,5 +298,9 @@ uint32_t getDelayActivationRelayMachine(uint8_t address);
 * \return 
 */
 uint32_t getRestActivationRelayMachine(uint8_t address);
+
+bool getConfig(uint8_t address);
+
+bool setConfig(uint8_t address, MACHINECONFIG machineConfig);
 
 #endif

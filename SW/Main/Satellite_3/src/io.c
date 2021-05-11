@@ -136,6 +136,7 @@ void vTaskIO(void *VParameter)
     TickType_t xLastWakeTime = xTaskGetTickCount();
     while (1)
     {
+        printf("%s%s%u\n", TAG_IO, "Machine ", machineConfig.config.address);
         switch (IOTaskState)
         {
         case IOTASKIDLE:

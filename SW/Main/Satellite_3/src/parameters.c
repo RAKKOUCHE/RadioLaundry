@@ -89,9 +89,17 @@ static bool setVFS_SPIFFS(void)
 */
 bool saveMachineConfig(MACHINECONFIG machineConfig)
 {
-    return ((fwrite(&machineConfig, sizeof(machineConfig), 1, filedata) > 0) &&
-            !fflush(filedata) &&
-            saveRelayMachineState(LO));
+    volatile int nb;
+    volatile bool isFlushed, relayState;
+    rewind(filedata);
+    if (((nb = fwrite(&machineConfig, sizeof(machineConfig), 1, filedata)) > 0) && (isFlushed = !fflush(filedata)) && (relayState = saveRelayMachineState(LO)))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 // /*!

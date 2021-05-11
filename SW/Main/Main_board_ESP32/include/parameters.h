@@ -53,4 +53,6 @@ typedef union
     CONFIG config;
     uint8_t buffer[sizeof(CONFIG)]; /*!<Tableau d'octets contenant la structure.*/
 } MACHINECONFIG;
+
+MACHINECONFIG machineConfig;
 #endif

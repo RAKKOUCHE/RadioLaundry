@@ -10,7 +10,6 @@
 #ifndef ESPNOW_H
 #define ESPNOW_H
 
-/*! Fichiers includes*/
 /*! Fichiers inclus*/
 #include <string.h>
 #include "freertos/FreeRTOS.h"
@@ -22,10 +21,10 @@
 #include "parameters.h"
 #include "main.h"
 
-/**
- * @brief 
- * 
- */
+/*!
+* \def SECONDE
+* Description
+*/
 #define SECONDE (1000 / portTICK_PERIOD_MS)
 
 /**
@@ -101,7 +100,7 @@ TaskHandle_t hTaskESPNOW;
 void setESPNOWTaskState(ESPNOWTaskState_t state);
 
 /*!
-* \fn void TASKESPNOW(void *vParameter)
+* \fn void vTaskESPNOW(void *vParameter)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date  16/02/2021

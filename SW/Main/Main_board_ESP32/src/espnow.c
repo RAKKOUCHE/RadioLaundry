@@ -7,8 +7,6 @@
 * \remarks None
 */
 
-//TODO: supprimer la lecture des paramètres dans la release.
-
 /*! Fichiers inclus*/
 #include "espnow.h"
 
@@ -46,7 +44,7 @@
 * \def TO_COMMAND
 * \brief
 */
-#define TO_COMMAND (1000 / portTICK_PERIOD_MS)
+#define TO_COMMAND (3000 / portTICK_PERIOD_MS)
 
 /*!
 * \fn typedef enum __attribute__((__packed__))
@@ -95,11 +93,6 @@ static ESPNOWTaskState_t ESPNOWTaskState;
 static esp_now_peer_info_t peer_info;
 
 /**
-* \brief
-*/
-static bool isCommandFinished;
-
-/**
  * @brief 
  * 
  */
@@ -122,7 +115,7 @@ static uint8_t macAddress[] = {0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF};
 */
 static void CommandTO(const TimerHandle_t handle)
 {
-    isCommandFinished = true;
+    xSemaphoreGive(hSemaphore);
 }
 
 /*!
@@ -188,11 +181,12 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
         printf("%02u ", data[i]);
     }
     memmove(msg_received, data, len);
-    isCommandFinished = true;
     xTimerStop(hCommandTO, 1 * SECONDE);
     delay = 5;
     setLED(LED_1);
     setIOState(IOLedFlash);
+    printf("\n");
+    xSemaphoreGive(hSemaphore);
 }
 
 /*!
@@ -217,6 +211,8 @@ static void InitESPNOW(void)
     peer_info.encrypt = false;
     ESP_ERROR_CHECK(esp_now_add_peer(&peer_info));
     hCommandTO = xTimerCreate("TO command", TO_COMMAND, pdFALSE, 0, CommandTO);
+    hSemaphore = xSemaphoreCreateBinary();
+    xSemaphoreGive(hSemaphore);
     printf("%s%s", TAG_ESPNOW, "ESPNOW initialisé.");
 }
 
@@ -253,6 +249,7 @@ static void formatSendMsg(const uint8_t addressRecipient, const Command_t comman
         printf("%02u ", buffer[i]);
     }
     ESP_ERROR_CHECK(esp_now_send(macAddress, buffer, len + 6));
+
     free(buffer);
     printf("%s%d", "- Commande : ", command);
 }
@@ -286,8 +283,8 @@ static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 */
 void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const void *data)
 {
-    isCommandFinished = false;
     xTimerStart(hCommandTO, 1 * SECONDE);
+    xSemaphoreTake(hSemaphore, portMAX_DELAY);
     memset(msg_received, 0, sizeof(msg_received));
     msg_address_recipient = address;
     msg_cmd = header;
@@ -297,10 +294,8 @@ void prepareMessageToSend(const uint8_t address, const Command_t header, const u
     }
     setESPNOWTaskState(ESPNOWMSGSEND);
     xTaskNotifyGive(hTaskESPNOW);
-    while (!isCommandFinished)
-    {
-        vTaskDelay(1);
-    }
+    xSemaphoreTake(hSemaphore, portMAX_DELAY);
+    xTimerStop(hCommandTO, 1000);
 }
 
 /*!
@@ -317,7 +312,7 @@ bool ESPNOWPoll(const uint8_t address)
 {
     printf("%s%s", TAG_ESPNOW, "Poll");
     prepareMessageToSend(address, SIMPLEPOLL, 0, NULL);
-    printf("%s%s%s", TAG_ESPNOW, "Pool ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "résussi" : "échoué");
+    printf("%s%s%s", TAG_ESPNOW, "Le pool a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "résussi" : "échoué");
     return msg_received[0] == HOST;
 }
 
@@ -567,6 +562,25 @@ uint32_t getRestActivationRelayMachine(uint8_t address)
     prepareMessageToSend(address, REQUEST_REST_ACTIVATION, 0, NULL);
     printf("%s%s%u", TAG_ESPNOW, "Le délai restant d'activation est : ", msg_received[4] + (msg_received[5] * 0X100) + (msg_received[6] * 0X100000) + (msg_received[7] * 0X1000000));
     return (msg_received[4] + (msg_received[5] * 0X100) + (msg_received[6] * 0X100000) + (msg_received[7] * 0X1000000));
+}
+
+bool getConfig(uint8_t address)
+{
+    printf("%s%s%u\n", TAG_ESPNOW, "Lecture de la configuariont du module ", address);
+    prepareMessageToSend(address, REQUEST_CONFIG, 0, NULL);
+    if (msg_received[4] == address)
+    {
+        memmove(machineConfig.buffer, &msg_received[4], sizeof(machineConfig));
+        return true;
+    }
+    return false;
+}
+
+bool setConfig(uint8_t address, MACHINECONFIG machineConfig)
+{
+    printf("%s%s%u\n", TAG_ESPNOW, "Enregistrement de la configuration du module ", machineConfig.config.address);
+    prepareMessageToSend(address, MODIFY_CONFIG, sizeof(machineConfig), machineConfig.buffer);
+    return (msg_received[0] == HOST) && (msg_received[3] == ACK);
 }
 
 /*!

@@ -1,5 +1,5 @@
 /*!
-* \file d:\Projets\RADIOLAUNDRY\SW\Main\Main_board\src\main.c
+* \file d:\Projets\RADIOLAUNDRY\SW\Main\Main_board_ESP32\src\main.c
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date 23/02/2021
@@ -7,7 +7,7 @@
 * \remarks None 
 */
 
-//TODO:ssupprimer la lecture des paramètres dans la release.
+//TODO:supprimer la lecture des paramètres dans la release.
 
 /*! Fichiers inclus*/
 #include "main.h"
@@ -24,6 +24,10 @@
 */
 #define BUTTON 0
 
+/*!
+* \def newDevice
+* Description
+*/
 #define newDevice 0XFF
 
 /*!
@@ -38,9 +42,9 @@
 static void createTasks(void)
 {
     //Création la tâche des entrées sorties
-    xTaskCreate(TaskIO, "Task IO", 2048, NULL, 1, &hTaskIO);
+    xTaskCreate(TaskIO, "Task IO", 3072, NULL, 1, &hTaskIO);
     //Création de la tâche ESPNOW
-    xTaskCreate(TASKESPNOW, "Task ESPNOW", 2560, NULL, 1, &hTaskESPNOW);
+    xTaskCreate(TASKESPNOW, "Task ESPNOW", 3072, NULL, 2, &hTaskESPNOW);
 }
 
 /*!
@@ -100,26 +104,34 @@ void app_main()
             printf("%s%s", TAG_MAIN, "Bouton utilisé");
 
             //Envoie un poll.
-            printf("%s%s%s\n", TAG_MAIN, ((isMachineNew = ESPNOWPoll(newDevice)) ? "Une " : "Aucune"), "machine nouvelle detéctée.");
+            printf("%s%s%s\n", TAG_MAIN, ((isMachineNew = ESPNOWPoll(newDevice)) ? "Une " : "Aucune "), "machine nouvelle detéctée.");
             if (isMachineNew)
             {
 
                 //Change l'adresse du module
-                MachineAddress = newDevice;
-                printf("\n%s%s%s\n", TAG_MAIN, "Le changement d'adresse a ", setESPNOWNewAddress(MachineAddress, newAddress) ? "réussi" : "échoué");
-                printf("%s%s%s\n", TAG_MAIN, "le pool a ", ESPNOWPoll(MachineAddress = newAddress) ? "réussi" : "échoué");
+                printf("%s%s", TAG_MAIN, "Lecture de la configuration du nouveau module\n");
+                if (getConfig(MachineAddress = newDevice))
+                {
+                    machineConfig.config.address = newAddress;
+                    printf("%s%s%u%s", TAG_MAIN, "La configuration du module ", newAddress, setConfig(newDevice, machineConfig) ? " a réussi " : " a échoué");
+                    //printf("%s%s%s\n", TAG_MAIN, "le pool a ", ESPNOWPoll(MachineAddress = newAddress) ? "réussi" : "échoué");
+                }
             }
+
             //Lecture du numéro de série de carte
-            printf("%s%s%s\n", TAG_MAIN, "le pool a ", (ESPNOWPoll(MachineAddress)) ? "réussi" : "échoué");
+            printf("%s%s%s\n", TAG_MAIN, "Le pool a ", (ESPNOWPoll(MachineAddress)) ? "réussi" : "échoué");
             printf("%s%s%u\n", TAG_MAIN, "Le numéro de série est : ", getESPNOWSerialNumber(MachineAddress));
-
+            getConfig(MachineAddress);
+            vTaskDelay(100);
+            // machineConfig.config.lPulseInMS = 5000;
+            // setConfig(MachineAddress, machineConfig);
             //Activation du relais de la machine
-            printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais machine. Le relais est ", setESPNOWMachineRelay(MachineAddress, true) ? "activé" : "repos");
-            vTaskDelay(50);
+            printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du relais machine. Le relais est ", setESPNOWMachineRelay(MachineAddress, true) ? "activé" : " au repos");
+            vTaskDelay(5);
 
-            printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du  relais machine. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
-            vTaskDelay(10000);
-            printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du  relais machine. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "repos");
+            printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du relais machine. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "au repos");
+            vTaskDelay(1000);
+            printf("%s%s%s\n", TAG_MAIN, "Lecture de l'etat du relais machine. Le relais est ", getESPNOWStateMachineRelay(MachineAddress) ? "activé" : "au repos");
             vTaskDelay(100);
 
             printf("%s%s%s\n", TAG_MAIN, "Ecriture de l'etat du  relais. Le relais est ", setESPNOWMachineRelay(MachineAddress, false) ? "activé" : "repos");
@@ -157,11 +169,11 @@ void app_main()
             };
         }
 
-        //Arrête le glignotement de la led
-        if (delay && (--delay == 0))
-        {
-            setLED(LED_1);
-            setIOState(IOLEDOff);
-        }
+        // //Arrête le glignotement de la led
+        // if (delay && (--delay == 0))
+        // {
+        //     setLED(LED_1);
+        //     setIOState(IOLEDOff);
+        // }
     }
 }
