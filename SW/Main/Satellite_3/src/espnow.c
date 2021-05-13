@@ -360,7 +360,8 @@ static void checkheader(const uint8_t *data)
     }
     case REQUEST_REST_ACTIVATION:
     {
-        uint32_t result = xTimerGetExpiryTime(hTORelayMachine) - xTaskGetTickCount();
+        uint32_t result;
+        result = xTimerIsTimerActive(hTORelayMachine) ? xTimerGetExpiryTime(hTORelayMachine) - xTaskGetTickCount() : 0;
         printf("%s%s", TAG_ESPNOW, "Lecture du délai d'activation restant");
         printf("%s%s%u", TAG_ESPNOW, "Le délai d'activation restant est de :", result);
         boardState = ACK;
@@ -454,6 +455,7 @@ static void OnDataSend(const uint8_t *macAddr, esp_now_send_status_t status)
 static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
 {
     printf("\n%s%s%02X:%02X:%02X:%02X:%02X:%02X : - ", TAG_ESPNOW, "Données reçues de ", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5]);
+    printf("\n");
     for (uint8_t i = 0; i < len; i++)
     {
         printf("%02u ", data[i]);

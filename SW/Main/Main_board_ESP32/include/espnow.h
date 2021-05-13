@@ -94,7 +94,7 @@ TaskHandle_t hTaskESPNOW;
  * @brief 
  * 
  */
-xSemaphoreHandle hSemaphore;
+xSemaphoreHandle hSemaphoreESPNOW;
 
 /**
  * @brief 

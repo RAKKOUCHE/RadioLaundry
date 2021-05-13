@@ -45,7 +45,7 @@ static void InitIO(void)
 {
     ESP_ERROR_CHECK(gpio_set_direction(LED_1, GPIO_MODE_INPUT_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(LED_2, GPIO_MODE_INPUT_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_direction(CTRL_MAIN, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_direction(CTRL_MAIN, GPIO_MODE_INPUT_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(CTRL_MACHINE, GPIO_MODE_INPUT_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_direction(DIPSWITCH_2, GPIO_MODE_INPUT));
     ESP_ERROR_CHECK(gpio_set_direction(BOOT, GPIO_MODE_INPUT));

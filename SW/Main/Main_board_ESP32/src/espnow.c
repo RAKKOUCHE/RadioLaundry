@@ -44,7 +44,7 @@
 * \def TO_COMMAND
 * \brief
 */
-#define TO_COMMAND (3000 / portTICK_PERIOD_MS)
+#define TO_COMMAND (3 * SECONDE)
 
 /*!
 * \fn typedef enum __attribute__((__packed__))
@@ -115,7 +115,7 @@ static uint8_t macAddress[] = {0XFF, 0XFF, 0XFF, 0XFF, 0XFF, 0XFF};
 */
 static void CommandTO(const TimerHandle_t handle)
 {
-    xSemaphoreGive(hSemaphore);
+    xSemaphoreGive(hSemaphoreESPNOW);
 }
 
 /*!
@@ -180,13 +180,12 @@ static void OnDataRcv(const uint8_t *macAddr, const uint8_t *data, int len)
     {
         printf("%02u ", data[i]);
     }
+    printf("\n");
     memmove(msg_received, data, len);
     xTimerStop(hCommandTO, 1 * SECONDE);
-    delay = 5;
     setLED(LED_1);
     setIOState(IOLedFlash);
-    printf("\n");
-    xSemaphoreGive(hSemaphore);
+    xSemaphoreGive(hSemaphoreESPNOW);
 }
 
 /*!
@@ -211,8 +210,7 @@ static void InitESPNOW(void)
     peer_info.encrypt = false;
     ESP_ERROR_CHECK(esp_now_add_peer(&peer_info));
     hCommandTO = xTimerCreate("TO command", TO_COMMAND, pdFALSE, 0, CommandTO);
-    hSemaphore = xSemaphoreCreateBinary();
-    xSemaphoreGive(hSemaphore);
+    hSemaphoreESPNOW = xSemaphoreCreateBinary();
     printf("%s%s", TAG_ESPNOW, "ESPNOW initialisé.");
 }
 
@@ -249,7 +247,6 @@ static void formatSendMsg(const uint8_t addressRecipient, const Command_t comman
         printf("%02u ", buffer[i]);
     }
     ESP_ERROR_CHECK(esp_now_send(macAddress, buffer, len + 6));
-
     free(buffer);
     printf("%s%d", "- Commande : ", command);
 }
@@ -283,8 +280,9 @@ static void setESPNOWTaskState(const ESPNOWTaskState_t state)
 */
 void prepareMessageToSend(const uint8_t address, const Command_t header, const uint8_t len, const void *data)
 {
-    xTimerStart(hCommandTO, 1 * SECONDE);
-    xSemaphoreTake(hSemaphore, portMAX_DELAY);
+    xTimerStart(hCommandTO, 10 * SECONDE);
+    xSemaphoreGive(hSemaphoreESPNOW);
+    xSemaphoreTake(hSemaphoreESPNOW, portMAX_DELAY);
     memset(msg_received, 0, sizeof(msg_received));
     msg_address_recipient = address;
     msg_cmd = header;
@@ -294,8 +292,7 @@ void prepareMessageToSend(const uint8_t address, const Command_t header, const u
     }
     setESPNOWTaskState(ESPNOWMSGSEND);
     xTaskNotifyGive(hTaskESPNOW);
-    xSemaphoreTake(hSemaphore, portMAX_DELAY);
-    xTimerStop(hCommandTO, 1000);
+    xSemaphoreTake(hSemaphoreESPNOW, portMAX_DELAY);
 }
 
 /*!
@@ -313,7 +310,7 @@ bool ESPNOWPoll(const uint8_t address)
     printf("%s%s", TAG_ESPNOW, "Poll");
     prepareMessageToSend(address, SIMPLEPOLL, 0, NULL);
     printf("%s%s%s", TAG_ESPNOW, "Le pool a ", (msg_received[0] == HOST) && (msg_received[3] == ACK) ? "résussi" : "échoué");
-    return msg_received[0] == HOST;
+    return msg_received[0] == HOST && (msg_received[3] == ACK);
 }
 
 /*!
@@ -347,7 +344,7 @@ bool setESPNOWNewAddress(const uint8_t address, const uint8_t newAddress)
 */
 uint32_t getESPNOWSerialNumber(const uint8_t address)
 {
-    printf("%sDemande le numéro de série", TAG_ESPNOW);
+    printf("%s%s", TAG_ESPNOW, "Demande le numéro de série");
     memset(msg_received, 0, sizeof(msg_received));
     prepareMessageToSend(address, REQUEST_SERIAL_NUMBER, 0, NULL);
     printf("%s%s%u", TAG_ESPNOW, "Le numéro de série est : ", msg_received[6] + (msg_received[5] * 0X100) + (msg_received[4] * 0x10000));
@@ -390,7 +387,7 @@ int getESPNOWStateMachineRelay(uint8_t address)
     prepareMessageToSend(address, REQUEST_MACHINE_RELAY_STATE, 0, NULL);
     if ((msg_received[0] == HOST) && (msg_received[3] == ACK))
     {
-        printf("%s%s%s", TAG_ESPNOW, "Le relais est : ", msg_received[4] ? "activé" : "repos");
+        printf("%s%s%s", TAG_ESPNOW, "Le relais est ", msg_received[4] ? "activé" : "au repos");
         return msg_received[4];
     }
     else
@@ -473,7 +470,7 @@ int getESPNOWStateMainRelay(uint8_t address)
     prepareMessageToSend(address, REQUEST_MAIN_RELAY, 0, NULL);
     if ((msg_received[0] == HOST) && (msg_received[3] == ACK))
     {
-        printf("%s%s%s", TAG_ESPNOW, "Le relais est : ", msg_received[4] ? "activé" : "repos");
+        printf("%s%s%s", TAG_ESPNOW, "Le relais est ", msg_received[4] ? "activé" : "au repos");
         return msg_received[4];
     }
     else
@@ -566,7 +563,7 @@ uint32_t getRestActivationRelayMachine(uint8_t address)
 
 bool getConfig(uint8_t address)
 {
-    printf("%s%s%u\n", TAG_ESPNOW, "Lecture de la configuariont du module ", address);
+    printf("%s%s%u\n", TAG_ESPNOW, "Lecture de la configuration du module ", address);
     prepareMessageToSend(address, REQUEST_CONFIG, 0, NULL);
     if (msg_received[4] == address)
     {

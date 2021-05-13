@@ -131,7 +131,7 @@ void TaskIO(void *VParameter)
         case IOLedFlash:
         {
             gpio_set_level(LED, !gpio_get_level(LED));
-            printf("%s Led %d : %s",TAG_IO,  LED,  (gpio_get_level(LED) ? "ON" : "OFF"));
+            //printf("%s Led %d : %s",TAG_IO,  LED,  (gpio_get_level(LED) ? "ON" : "OFF"));
             break;
         }
         case IOLEDOff:
