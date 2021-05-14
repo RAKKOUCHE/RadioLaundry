@@ -102,37 +102,6 @@ bool saveMachineConfig(MACHINECONFIG machineConfig)
     }
 }
 
-// /*!
-// * \fn static uint32_t readDelayOverBusy(void)
-// * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-// * \version 0.1
-// * \date  08/03/2021
-// * \brief
-// * \remarks None
-// * \return
-// */
-// static uint32_t readDelayOverBusy(void)
-// {
-//     fseek(filedata, ADDRESS_OVER_BUSY, SEEK_SET);
-//     fread(&machineconfig.delayOverBusy, sizeof(machineconfig.delayOverBusy), 1, filedata);
-//     return machineconfig.delayOverBusy;
-// }
-
-// /*!
-// * \fn static uint32_t readDelayActivation(void)
-// * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
-// * \version 0.1
-// * \date  08/03/2021
-// * \brief
-// * \remarks None
-// * \return
-// */
-// static uint32_t readDelayActivation(void)
-// {
-//     fseek(filedata, ADDRESS_DELAY_RELAY, SEEK_SET);
-//     return fread(&machineconfig.lPulseInMS, sizeof(machineconfig.lPulseInMS), 1, filedata);
-// }
-
 /*!
 * \fn static bool readStateRelayMachine(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
