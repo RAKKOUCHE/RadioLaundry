@@ -1,0 +1,7 @@
+D:\Projets\RADIOLAUNDRY\SW\Main\C#\random\random\obj\Debug\random.csprojAssemblyReference.cache
+D:\Projets\RADIOLAUNDRY\SW\Main\C#\random\random\obj\Debug\random.csproj.CoreCompileInputs.cache
+D:\Projets\RADIOLAUNDRY\SW\Main\C#\random\random\bin\Debug\random.exe.config
+D:\Projets\RADIOLAUNDRY\SW\Main\C#\random\random\bin\Debug\random.exe
+D:\Projets\RADIOLAUNDRY\SW\Main\C#\random\random\bin\Debug\random.pdb
+D:\Projets\RADIOLAUNDRY\SW\Main\C#\random\random\obj\Debug\random.exe
+D:\Projets\RADIOLAUNDRY\SW\Main\C#\random\random\obj\Debug\random.pdb
