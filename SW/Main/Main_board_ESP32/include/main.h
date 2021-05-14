@@ -1,5 +1,5 @@
 /*!
-* \file d:\Projets\RADIOLAUNDRY\SW\Main\Main_board\include\main.h
+* \file d:\Projets\RADIOLAUNDRY\SW\Main\Main_board_ESP32\include\main.h
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
 * \version 0.1
 * \date 23/02/2021
@@ -17,6 +17,7 @@
 #include "flash.h"
 #include "espnow.h"
 #include "adc.h"
+#include "esp_spiffs.h"
 
 /*!
 * \def DEBUG
@@ -35,5 +36,11 @@ uint8_t MachineAddress = 11;
  * 
  */
 uint8_t delay = 5;
+
+/**
+ * @brief 
+ * 
+ */
+uint8_t key[1024];
 
 #endif
