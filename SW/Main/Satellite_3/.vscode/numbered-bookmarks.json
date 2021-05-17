@@ -44,6 +44,51 @@
 					"column": 0
 				}
 			]
+		},
+		{
+			"path": "src/parameters.c",
+			"bookmarks": [
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": 193,
+					"column": 13
+				},
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": -1,
+					"column": 0
+				},
+				{
+					"line": -1,
+					"column": 0
+				}
+			]
 		}
 	]
 }

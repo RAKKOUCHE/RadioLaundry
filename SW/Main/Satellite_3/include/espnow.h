@@ -44,6 +44,12 @@ typedef enum
  * @brief 
  * 
  */
+uint8_t key[100];
+
+/**
+ * @brief 
+ * 
+ */
 typedef enum __attribute__((__packed__))
 {
     SIMPLEPOLL = 0xFE, /*!< Vérifie la communication, le satellite répond par un ack.*/

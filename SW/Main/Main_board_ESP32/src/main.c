@@ -42,6 +42,10 @@ static esp_vfs_spiffs_conf_t conf;
  */
 static esp_err_t err;
 
+static const char *filename = "/data/random";
+
+FILE *filekey;
+
 /*!
 * \fn static void createTasks(void)
 * \author Rachid AKKOUCHE <rachid.akkouche@wanadoo.fr>
@@ -111,24 +115,23 @@ static void getKey()
 {
     volatile int nbRead;
     struct stat s;
-    FILE *filekey;
-    char *filename = "/data/random";
+
     if (setVFS_SPIFFS())
     {
-        if (stat(filename, &s) < 0)
-        {
-            printf("%s%s", TAG_MAIN, "La clé est introuvable.");
-            filekey = fopen(filename, "rb");
-            fclose(filekey);
-            filekey = NULL;
-            return;
-        }
-        else
-        {
-            filekey = fopen(filename, "rb");
-            //rewind(filekey);
-            printf("%s%u", "TAG_MAIN", nbRead = fread(&key, 1, 1024, filekey));
-        }
+        // if (stat(filename, &s) < 0)
+        // {
+        //     printf("%s%s", TAG_MAIN, "La clé est introuvable.");
+        //     filekey = fopen(filename, "rb");
+        //     fclose(filekey);
+        //     filekey = NULL;
+        //     return;
+        // }
+        // else
+        // {
+
+        //     //rewind(filekey);
+        //     printf("%s%u", "TAG_MAIN", nbRead = fread(&key, 1, 1024, filekey = fopen(filename, "rb")));
+        // }
     }
     printf("%s%s", TAG_MAIN, "La clé est lue");
 }

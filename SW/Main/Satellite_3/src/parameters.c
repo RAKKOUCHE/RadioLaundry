@@ -20,12 +20,14 @@
 /**
 *\brief Nom du fichier contenant les paramètres
  */
-static const char *filename = "/data/parameters";
+const char *filename = "/data/parameters";
+const char *filerandom = "/data/random";
 
 /**
 *\brief
  */
-static FILE *filedata;
+FILE *filedata;
+FILE *filerand;
 
 /**
 *\brief
@@ -169,7 +171,7 @@ static void initNewDevice()
 static void checkFileParameters(void)
 {
     struct stat s;
-
+    volatile int number;
     printf("%s%s", TAG_PARAMETER, "Lecture du numéro de la machine");
     if (stat(filename, &s) < 0)
     {
@@ -179,6 +181,17 @@ static void checkFileParameters(void)
         fclose(filedata);
         filedata = NULL;
     }
+    if (stat(filerandom, &s) < 0)
+    {
+        printf("%s%s", TAG_PARAMETER, "Le fichier n'existe pas!");
+        filerand = fopen(filerandom, "wb+");
+        //initNewDevice();
+        fclose(filedata);
+        filedata = NULL;
+    }
+    filerand = fopen(filerandom, "wb+");
+    number = fread(&key, 1, 100, filerand);
+    number++;
 
     if (!fread(&machineConfig, sizeof(machineConfig), 1, (filedata = fopen(filename, "rb+"))))
     {
