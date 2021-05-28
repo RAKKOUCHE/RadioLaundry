@@ -2505,12 +2505,6 @@ ComponentSymbolReference26=SELF
 ComponentUpdate26=1
 ComponentIsDeviceSheet26=0
 
-[NetInfos]
-Net1=NetName=CTRL_MAIN|NetColor=$0000BE00
-Net2=NetName=CTRL_MAIN_4|NetColor=$0000BE00
-Net3=NetName=NEUTRAL|NetColor=$006E6EFF
-Net4=NetName=NEUTRAL_1|NetColor=$006E6EFF
-
 [Comparison Options]
 ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
 ComparisonOptions1=Kind=Net Class|MinPercent=75|MinMatch=3|ShowMatch=0|UseName=-1|InclAllRules=0
